@@ -11,7 +11,7 @@ namespace Library
         // Indica si el usuario está activo o no 
         bool Activo { get; set; }
 
-        // Fecha en la que el usuario fue creado o dado de alta.
+        // Fecha en la que el usuario fue creado 
         DateTime FechaCreacion { get; set; }
     }
 }
