@@ -1,3 +1,4 @@
+// GestorClientes.cs
 using System;
 using System.Collections.Generic;
 
@@ -8,8 +9,7 @@ namespace Library
     public class GestorClientes
     {
         // Lista que actúa como nuestra "base de datos"
-        
-        public List<Cliente> clientes = new List<Cliente>();
+        private readonly List<Cliente> clientes = new List<Cliente>();
 
         // Contador interno para asignar IDs automáticos a los clientes nuevos
         private int proximoId = 1;
@@ -32,35 +32,28 @@ namespace Library
         // Recibe los datos principales del cliente
         public int AgregarCliente(string nombre, string apellido, string email, string telefono)
         {
-            Cliente nuevo = new Cliente();
+            Cliente nuevo = new Cliente
+            {
+                Id = proximoId,
+                Nombre = nombre,
+                Apellido = apellido,
+                Email = email,
+                Telefono = telefono,
+                FechaUltimaInteraccion = DateTime.Now
+            };
 
-            // Asigna los valores básicos
-            nuevo.Id = proximoId;
-            nuevo.Nombre = nombre;
-            nuevo.Apellido = apellido;
-            nuevo.Email = email;
-            nuevo.Telefono = telefono;
-            nuevo.FechaUltimaInteraccion = DateTime.Now;
-
-            // Agrega a la lista general
             clientes.Add(nuevo);
-
-            // Incrementa el contador para el siguiente cliente
             proximoId++;
-
-            // Devuelve el ID asignado
             return nuevo.Id;
         }
 
         // Método para obtener un cliente por su ID
         public Cliente ObtenerCliente(int id)
         {
-            for (int i = 0; i < clientes.Count; i++)
+            foreach (var c in clientes)
             {
-                if (clientes[i].Id == id)
-                {
-                    return clientes[i];
-                }
+                if (c.Id == id)
+                    return c;
             }
             return null;
         }
@@ -68,13 +61,9 @@ namespace Library
         // Método para mostrar todos los clientes por consola
         public void MostrarTodosClientes()
         {
-            for (int i = 0; i < clientes.Count; i++)
+            foreach (var c in clientes)
             {
-                Console.WriteLine("ID: " + clientes[i].Id +
-                                  ", Nombre: " + clientes[i].Nombre +
-                                  ", Apellido: " + clientes[i].Apellido +
-                                  ", Email: " + clientes[i].Email +
-                                  ", Teléfono: " + clientes[i].Telefono);
+                Console.WriteLine($"ID: {c.Id}, Nombre: {c.Nombre}, Apellido: {c.Apellido}, Email: {c.Email}, Teléfono: {c.Telefono}");
             }
         }
 
@@ -93,15 +82,18 @@ namespace Library
         // Método para eliminar un cliente por su ID
         public bool EliminarCliente(int id)
         {
-            for (int i = 0; i < clientes.Count; i++)
+            var cliente = ObtenerCliente(id);
+            if (cliente != null)
             {
-                if (clientes[i].Id == id)
-                {
-                    clientes.RemoveAt(i);
-                    return true;
-                }
+                return clientes.Remove(cliente);
             }
             return false;
+        }
+
+        // Opcional: exponer una copia de la lista de clientes (si se necesita fuera)
+        public List<Cliente> ObtenerTodosClientes()
+        {
+            return new List<Cliente>(clientes);
         }
     }
 }
