@@ -49,13 +49,13 @@ namespace Program.Tests
 
             // agregarNota 
             // Se agrega una nueva nota a la interacción
-            interaccion.agregarNota("Se acordó enviar presupuesto el lunes.");
+            interaccion.AgregarNota("Se acordó enviar presupuesto el lunes.");
 
             // Se agrega otra para probar la concatenación en nuevas líneas
-            interaccion.agregarNota("Cliente confirmó recepción del correo.");
+            interaccion.AgregarNota("Cliente confirmó recepción del correo.");
 
             // Se intenta agregar una nota vacía (no debería afectar)
-            interaccion.agregarNota("");
+            interaccion.AgregarNota("");
 
             
             Console.WriteLine("agregarNota ejecutado correctamente (sin errores).");

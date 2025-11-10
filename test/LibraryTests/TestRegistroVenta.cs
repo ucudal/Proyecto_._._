@@ -12,36 +12,35 @@ namespace Program.Tests
         {
             Console.WriteLine("== TestRegistroVenta ==");
 
-            // Se crea una lista vacía de ventas que servirá como base de datos temporal
+            // Lista simulada de ventas (como base de datos temporal)
             List<Venta> listaVentas = new List<Venta>();
 
-            // Se crea una instancia de RegistroVenta, pasándole la lista de ventas
+            // Instancia de RegistroVenta con la lista creada
             RegistroVenta registro = new RegistroVenta(listaVentas);
 
-            // Se crean tres ventas con diferentes fechas
-            Venta v1 = new Venta(1000, DateTime.Now.AddDays(-10)); // Venta de hace 10 días
-            Venta v2 = new Venta(2000, DateTime.Now.AddDays(-5));  // Venta de hace 5 días
-            Venta v3 = new Venta(3000, DateTime.Now);              // Venta de hoy
+            // Se crean tres ventas con todos los parámetros requeridos
+            Venta v1 = new Venta(1000, DateTime.Now.AddDays(-10), "Venta antigua", "sin notas", true, "Sucursal A");
+            Venta v2 = new Venta(2000, DateTime.Now.AddDays(-5), "Venta intermedia", "ninguna", true, "Sucursal B");
+            Venta v3 = new Venta(3000, DateTime.Now, "Venta reciente", "ninguna", true, "Sucursal C");
 
             // Se agregan las ventas a la lista general
             listaVentas.Add(v1);
             listaVentas.Add(v2);
             listaVentas.Add(v3);
 
-            // Se definen las fechas de búsqueda: desde hace 7 días hasta hoy
+            // Definimos el rango de fechas de búsqueda
             DateTime desde = DateTime.Now.AddDays(-7);
             DateTime hasta = DateTime.Now;
 
-            // Se obtienen las ventas que ocurrieron dentro del rango de fechas indicado
+            // Se obtienen las ventas entre esas fechas
             List<Venta> resultado = registro.getVentasEntre(desde, hasta);
 
-            // Se verifica si el método getVentasEntre devolvió exactamente 2 ventas
+            // Verificamos si se filtraron correctamente (esperamos 2 ventas)
             if (resultado.Count == 2)
-                Console.WriteLine("getVentasEntre filtra correctamente por fechas.");
+                Console.WriteLine("GetVentasEntre filtra correctamente por fechas.");
             else
                 Console.WriteLine($"Error: se esperaban 2 ventas y se obtuvieron {resultado.Count}.");
 
-            // Línea en blanco para separar la salida visualmente
             Console.WriteLine();
         }
     }

@@ -35,8 +35,8 @@ namespace Program.Tests
 
             // Probamos el método agregarNota heredado desde la clase base Interaccion
             // Este método debe agregar las nuevas notas, separadas por saltos de línea
-            llamada.agregarNota("Se acordó próxima reunión.");
-            llamada.agregarNota("Cliente confirmó asistencia.");
+            llamada.AgregarNota("Se acordó próxima reunión.");
+            llamada.AgregarNota("Cliente confirmó asistencia.");
 
             // Mostramos un mensaje indicando que se ejecutó sin errores
             Console.WriteLine("Método agregarNota ejecutado sin errores.");
