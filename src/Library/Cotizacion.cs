@@ -4,9 +4,9 @@ namespace Library
 {
     public class Cotizacion : Interaccion
     {
-        private string estado;
-        private DateTime fechaEnvio;
-        private double importeTotal;
+        public string Estado { get; private set; }
+        public DateTime FechaEnvio { get; private set; }
+        public double ImporteTotal { get; private set; }
 
         public Cotizacion(
             string estado,
@@ -19,9 +19,11 @@ namespace Library
             string direccion
         ) : base(fecha, descripcion, notas, respondida, direccion)
         {
-            this.estado = estado;
-            this.fechaEnvio = fechaEnvio;
-            this.importeTotal = importeTotal;
+            Estado = estado;
+            FechaEnvio = fechaEnvio;
+            ImporteTotal = importeTotal;
         }
+
+        public Cotizacion() : base() { }
     }
 }

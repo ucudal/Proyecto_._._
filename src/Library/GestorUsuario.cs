@@ -13,25 +13,27 @@ namespace Library
         {
             get
             {
-                // Si 'instancia' es null, se crea una nueva.
-                // Si no, se devuelve la que ya existe.
-                return instancia ?? (instancia = new GestorUsuarios());  //Singelton, no se pueden crear mas instancias
+                // Crea la instancia si no existe
+                return instancia ?? (instancia = new GestorUsuarios());
             }
         }
 
-        // Constructor privado (impide usar "new" desde afuera)
+        // Constructor privado (impide instanciación externa)
         private GestorUsuarios() { }
 
         // Lista que actúa como "base de datos"
-        public List<Usuario> usuarios = new List<Usuario>();
+        private readonly List<Usuario> usuarios = new List<Usuario>();
 
-        private int proximoId = 1;  // Contador interno
+        private int proximoId = 1;
 
         // Agregar un nuevo usuario
         public int AgregarUsuario(bool activo, DateTime fechaCreacion)
         {
-            Usuario nuevo = new Usuario(activo, fechaCreacion);
-            nuevo.Id = proximoId;
+            Usuario nuevo = new Usuario(activo, fechaCreacion)
+            {
+                Id = proximoId
+            };
+
             usuarios.Add(nuevo);
             proximoId++;
             return nuevo.Id;
@@ -40,12 +42,10 @@ namespace Library
         // Obtener usuario por ID
         public Usuario ObtenerUsuario(int id)
         {
-            for (int i = 0; i < usuarios.Count; i++)
+            foreach (var usuario in usuarios)
             {
-                if (usuarios[i].Id == id)
-                {
-                    return usuarios[i];
-                }
+                if (usuario.Id == id)
+                    return usuario;
             }
             return null;
         }
@@ -53,11 +53,9 @@ namespace Library
         // Mostrar todos los usuarios
         public void MostrarTodosUsuarios()
         {
-            for (int i = 0; i < usuarios.Count; i++)
+            foreach (var usuario in usuarios)
             {
-                Console.WriteLine("ID: " + usuarios[i].Id +
-                                  ", Activo: " + (usuarios[i].Activo ? "Sí" : "No") +
-                                  ", FechaCreacion: " + usuarios[i].FechaCreacion.ToShortDateString());
+                Console.WriteLine($"ID: {usuario.Id}, Activo: {(usuario.Activo ? "Sí" : "No")}, FechaCreacion: {usuario.FechaCreacion.ToShortDateString()}");
             }
         }
 
@@ -76,13 +74,11 @@ namespace Library
         // Eliminar usuario por ID
         public bool EliminarUsuario(int id)
         {
-            for (int i = 0; i < usuarios.Count; i++)
+            Usuario usuario = ObtenerUsuario(id);
+            if (usuario != null)
             {
-                if (usuarios[i].Id == id)
-                {
-                    usuarios.RemoveAt(i);
-                    return true;
-                }
+                usuarios.Remove(usuario);
+                return true;
             }
             return false;
         }
