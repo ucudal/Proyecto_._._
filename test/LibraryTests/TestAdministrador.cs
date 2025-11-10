@@ -21,7 +21,7 @@ namespace Program.Tests
                 Console.WriteLine("Error en la inicialización del Administrador.");
 
             // Se prueba la creación de un usuario a través del método crearUsuario
-            Usuario nuevoUsuario = admin.crearUsuario("Juan", "Pérez", "juan@correo.com");
+            Usuario nuevoUsuario = admin.CrearUsuario("Juan", "Pérez", "juan@correo.com");
 
             // Se comprueba que el usuario se haya creado correctamente y esté activo
             if (nuevoUsuario != null && nuevoUsuario.Activo)

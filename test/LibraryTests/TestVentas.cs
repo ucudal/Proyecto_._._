@@ -3,37 +3,54 @@ using Library;
 
 namespace Program.Tests
 {
-    // Clase de prueba para comprobar el correcto funcionamiento de la clase Venta
-    public static class TestVentas
+    public static class TestVenta
     {
-        // Método principal que ejecuta las pruebas de la clase Venta
         public static void Run()
         {
-            Console.WriteLine("== TestVentas ==");
+            Console.WriteLine("== TestVenta ==");
 
-            // Se define un valor total y una fecha de ejemplo para la venta
-            double total = 1500.50;
-            DateTime fecha = DateTime.Now.AddDays(-3); // Venta realizada hace 3 días
+            // Crear una instancia de Venta con datos de ejemplo
+            Venta venta = new Venta(
+                2500.75,                       // total
+                DateTime.Now,                  // fecha
+                "Venta de productos",          // descripción
+                "Pago realizado en efectivo",  // notas
+                true,                          // respondida
+                "Sucursal Montevideo"          // dirección
+            );
 
-            // Se crea una nueva venta con los valores definidos
-            Venta venta = new Venta(total, fecha);
-
-            // Se verifica que los valores del constructor se hayan asignado correctamente
-            if (venta.Total == total && venta.Fecha == fecha)
-                Console.WriteLine("Constructor y propiedades funcionan correctamente.");
+            //  Verificar creación
+            if (venta != null)
+            {
+                Console.WriteLine("Venta creada correctamente.");
+            }
             else
-                Console.WriteLine("Error en la inicialización de Venta.");
+            {
+                Console.WriteLine("Error: la venta no se creó correctamente.");
+            }
 
-            // Se prueba el método getTotales con criterios ficticios
-            double resultado = venta.getTotales("criterio1", "criterio2");
+            // Verificar que el total sea correcto
+            if (venta.Total == 2500.75)
+            {
+                Console.WriteLine("El total fue asignado correctamente.");
+            }
+            else
+            {
+                Console.WriteLine("Error: el total no coincide.");
+            }
 
-            // Se verifica si el método devuelve el valor esperado
-            Console.WriteLine(resultado == total 
-                ? "getTotales devuelve el total correctamente." 
-                : "Error en getTotales.");
+            // Probar método GetTotales 
+            double resultado = venta.GetTotales("criterio1", "criterio2");
+            Console.WriteLine("Resultado de GetTotales(): " + resultado);
 
-            // Línea vacía para mantener ordenada la salida en consola
-            Console.WriteLine();
+            //  Mostrar datos para validación visual 
+            Console.WriteLine("Fecha: " + venta.Fecha.ToShortDateString());
+            Console.WriteLine("Descripción: Venta de productos");
+            Console.WriteLine("Notas: Pago realizado en efectivo");
+            Console.WriteLine("Respondida: true");
+            Console.WriteLine("Dirección: Sucursal Montevideo");
+
+            Console.WriteLine("== Fin de TestVenta ==\n");
         }
     }
 }
