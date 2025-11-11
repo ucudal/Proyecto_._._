@@ -1,0 +1,53 @@
+\doxysection{Test\+Administrador.\+cs}
+\hypertarget{_test_administrador_8cs_source}{}\label{_test_administrador_8cs_source}\index{test/LibraryTests/TestAdministrador.cs@{test/LibraryTests/TestAdministrador.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00004}\mbox{\hyperlink{namespace_program}{00004}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestAdministrador}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestAdministrador\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ crea\ un\ administrador\ activo\ con\ fecha\ de\ creación\ actual}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_administrador}{Administrador}}\ admin\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_administrador}{Administrador}}(\textcolor{keyword}{true},\ DateTime.Now);}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ verifica\ que\ las\ propiedades\ se\ asignen\ correctamente}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (admin.\mbox{\hyperlink{class_library_1_1_administrador_aa2377af78c72522d123dd724c71fc666}{Activo}}\ \&\&\ admin.\mbox{\hyperlink{class_library_1_1_administrador_a5b71ea12a14a970c55e1767d1cbc4dd0}{FechaCreacion}}.Date\ ==\ DateTime.Now.Date)}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Constructor\ y\ propiedades\ funcionan\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ la\ inicialización\ del\ Administrador."{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ prueba\ la\ creación\ de\ un\ usuario\ a\ través\ del\ método\ CrearUsuario}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}}\ nuevoUsuario\ =\ admin.\mbox{\hyperlink{class_library_1_1_administrador_a03849791e37805ac3f81b994a423bafd}{CrearUsuario}}(\textcolor{stringliteral}{"{}Juan"{}},\ \textcolor{stringliteral}{"{}Pérez"{}},\ \textcolor{stringliteral}{"{}juan@correo.com"{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ comprueba\ que\ el\ usuario\ se\ haya\ creado\ correctamente\ y\ esté\ activo}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nuevoUsuario\ !=\ \textcolor{keyword}{null}\ \&\&\ nuevoUsuario.\mbox{\hyperlink{class_library_1_1_usuario_af68ce699d4018094e8da0168fb525d95}{Activo}})}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}CrearUsuario\ crea\ un\ usuario\ activo\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ CrearUsuario."{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ prueba\ el\ método\ SuspenderUsuario\ (pasando\ el\ Id)}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ admin.\mbox{\hyperlink{class_library_1_1_administrador_a836079587792fc49d83879d61a8ccafb}{SuspenderUsuario}}(nuevoUsuario.\mbox{\hyperlink{class_library_1_1_usuario_a772f332cd6068d14827814b329f46e48}{Id}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ verifica\ que\ el\ usuario\ haya\ sido\ suspendido\ correctamente}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!nuevoUsuario.\mbox{\hyperlink{class_library_1_1_usuario_af68ce699d4018094e8da0168fb525d95}{Activo}})}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}SuspenderUsuario\ funciona\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ SuspenderUsuario."{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ prueba\ EliminarUsuario\ (también\ por\ Id)}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ admin.\mbox{\hyperlink{class_library_1_1_administrador_ac4216920a6a54bb4c718651e94f2db30}{EliminarUsuario}}(nuevoUsuario.\mbox{\hyperlink{class_library_1_1_usuario_a772f332cd6068d14827814b329f46e48}{Id}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}EliminarUsuario\ ejecutado\ (sin\ implementación\ actual)."{}});}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Línea\ vacía\ para\ mantener\ ordenada\ la\ salida\ en\ consola}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine();}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_administrador_8cs_source_l00057}00057\ \}}
+
+\end{DoxyCode}

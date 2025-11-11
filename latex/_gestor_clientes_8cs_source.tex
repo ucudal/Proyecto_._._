@@ -1,0 +1,92 @@
+\doxysection{Gestor\+Clientes.\+cs}
+\hypertarget{_gestor_clientes_8cs_source}{}\label{_gestor_clientes_8cs_source}\index{src/Library/GestorClientes.cs@{src/Library/GestorClientes.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00001}00001\ \textcolor{comment}{//\ GestorClientes.cs}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_library}{Library}}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00012}\mbox{\hyperlink{class_library_1_1_gestor_clientes}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GestorClientes}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ readonly\ List<Cliente>\ clientes\ =\ \textcolor{keyword}{new}\ List<Cliente>();}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ proximoId\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ GestorClientes\ instancia;}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00032}\mbox{\hyperlink{class_library_1_1_gestor_clientes_ac9a0ce42a89934bcdbb13193af316522}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GestorClientes\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_ac9a0ce42a89934bcdbb13193af316522}{Instancia}}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instancia\ ??\ (instancia\ =\ \textcolor{keyword}{new}\ GestorClientes());}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_library_1_1_gestor_clientes}{GestorClientes}}()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00053}\mbox{\hyperlink{class_library_1_1_gestor_clientes_a98f90d9b7d7655e032c099d17a6857eb}{00053}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a98f90d9b7d7655e032c099d17a6857eb}{AgregarCliente}}(\textcolor{keywordtype}{string}\ nombre,\ \textcolor{keywordtype}{string}\ apellido,\ \textcolor{keywordtype}{string}\ email,\ \textcolor{keywordtype}{string}\ telefono)}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}}\ nuevo\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ proximoId,}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Nombre\ =\ nombre,}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Apellido\ =\ apellido,}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ email,}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Telefono\ =\ telefono,}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FechaUltimaInteraccion\ =\ DateTime.Now}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ clientes.Add(nuevo);}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ proximoId++;}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nuevo.\mbox{\hyperlink{class_library_1_1_cliente_ae7d51a7d8b68818dccd954de7a3da4b3}{Id}};}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00075}\mbox{\hyperlink{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}}\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}{ObtenerCliente}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ c\ \textcolor{keywordflow}{in}\ clientes)}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c.Id\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00088}\mbox{\hyperlink{class_library_1_1_gestor_clientes_a6f22a8dae168fe675c8ec0d039ab2b41}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a6f22a8dae168fe675c8ec0d039ab2b41}{MostrarTodosClientes}}()}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ c\ \textcolor{keywordflow}{in}\ clientes)}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}ID:\ \{c.Id\},\ Nombre:\ \{c.Nombre\},\ Apellido:\ \{c.Apellido\},\ Email:\ \{c.Email\},\ Teléfono:\ \{c.Telefono\}"{}});}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00102}\mbox{\hyperlink{class_library_1_1_gestor_clientes_a665222158ae12ad68530adb0bcc52516}{00102}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a665222158ae12ad68530adb0bcc52516}{ActualizarEmail}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{string}\ nuevoEmail)}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}}\ cliente\ =\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}{ObtenerCliente}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cliente\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cliente.Email\ =\ nuevoEmail;}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00118}\mbox{\hyperlink{class_library_1_1_gestor_clientes_a8e70cd5215406f4732c0a1d5c0b6e3cf}{00118}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a8e70cd5215406f4732c0a1d5c0b6e3cf}{EliminarCliente}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ var\ cliente\ =\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}{ObtenerCliente}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cliente\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ clientes.Remove(cliente);}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00132}\mbox{\hyperlink{class_library_1_1_gestor_clientes_a0b501d9cef45346fce1956e866c8678c}{00132}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Cliente>\ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a0b501d9cef45346fce1956e866c8678c}{ObtenerTodosClientes}}()}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ List<Cliente>(clientes);}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_clientes_8cs_source_l00137}00137\ \}}
+
+\end{DoxyCode}

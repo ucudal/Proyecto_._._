@@ -1,0 +1,48 @@
+\doxysection{Test\+Clientes.\+cs}
+\hypertarget{_test_clientes_8cs_source}{}\label{_test_clientes_8cs_source}\index{test/LibraryTests/TestClientes.cs@{test/LibraryTests/TestClientes.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestClientes}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestClientes\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ crea\ un\ nuevo\ cliente\ con\ datos\ de\ ejemplo}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incluye\ nombre,\ apellido,\ teléfono,\ correo,\ descripción,\ género,\ fecha\ de\ nacimiento\ y\ última\ interacción}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ Cliente\ cliente\ =\ \textcolor{keyword}{new}\ Cliente(}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Juan"{}},\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Pérez"{}},\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}099123456"{}},\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}juan@correo.com"{}},\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Cliente\ regular"{}},\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Masculino"{}},\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime.Now.AddYears(-\/30),\ \ \ \textcolor{comment}{//\ Fecha\ de\ nacimiento\ (30\ años\ atrás)}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime.Now.AddDays(-\/10)\ \ \ \ \ \textcolor{comment}{//\ Última\ interacción\ fue\ hace\ 10\ días}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ comprueba\ si\ el\ cliente\ se\ considera\ inactivo\ tras\ más\ de\ 5\ días\ sin\ interacción}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ inactivo\ =\ cliente.\mbox{\hyperlink{class_library_1_1_cliente_aae6927cadd187bc73828856c060558e0}{esInactivo}}(\textcolor{stringliteral}{"{}5"{}});}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ muestra\ un\ mensaje\ dependiendo\ del\ resultado\ de\ la\ comprobación}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(inactivo\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{stringliteral}{"{}Cliente\ correctamente\ marcado\ como\ inactivo\ (más\ de\ 5\ días\ sin\ interacción)."{}}\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}Error:\ debería\ ser\ inactivo."{}});}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ crea\ una\ nueva\ etiqueta\ "{}VIP"{}\ y\ se\ agrega\ al\ cliente}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ Etiqueta\ etiqueta\ =\ \textcolor{keyword}{new}\ Etiqueta(\textcolor{stringliteral}{"{}VIP"{}});}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ cliente.\mbox{\hyperlink{class_library_1_1_cliente_a1e3920f067b94c3b2900229958d8a2b2}{agregarEtiqueta}}(etiqueta);}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ muestra\ un\ mensaje\ indicando\ que\ la\ prueba\ de\ agregarEtiqueta\ se\ ejecutó}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}agregarEtiqueta\ ejecutado\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_clientes_8cs_source_l00051}00051\ \}}
+
+\end{DoxyCode}

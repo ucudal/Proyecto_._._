@@ -1,0 +1,41 @@
+\doxysection{Library Namespace Reference}
+\hypertarget{namespace_library}{}\label{namespace_library}\index{Library@{Library}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_library_1_1_administrador}{Administrador}}
+\begin{DoxyCompactList}\small\item\em Representa un administrador dentro del sistema. Implementa la interfaz \doxylink{interface_library_1_1_i_usuario}{IUsuario} y permite gestionar usuarios (crearlos, suspenderlos, eliminarlos y mostrarlos) mediante el \doxylink{class_library_1_1_gestor_usuarios}{Gestor\+Usuarios}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}}
+\begin{DoxyCompactList}\small\item\em Representa un cliente dentro del sistema CRM. Contiene información personal, etiquetas, interacciones y un vendedor asignado. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_correo}{Correo}}
+\begin{DoxyCompactList}\small\item\em Representa un correo electrónico enviado o recibido como interacción con un cliente. Hereda de la clase \doxylink{class_library_1_1_interaccion}{Interaccion}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_cotizacion}{Cotizacion}}
+\begin{DoxyCompactList}\small\item\em Representa una cotización asociada a un cliente o interacción. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_etiqueta}{Etiqueta}}
+\begin{DoxyCompactList}\small\item\em Representa una etiqueta que puede asociarse a clientes u otros elementos del sistema. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_gestor_clientes}{Gestor\+Clientes}}
+\begin{DoxyCompactList}\small\item\em Clase que gestiona la lista de clientes del sistema. Implementa el patrón Singleton para asegurar una sola instancia. Permite agregar, obtener, mostrar, actualizar y eliminar clientes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_gestor_interacciones}{Gestor\+Interacciones}}
+\begin{DoxyCompactList}\small\item\em Gestor de todas las interacciones (llamadas, reuniones, mensajes, correos) del sistema. Implementa el patrón Singleton. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_gestor_usuarios}{Gestor\+Usuarios}}
+\begin{DoxyCompactList}\small\item\em Clase encargada de gestionar las operaciones relacionadas con los usuarios del sistema. Implementa el patrón Singleton para asegurar que solo exista una instancia. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}
+\begin{DoxyCompactList}\small\item\em Clase base abstracta que representa una interacción genérica con un cliente, como una llamada, correo, mensaje, reunión, etc. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_interaccion_sin_descripcion_exception}{Interaccion\+Sin\+Descripcion\+Exception}}
+\begin{DoxyCompactList}\small\item\em Excepción personalizada que se lanza cuando se intenta crear o registrar una interacción sin descripción válida. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_library_1_1_i_usuario}{IUsuario}}
+\begin{DoxyCompactList}\small\item\em Define las propiedades básicas que deben tener todos los tipos de usuario del sistema. Sirve como contrato para asegurar que cualquier clase que la implemente mantenga información sobre su estado de actividad y su fecha de creación. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_llamada}{Llamada}}
+\begin{DoxyCompactList}\small\item\em Representa una interacción del tipo llamada dentro del sistema CRM. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion} y agrega información sobre la duración de la llamada. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_mensaje}{Mensaje}}
+\begin{DoxyCompactList}\small\item\em Representa una interacción del tipo mensaje dentro del sistema CRM. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion} e incluye información adicional sobre el medio del mensaje. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_registro_venta}{Registro\+Venta}}
+\begin{DoxyCompactList}\small\item\em Clase que representa un registro de ventas del sistema. Permite almacenar y consultar ventas en un rango de fechas. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_reunion}{Reunion}}
+\begin{DoxyCompactList}\small\item\em Representa una reunión como tipo de interacción. Hereda de la clase base \doxylink{class_library_1_1_interaccion}{Interaccion}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}}
+\begin{DoxyCompactList}\small\item\em Representa a un usuario común del sistema. Implementa la interfaz \doxylink{interface_library_1_1_i_usuario}{IUsuario}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_vendedor}{Vendedor}}
+\begin{DoxyCompactList}\small\item\em Representa un vendedor del sistema, implementando la interfaz \doxylink{interface_library_1_1_i_usuario}{IUsuario}. Contiene información sobre el estado del vendedor y la fecha de creación. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_library_1_1_venta}{Venta}}
+\begin{DoxyCompactList}\small\item\em Representa una venta realizada, heredando de la clase \doxylink{class_library_1_1_interaccion}{Interaccion}. Contiene información sobre el total de la venta, fecha, descripción, notas, estado de respuesta y dirección. \end{DoxyCompactList}\end{DoxyCompactItemize}

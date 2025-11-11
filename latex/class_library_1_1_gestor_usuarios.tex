@@ -1,0 +1,167 @@
+\doxysection{Library.\+Gestor\+Usuarios Class Reference}
+\hypertarget{class_library_1_1_gestor_usuarios}{}\label{class_library_1_1_gestor_usuarios}\index{Library.GestorUsuarios@{Library.GestorUsuarios}}
+
+
+Clase encargada de gestionar las operaciones relacionadas con los usuarios del sistema. Implementa el patrón Singleton para asegurar que solo exista una instancia.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_gestor_usuarios_ad485c833dade326227e3b9945f7eecfd}{Agregar\+Usuario}} (bool activo, Date\+Time fecha\+Creacion)
+\begin{DoxyCompactList}\small\item\em Agrega un nuevo usuario al sistema. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_usuario}{Usuario}} \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}{Obtener\+Usuario}} (int id)
+\begin{DoxyCompactList}\small\item\em Obtiene un usuario a partir de su ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a73967f1e03aefff08d9bcda0e49b94f6}{Mostrar\+Todos\+Usuarios}} ()
+\begin{DoxyCompactList}\small\item\em Muestra todos los usuarios registrados en la consola. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a05f0c783602fd92408f2e383ffccbe88}{Actualizar\+Activo}} (int id, bool nuevo\+Activo)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado de actividad de un usuario. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a5a029185edaf223cf3af4d3d347da0f7}{Eliminar\+Usuario}} (int id)
+\begin{DoxyCompactList}\small\item\em Elimina un usuario de la lista a partir de su ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_library_1_1_gestor_usuarios}{Gestor\+Usuarios}} \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a2782aabd000472735a6323496342cccf}{Instancia}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Propiedad pública para acceder a la instancia única del gestor. Si no existe, la crea automáticamente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase encargada de gestionar las operaciones relacionadas con los usuarios del sistema. Implementa el patrón Singleton para asegurar que solo exista una instancia. 
+
+Definition at line \mbox{\hyperlink{_gestor_usuario_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_gestor_usuario_8cs_source}{Gestor\+Usuario.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_library_1_1_gestor_usuarios_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_library_1_1_gestor_usuarios_a05f0c783602fd92408f2e383ffccbe88}\index{Library.GestorUsuarios@{Library.GestorUsuarios}!ActualizarActivo@{ActualizarActivo}}
+\index{ActualizarActivo@{ActualizarActivo}!Library.GestorUsuarios@{Library.GestorUsuarios}}
+\doxysubsubsection{\texorpdfstring{ActualizarActivo()}{ActualizarActivo()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_usuarios_a05f0c783602fd92408f2e383ffccbe88} 
+bool Library.\+Gestor\+Usuarios.\+Actualizar\+Activo (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{bool}]{nuevo\+Activo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Actualiza el estado de actividad de un usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador del usuario.\\
+\hline
+{\em nuevo\+Activo} & Nuevo valor de estado (activo/inactivo).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si se actualizó correctamente; false si no se encontró el usuario.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_usuario_8cs_source_l00095}{95}} of file \mbox{\hyperlink{_gestor_usuario_8cs_source}{Gestor\+Usuario.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_usuarios_ad485c833dade326227e3b9945f7eecfd}\index{Library.GestorUsuarios@{Library.GestorUsuarios}!AgregarUsuario@{AgregarUsuario}}
+\index{AgregarUsuario@{AgregarUsuario}!Library.GestorUsuarios@{Library.GestorUsuarios}}
+\doxysubsubsection{\texorpdfstring{AgregarUsuario()}{AgregarUsuario()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_usuarios_ad485c833dade326227e3b9945f7eecfd} 
+int Library.\+Gestor\+Usuarios.\+Agregar\+Usuario (\begin{DoxyParamCaption}\item[{bool}]{activo}{, }\item[{Date\+Time}]{fecha\+Creacion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega un nuevo usuario al sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activo} & Indica si el usuario está activo.\\
+\hline
+{\em fecha\+Creacion} & Fecha en la que se crea el usuario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El ID asignado al nuevo usuario.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_usuario_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_gestor_usuario_8cs_source}{Gestor\+Usuario.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_usuarios_a5a029185edaf223cf3af4d3d347da0f7}\index{Library.GestorUsuarios@{Library.GestorUsuarios}!EliminarUsuario@{EliminarUsuario}}
+\index{EliminarUsuario@{EliminarUsuario}!Library.GestorUsuarios@{Library.GestorUsuarios}}
+\doxysubsubsection{\texorpdfstring{EliminarUsuario()}{EliminarUsuario()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_usuarios_a5a029185edaf223cf3af4d3d347da0f7} 
+bool Library.\+Gestor\+Usuarios.\+Eliminar\+Usuario (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina un usuario de la lista a partir de su ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador del usuario a eliminar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si se eliminó correctamente; false si no se encontró el usuario.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_usuario_8cs_source_l00111}{111}} of file \mbox{\hyperlink{_gestor_usuario_8cs_source}{Gestor\+Usuario.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_usuarios_a73967f1e03aefff08d9bcda0e49b94f6}\index{Library.GestorUsuarios@{Library.GestorUsuarios}!MostrarTodosUsuarios@{MostrarTodosUsuarios}}
+\index{MostrarTodosUsuarios@{MostrarTodosUsuarios}!Library.GestorUsuarios@{Library.GestorUsuarios}}
+\doxysubsubsection{\texorpdfstring{MostrarTodosUsuarios()}{MostrarTodosUsuarios()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_usuarios_a73967f1e03aefff08d9bcda0e49b94f6} 
+void Library.\+Gestor\+Usuarios.\+Mostrar\+Todos\+Usuarios (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra todos los usuarios registrados en la consola. 
+
+
+
+Definition at line \mbox{\hyperlink{_gestor_usuario_8cs_source_l00081}{81}} of file \mbox{\hyperlink{_gestor_usuario_8cs_source}{Gestor\+Usuario.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}\index{Library.GestorUsuarios@{Library.GestorUsuarios}!ObtenerUsuario@{ObtenerUsuario}}
+\index{ObtenerUsuario@{ObtenerUsuario}!Library.GestorUsuarios@{Library.GestorUsuarios}}
+\doxysubsubsection{\texorpdfstring{ObtenerUsuario()}{ObtenerUsuario()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67} 
+\mbox{\hyperlink{class_library_1_1_usuario}{Usuario}} Library.\+Gestor\+Usuarios.\+Obtener\+Usuario (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene un usuario a partir de su ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador único del usuario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El objeto \doxylink{class_library_1_1_usuario}{Usuario} si se encuentra; de lo contrario, null.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_usuario_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_gestor_usuario_8cs_source}{Gestor\+Usuario.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_gestor_usuarios_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_gestor_usuarios_a2782aabd000472735a6323496342cccf}\index{Library.GestorUsuarios@{Library.GestorUsuarios}!Instancia@{Instancia}}
+\index{Instancia@{Instancia}!Library.GestorUsuarios@{Library.GestorUsuarios}}
+\doxysubsubsection{\texorpdfstring{Instancia}{Instancia}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_usuarios_a2782aabd000472735a6323496342cccf} 
+\mbox{\hyperlink{class_library_1_1_gestor_usuarios}{Gestor\+Usuarios}} Library.\+Gestor\+Usuarios.\+Instancia\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Propiedad pública para acceder a la instancia única del gestor. Si no existe, la crea automáticamente. 
+
+
+
+Definition at line \mbox{\hyperlink{_gestor_usuario_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_gestor_usuario_8cs_source}{Gestor\+Usuario.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Gestor\+Usuario.\+cs\end{DoxyCompactItemize}

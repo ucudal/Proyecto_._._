@@ -1,0 +1,74 @@
+\doxysection{Test\+Gestor\+Interaccion.\+cs}
+\hypertarget{_test_gestor_interaccion_8cs_source}{}\label{_test_gestor_interaccion_8cs_source}\index{test/LibraryTests/TestGestorInteraccion.cs@{test/LibraryTests/TestGestorInteraccion.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestGestorInteracciones}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestGestorInteracciones\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtener\ instancia\ única\ del\ GestorInteracciones\ (Singleton)}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ GestorInteracciones\ gestor\ =\ GestorInteracciones.Instancia;}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AgregarInteraccion:\ crear\ una\ llamada}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idLlamada\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a11ede1f8b86f1b41845ce7c0f3922fba}{AgregarInteraccion}}(}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}llamada"{}},}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime.Now.AddDays(-\/2),}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Llamada\ con\ cliente"{}},}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Habló\ sobre\ presupuestos"{}},}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}099123456"{}}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificar\ creación\ correcta}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ Interaccion\ interaccion\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_interacciones_ae96370c92ee070ef010bcca1f7191095}{ObtenerInteraccion}}(idLlamada);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (interaccion\ !=\ \textcolor{keyword}{null}\ \&\&\ interaccion.GetType().Name\ ==\ \textcolor{stringliteral}{"{}Llamada"{}})}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}AgregarInteraccion\ crea\ correctamente\ una\ interacción\ de\ tipo\ Llamada."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ al\ crear\ la\ interacción\ de\ tipo\ Llamada."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AgregarInteraccion\ con\ tipo\ inválido}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idInvalido\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a11ede1f8b86f1b41845ce7c0f3922fba}{AgregarInteraccion}}(}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}video"{}},}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime.Now,}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Intento\ de\ tipo\ no\ válido"{}},}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idInvalido\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}AgregarInteraccion\ maneja\ correctamente\ tipos\ no\ válidos."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error:\ se\ aceptó\ un\ tipo\ de\ interacción\ inválido."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ObtenerInteraccion:\ validar\ obtención\ correcta}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ Interaccion\ encontrada\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_interacciones_ae96370c92ee070ef010bcca1f7191095}{ObtenerInteraccion}}(idLlamada);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (encontrada\ !=\ \textcolor{keyword}{null}\ \&\&\ encontrada.\mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}}\ ==\ idLlamada)}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}ObtenerInteraccion\ devuelve\ la\ interacción\ correcta."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ ObtenerInteraccion."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MostrarTodasInteracciones:\ mostrar\ todas\ las\ interacciones\ registradas}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Mostrando\ todas\ las\ interacciones\ registradas:"{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ gestor.\mbox{\hyperlink{class_library_1_1_gestor_interacciones_ad4693b61e289060d06d45a254b1bbbe9}{MostrarTodasInteracciones}}();}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ EliminarInteraccion:\ eliminar\ la\ interacción\ creada}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ eliminada\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a7f58ce74ae1e3ac084889d529848bd17}{EliminarInteraccion}}(idLlamada);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ Interaccion\ eliminadaCheck\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_interacciones_ae96370c92ee070ef010bcca1f7191095}{ObtenerInteraccion}}(idLlamada);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (eliminada\ \&\&\ eliminadaCheck\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}EliminarInteraccion\ elimina\ correctamente\ la\ interacción."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ EliminarInteraccion."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine();}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_interaccion_8cs_source_l00080}00080\ \}}
+
+\end{DoxyCode}

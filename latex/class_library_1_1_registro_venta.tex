@@ -1,0 +1,79 @@
+\doxysection{Library.\+Registro\+Venta Class Reference}
+\hypertarget{class_library_1_1_registro_venta}{}\label{class_library_1_1_registro_venta}\index{Library.RegistroVenta@{Library.RegistroVenta}}
+
+
+Clase que representa un registro de ventas del sistema. Permite almacenar y consultar ventas en un rango de fechas.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_registro_venta_a578d0d55f0ec6d77684b18e75beaaa7e}{Registro\+Venta}} (List$<$ \mbox{\hyperlink{class_library_1_1_venta}{Venta}} $>$ ventas)
+\begin{DoxyCompactList}\small\item\em Constructor que inicializa el registro de ventas. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_venta}{Venta}} $>$ \mbox{\hyperlink{class_library_1_1_registro_venta_a4a1b1f8c7e7aab95f37d2c49495e3f1e}{get\+Ventas\+Entre}} (Date\+Time desde, Date\+Time hasta)
+\begin{DoxyCompactList}\small\item\em Obtiene todas las ventas registradas dentro de un rango de fechas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que representa un registro de ventas del sistema. Permite almacenar y consultar ventas en un rango de fechas. 
+
+Definition at line \mbox{\hyperlink{_registro_venta_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_registro_venta_8cs_source}{Registro\+Venta.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_library_1_1_registro_venta_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_library_1_1_registro_venta_a578d0d55f0ec6d77684b18e75beaaa7e}\index{Library.RegistroVenta@{Library.RegistroVenta}!RegistroVenta@{RegistroVenta}}
+\index{RegistroVenta@{RegistroVenta}!Library.RegistroVenta@{Library.RegistroVenta}}
+\doxysubsubsection{\texorpdfstring{RegistroVenta()}{RegistroVenta()}}
+{\footnotesize\ttfamily \label{class_library_1_1_registro_venta_a578d0d55f0ec6d77684b18e75beaaa7e} 
+Library.\+Registro\+Venta.\+Registro\+Venta (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_library_1_1_venta}{Venta}} $>$}]{ventas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que inicializa el registro de ventas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ventas} & Lista de ventas existente; si es null se crea una nueva lista vacía.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_registro_venta_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_registro_venta_8cs_source}{Registro\+Venta.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_library_1_1_registro_venta_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_library_1_1_registro_venta_a4a1b1f8c7e7aab95f37d2c49495e3f1e}\index{Library.RegistroVenta@{Library.RegistroVenta}!getVentasEntre@{getVentasEntre}}
+\index{getVentasEntre@{getVentasEntre}!Library.RegistroVenta@{Library.RegistroVenta}}
+\doxysubsubsection{\texorpdfstring{getVentasEntre()}{getVentasEntre()}}
+{\footnotesize\ttfamily \label{class_library_1_1_registro_venta_a4a1b1f8c7e7aab95f37d2c49495e3f1e} 
+List$<$ \mbox{\hyperlink{class_library_1_1_venta}{Venta}} $>$ Library.\+Registro\+Venta.\+get\+Ventas\+Entre (\begin{DoxyParamCaption}\item[{Date\+Time}]{desde}{, }\item[{Date\+Time}]{hasta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene todas las ventas registradas dentro de un rango de fechas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desde} & Fecha de inicio del rango (inclusive).\\
+\hline
+{\em hasta} & Fecha de fin del rango (inclusive).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista de ventas cuyo valor de fecha está dentro del rango especificado.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_registro_venta_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_registro_venta_8cs_source}{Registro\+Venta.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Registro\+Venta.\+cs\end{DoxyCompactItemize}

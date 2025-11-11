@@ -1,0 +1,132 @@
+\doxysection{Library.\+Mensaje Class Reference}
+\hypertarget{class_library_1_1_mensaje}{}\label{class_library_1_1_mensaje}\index{Library.Mensaje@{Library.Mensaje}}
+
+
+Representa una interacción del tipo mensaje dentro del sistema CRM. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion} e incluye información adicional sobre el medio del mensaje.  
+
+
+Inheritance diagram for Library.\+Mensaje\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_library_1_1_mensaje}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_mensaje_a3a1fe5277876ae3c157c6a62e0426345}{Mensaje}} (Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion, string medio)
+\begin{DoxyCompactList}\small\item\em Constructor que inicializa una nueva instancia de la clase \doxylink{class_library_1_1_mensaje}{Mensaje}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_mensaje_a47b679a54532219267874201a5a36004}{Mensaje}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío que permite crear una instancia sin inicializar los valores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{Agregar\+Nota}} (string nota)
+\begin{DoxyCompactList}\small\item\em Agrega una nueva nota a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_library_1_1_mensaje_aeee70fd385c6d6b09a48d03c50c71044}{Medio}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Medio por el cual se envió el mensaje (por ejemplo, "{}\+Whats\+App"{}, "{}\+SMS"{}, "{}\+Telegram"{}, etc.). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identificador único de la interacción. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha en la que ocurrió la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{Descripcion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Breve descripción del contenido o propósito de la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Notas adicionales o detalles de la interacción. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{Respondida}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indica si la interacción fue respondida o no. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{Direccion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dirección o ubicación asociada a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}{Interaccion}} (Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion)
+\begin{DoxyCompactList}\small\item\em Constructor protegido\+: inicializa los valores principales de la interacción. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f}{Interaccion}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío\+: permite crear una interacción sin parámetros (por ejemplo, desde un gestor). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa una interacción del tipo mensaje dentro del sistema CRM. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion} e incluye información adicional sobre el medio del mensaje. 
+
+Definition at line \mbox{\hyperlink{_mensaje_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_mensaje_8cs_source}{Mensaje.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_library_1_1_mensaje_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_library_1_1_mensaje_a3a1fe5277876ae3c157c6a62e0426345}\index{Library.Mensaje@{Library.Mensaje}!Mensaje@{Mensaje}}
+\index{Mensaje@{Mensaje}!Library.Mensaje@{Library.Mensaje}}
+\doxysubsubsection{\texorpdfstring{Mensaje()}{Mensaje()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_mensaje_a3a1fe5277876ae3c157c6a62e0426345} 
+Library.\+Mensaje.\+Mensaje (\begin{DoxyParamCaption}\item[{Date\+Time}]{fecha}{, }\item[{string}]{descripcion}{, }\item[{string}]{notas}{, }\item[{bool}]{respondida}{, }\item[{string}]{direccion}{, }\item[{string}]{medio}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que inicializa una nueva instancia de la clase \doxylink{class_library_1_1_mensaje}{Mensaje}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fecha} & Fecha en que se realizó la interacción.\\
+\hline
+{\em descripcion} & Descripción breve del mensaje.\\
+\hline
+{\em notas} & Notas adicionales asociadas al mensaje.\\
+\hline
+{\em respondida} & Indica si el mensaje fue respondido.\\
+\hline
+{\em direccion} & Dirección o contacto relacionado con el mensaje.\\
+\hline
+{\em medio} & Medio de comunicación utilizado.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_mensaje_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_mensaje_8cs_source}{Mensaje.\+cs}}.
+
+\Hypertarget{class_library_1_1_mensaje_a47b679a54532219267874201a5a36004}\index{Library.Mensaje@{Library.Mensaje}!Mensaje@{Mensaje}}
+\index{Mensaje@{Mensaje}!Library.Mensaje@{Library.Mensaje}}
+\doxysubsubsection{\texorpdfstring{Mensaje()}{Mensaje()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_mensaje_a47b679a54532219267874201a5a36004} 
+Library.\+Mensaje.\+Mensaje (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor vacío que permite crear una instancia sin inicializar los valores. 
+
+
+
+Definition at line \mbox{\hyperlink{_mensaje_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_mensaje_8cs_source}{Mensaje.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_mensaje_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_mensaje_aeee70fd385c6d6b09a48d03c50c71044}\index{Library.Mensaje@{Library.Mensaje}!Medio@{Medio}}
+\index{Medio@{Medio}!Library.Mensaje@{Library.Mensaje}}
+\doxysubsubsection{\texorpdfstring{Medio}{Medio}}
+{\footnotesize\ttfamily \label{class_library_1_1_mensaje_aeee70fd385c6d6b09a48d03c50c71044} 
+string Library.\+Mensaje.\+Medio\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Medio por el cual se envió el mensaje (por ejemplo, "{}\+Whats\+App"{}, "{}\+SMS"{}, "{}\+Telegram"{}, etc.). 
+
+
+
+Definition at line \mbox{\hyperlink{_mensaje_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_mensaje_8cs_source}{Mensaje.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Mensaje.\+cs\end{DoxyCompactItemize}

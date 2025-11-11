@@ -1,0 +1,34 @@
+\doxysection{Test\+Etiqueta.\+cs}
+\hypertarget{_test_etiqueta_8cs_source}{}\label{_test_etiqueta_8cs_source}\index{test/LibraryTests/TestEtiqueta.cs@{test/LibraryTests/TestEtiqueta.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestEtiqueta}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestEtiqueta\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ una\ nueva\ etiqueta\ con\ nombre\ de\ ejemplo}}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ nombreEsperado\ =\ \textcolor{stringliteral}{"{}Importante"{}};}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ Etiqueta\ etiqueta\ =\ \textcolor{keyword}{new}\ Etiqueta(nombreEsperado);}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificar\ que\ ObtenerNombre\ devuelva\ el\ valor\ correcto}}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ nombreObtenido\ =\ etiqueta.\mbox{\hyperlink{class_library_1_1_etiqueta_a6076dd32034ab4ad03b6f68ab9165338}{ObtenerNombre}}();}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nombreObtenido\ ==\ nombreEsperado)}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Constructor\ y\ ObtenerNombre\ funcionan\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Error:\ se\ esperaba\ '\{nombreEsperado\}'\ y\ se\ obtuvo\ '\{nombreObtenido\}'."{}});}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Línea\ vacía\ para\ mantener\ ordenada\ la\ salida\ en\ consola}}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine();}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_etiqueta_8cs_source_l00036}00036\ \}}
+
+\end{DoxyCode}

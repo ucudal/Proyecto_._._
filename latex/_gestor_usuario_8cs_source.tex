@@ -1,0 +1,83 @@
+\doxysection{Gestor\+Usuario.\+cs}
+\hypertarget{_gestor_usuario_8cs_source}{}\label{_gestor_usuario_8cs_source}\index{src/Library/GestorUsuario.cs@{src/Library/GestorUsuario.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_library}{Library}}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00010}\mbox{\hyperlink{class_library_1_1_gestor_usuarios}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GestorUsuarios}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ GestorUsuarios\ instancia;}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00021}\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a2782aabd000472735a6323496342cccf}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GestorUsuarios\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a2782aabd000472735a6323496342cccf}{Instancia}}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crea\ la\ instancia\ si\ no\ existe}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instancia\ ??\ (instancia\ =\ \textcolor{keyword}{new}\ GestorUsuarios());}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios}{GestorUsuarios}}()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ readonly\ List<Usuario>\ usuarios\ =\ \textcolor{keyword}{new}\ List<Usuario>();}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ proximoId\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00051}\mbox{\hyperlink{class_library_1_1_gestor_usuarios_ad485c833dade326227e3b9945f7eecfd}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios_ad485c833dade326227e3b9945f7eecfd}{AgregarUsuario}}(\textcolor{keywordtype}{bool}\ activo,\ DateTime\ fechaCreacion)}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}}\ nuevo\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}}(activo,\ fechaCreacion)}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ proximoId}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ usuarios.Add(nuevo);}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ proximoId++;}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nuevo.\mbox{\hyperlink{class_library_1_1_usuario_a772f332cd6068d14827814b329f46e48}{Id}};}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00068}\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}{00068}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}}\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}{ObtenerUsuario}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ usuario\ \textcolor{keywordflow}{in}\ usuarios)}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (usuario.Id\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ usuario;}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00081}\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a73967f1e03aefff08d9bcda0e49b94f6}{00081}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a73967f1e03aefff08d9bcda0e49b94f6}{MostrarTodosUsuarios}}()}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ usuario\ \textcolor{keywordflow}{in}\ usuarios)}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}ID:\ \{usuario.Id\},\ Activo:\ \{(usuario.Activo\ ?\ "{}}Sí\textcolor{stringliteral}{"{}\ :\ "{}}No\textcolor{stringliteral}{"{})\},\ FechaCreacion:\ \{usuario.FechaCreacion.ToShortDateString()\}"{}});}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00095}\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a05f0c783602fd92408f2e383ffccbe88}{00095}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a05f0c783602fd92408f2e383ffccbe88}{ActualizarActivo}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ nuevoActivo)}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}}\ usuario\ =\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}{ObtenerUsuario}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (usuario\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usuario.Activo\ =\ nuevoActivo;}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00111}\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a5a029185edaf223cf3af4d3d347da0f7}{00111}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a5a029185edaf223cf3af4d3d347da0f7}{EliminarUsuario}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}}\ usuario\ =\ \mbox{\hyperlink{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}{ObtenerUsuario}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (usuario\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usuarios.Remove(usuario);}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_usuario_8cs_source_l00122}00122\ \}}
+
+\end{DoxyCode}

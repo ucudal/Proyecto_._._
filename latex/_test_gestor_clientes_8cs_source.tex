@@ -1,0 +1,60 @@
+\doxysection{Test\+Gestor\+Clientes.\+cs}
+\hypertarget{_test_gestor_clientes_8cs_source}{}\label{_test_gestor_clientes_8cs_source}\index{test/LibraryTests/TestGestorClientes.cs@{test/LibraryTests/TestGestorClientes.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestGestorClientes}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestGestorClientes\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtener\ instancia\ única\ del\ GestorClientes\ (Singleton)}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ GestorClientes\ gestor\ =\ GestorClientes.Instancia;}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AgregarCliente:\ crear\ un\ nuevo\ cliente}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idCliente\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_clientes_a98f90d9b7d7655e032c099d17a6857eb}{AgregarCliente}}(\textcolor{stringliteral}{"{}Ana"{}},\ \textcolor{stringliteral}{"{}García"{}},\ \textcolor{stringliteral}{"{}ana@mail.com"{}},\ \textcolor{stringliteral}{"{}099111222"{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificar\ creación\ correcta}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ Cliente\ cliente\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}{ObtenerCliente}}(idCliente);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cliente\ !=\ \textcolor{keyword}{null}\ \&\&\ cliente.\mbox{\hyperlink{class_library_1_1_cliente_a331e1d120f7facded0de35d2d73665b3}{Nombre}}\ ==\ \textcolor{stringliteral}{"{}Ana"{}}\ \&\&\ cliente.\mbox{\hyperlink{class_library_1_1_cliente_a19531353dcaa991239a9a5a1e7951c53}{Apellido}}\ ==\ \textcolor{stringliteral}{"{}García"{}})}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}AgregarCliente\ funciona\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ AgregarCliente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ObtenerCliente:\ validar\ obtención\ correcta}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ Cliente\ clienteObtenido\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}{ObtenerCliente}}(idCliente);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clienteObtenido\ !=\ \textcolor{keyword}{null}\ \&\&\ clienteObtenido.\mbox{\hyperlink{class_library_1_1_cliente_ae7d51a7d8b68818dccd954de7a3da4b3}{Id}}\ ==\ idCliente)}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}ObtenerCliente\ devuelve\ el\ cliente\ correcto."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ ObtenerCliente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ActualizarEmail:\ actualizar\ correo\ electrónico\ del\ cliente}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ actualizado\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_clientes_a665222158ae12ad68530adb0bcc52516}{ActualizarEmail}}(idCliente,\ \textcolor{stringliteral}{"{}nuevo@mail.com"{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (actualizado\ \&\&\ cliente.\mbox{\hyperlink{class_library_1_1_cliente_af4135ffcfd0c66b842b0978012a0712d}{Email}}\ ==\ \textcolor{stringliteral}{"{}nuevo@mail.com"{}})}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}ActualizarEmail\ actualiza\ correctamente\ el\ correo."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ ActualizarEmail."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MostrarTodosClientes:\ mostrar\ todos\ los\ clientes\ registrados}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Mostrando\ todos\ los\ clientes\ registrados:"{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ gestor.\mbox{\hyperlink{class_library_1_1_gestor_clientes_a6f22a8dae168fe675c8ec0d039ab2b41}{MostrarTodosClientes}}();}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ EliminarCliente:\ eliminar\ cliente\ recién\ creado}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ eliminado\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_clientes_a8e70cd5215406f4732c0a1d5c0b6e3cf}{EliminarCliente}}(idCliente);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ Cliente\ clienteEliminado\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}{ObtenerCliente}}(idCliente);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (eliminado\ \&\&\ clienteEliminado\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}EliminarCliente\ elimina\ correctamente\ al\ cliente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ EliminarCliente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine();}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_clientes_8cs_source_l00066}00066\ \}}
+
+\end{DoxyCode}

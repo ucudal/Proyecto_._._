@@ -1,0 +1,50 @@
+\doxysection{Interaccion.\+cs}
+\hypertarget{_interaccion_8cs_source}{}\label{_interaccion_8cs_source}\index{src/Library/Interaccion.cs@{src/Library/Interaccion.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_library}{Library}}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00009}\mbox{\hyperlink{class_library_1_1_interaccion}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}{Interaccion}}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00014}\mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00019}\mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00024}\mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{Descripcion}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00029}\mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{00029}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00034}\mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{Respondida}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00039}\mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{00039}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{Direccion}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00044}\mbox{\hyperlink{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}{Interaccion}}(DateTime\ fecha,\ \textcolor{keywordtype}{string}\ descripcion,\ \textcolor{keywordtype}{string}\ notas,\ \textcolor{keywordtype}{bool}\ respondida,\ \textcolor{keywordtype}{string}\ direccion)}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(descripcion))}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_interaccion_sin_descripcion_exception}{InteraccionSinDescripcionException}}(\textcolor{stringliteral}{"{}La\ descripción\ de\ la\ interacción\ no\ puede\ estar\ vacía."{}});}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}\ =\ fecha;}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{Descripcion}}\ =\ descripcion;}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\ =\ notas;}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{Respondida}}\ =\ respondida;}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{Direccion}}\ =\ direccion;}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00059}\mbox{\hyperlink{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f}{Interaccion}}()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00065}\mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{AgregarNota}}(\textcolor{keywordtype}{string}\ nota)}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(nota))}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(\mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}))}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\ =\ nota;}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\ +=\ Environment.NewLine\ +\ nota;}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interaccion_8cs_source_l00076}00076\ \}}
+
+\end{DoxyCode}

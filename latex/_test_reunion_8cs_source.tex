@@ -1,0 +1,58 @@
+\doxysection{Test\+Reunion.\+cs}
+\hypertarget{_test_reunion_8cs_source}{}\label{_test_reunion_8cs_source}\index{test/LibraryTests/TestReunion.cs@{test/LibraryTests/TestReunion.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestReunion}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestReunion\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Datos\ de\ ejemplo\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ fechaPasada\ =\ DateTime.Now.AddDays(-\/3);\ \ \ \textcolor{comment}{//\ Reunión\ que\ ya\ ocurrió}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ fechaFutura\ =\ DateTime.Now.AddDays(2);\ \ \ \ \textcolor{comment}{//\ Reunión\ próxima}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ descripcion\ =\ \textcolor{stringliteral}{"{}Reunión\ de\ planificación\ trimestral"{}};}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ notas\ =\ \textcolor{stringliteral}{"{}Se\ trataron\ los\ nuevos\ objetivos\ del\ equipo"{}};}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ respondida\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ direccion\ =\ \textcolor{stringliteral}{"{}Oficina\ central"{}};}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ lugar\ =\ \textcolor{stringliteral}{"{}Sala\ de\ conferencias\ 2"{}};}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Creación\ de\ objetos\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ Reunion\ reunionPasada\ =\ \textcolor{keyword}{new}\ Reunion(fechaPasada,\ descripcion,\ notas,\ respondida,\ direccion,\ lugar);}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ Reunion\ reunionFutura\ =\ \textcolor{keyword}{new}\ Reunion(fechaFutura,\ descripcion,\ notas,\ respondida,\ direccion,\ lugar);}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Verificación\ de\ creación\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reunionPasada\ !=\ \textcolor{keyword}{null}\ \&\&\ reunionFutura\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Instancias\ de\ Reunion\ creadas\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ al\ crear\ una\ o\ ambas\ instancias\ de\ Reunion."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Prueba\ del\ método\ EsProxima()\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!reunionPasada.\mbox{\hyperlink{class_library_1_1_reunion_a3e51fceee209aca8b2e619409b7f29c0}{EsProxima}}())}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}EsProxima()\ correctamente\ devuelve\ false\ para\ una\ reunión\ pasada."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error:\ EsProxima()\ debería\ devolver\ false."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reunionFutura.\mbox{\hyperlink{class_library_1_1_reunion_a3e51fceee209aca8b2e619409b7f29c0}{EsProxima}}())}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}EsProxima()\ correctamente\ devuelve\ true\ para\ una\ reunión\ futura."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error:\ EsProxima()\ debería\ devolver\ true."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Prueba\ del\ método\ heredado\ AgregarNota()\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ reunionFutura.\mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{AgregarNota}}(\textcolor{stringliteral}{"{}Confirmar\ asistencia\ del\ equipo\ de\ ventas."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ reunionFutura.\mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{AgregarNota}}(\textcolor{stringliteral}{"{}Preparar\ proyector\ y\ materiales."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Método\ AgregarNota()\ ejecutado\ correctamente\ en\ Reunion."{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Confirmación\ final\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}La\ clase\ Reunion\ pasó\ todas\ las\ pruebas\ correctamente.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_reunion_8cs_source_l00059}00059\ \}}
+
+\end{DoxyCode}

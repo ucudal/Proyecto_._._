@@ -1,0 +1,71 @@
+\doxysection{Test\+Gestor\+Usuario.\+cs}
+\hypertarget{_test_gestor_usuario_8cs_source}{}\label{_test_gestor_usuario_8cs_source}\index{test/LibraryTests/TestGestorUsuario.cs@{test/LibraryTests/TestGestorUsuario.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestGestorUsuarios}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestGestorUsuarios\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtener\ instancia\ única\ del\ GestorUsuarios\ (Singleton)}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ GestorUsuarios\ gestor\ =\ GestorUsuarios.Instancia;}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AgregarUsuario:\ crear\ un\ nuevo\ usuario\ activo\ con\ fecha\ actual}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idUsuario\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_usuarios_ad485c833dade326227e3b9945f7eecfd}{AgregarUsuario}}(\textcolor{keyword}{true},\ DateTime.Now);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ObtenerUsuario:\ recuperar\ el\ usuario\ recién\ agregado}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ Usuario\ usuario\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}{ObtenerUsuario}}(idUsuario);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificación\ de\ datos}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (usuario\ !=\ \textcolor{keyword}{null}\ \&\&\ usuario.\mbox{\hyperlink{class_library_1_1_usuario_af68ce699d4018094e8da0168fb525d95}{Activo}})}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}AgregarUsuario\ funciona\ correctamente\ (usuario\ creado\ y\ activo)."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ AgregarUsuario."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ObtenerUsuario\ por\ ID}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ Usuario\ obtenido\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}{ObtenerUsuario}}(idUsuario);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obtenido\ !=\ \textcolor{keyword}{null}\ \&\&\ obtenido.\mbox{\hyperlink{class_library_1_1_usuario_a772f332cd6068d14827814b329f46e48}{Id}}\ ==\ idUsuario)}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}ObtenerUsuario\ devuelve\ correctamente\ el\ usuario\ solicitado."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ ObtenerUsuario."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ActualizarActivo:\ cambiar\ estado\ del\ usuario\ a\ inactivo}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ actualizado\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a05f0c783602fd92408f2e383ffccbe88}{ActualizarActivo}}(idUsuario,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (actualizado\ \&\&\ !usuario.\mbox{\hyperlink{class_library_1_1_usuario_af68ce699d4018094e8da0168fb525d95}{Activo}})}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}ActualizarActivo\ actualiza\ correctamente\ el\ estado\ del\ usuario."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ ActualizarActivo."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MostrarTodosUsuarios:\ mostrar\ todos\ los\ usuarios\ almacenados}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Mostrando\ todos\ los\ usuarios\ registrados:"{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ gestor.\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a73967f1e03aefff08d9bcda0e49b94f6}{MostrarTodosUsuarios}}();}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ EliminarUsuario:\ eliminar\ al\ usuario\ recién\ creado}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ eliminado\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a5a029185edaf223cf3af4d3d347da0f7}{EliminarUsuario}}(idUsuario);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Confirmar\ eliminación}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ Usuario\ eliminadoCheck\ =\ gestor.\mbox{\hyperlink{class_library_1_1_gestor_usuarios_a7c3c1d9e789ca01c4998ae8bf50e8a67}{ObtenerUsuario}}(idUsuario);}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (eliminado\ \&\&\ eliminadoCheck\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}EliminarUsuario\ elimina\ correctamente\ al\ usuario."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ EliminarUsuario."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validación\ del\ Singleton:\ obtener\ otra\ instancia\ y\ verificar\ referencia}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ GestorUsuarios\ otraInstancia\ =\ GestorUsuarios.Instancia;}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReferenceEquals(gestor,\ otraInstancia))}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}El\ patrón\ Singleton\ funciona\ correctamente\ (una\ sola\ instancia\ activa)."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error:\ se\ detectaron\ múltiples\ instancias\ del\ gestor."{}});}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine();}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_gestor_usuario_8cs_source_l00077}00077\ \}}
+
+\end{DoxyCode}

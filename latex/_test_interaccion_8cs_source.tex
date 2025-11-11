@@ -1,0 +1,60 @@
+\doxysection{Test\+Interaccion.\+cs}
+\hypertarget{_test_interaccion_8cs_source}{}\label{_test_interaccion_8cs_source}\index{test/LibraryTests/TestInteraccion.cs@{test/LibraryTests/TestInteraccion.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestInteraccion}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{class\ }InteraccionPrueba\ :\ Interaccion}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ InteraccionPrueba(DateTime\ fecha,\ \textcolor{keywordtype}{string}\ descripcion,\ \textcolor{keywordtype}{string}\ notas,\ \textcolor{keywordtype}{bool}\ respondida,\ \textcolor{keywordtype}{string}\ direccion)}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(fecha,\ descripcion,\ notas,\ respondida,\ direccion)}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestInteraccion\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ una\ interacción\ de\ prueba}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ fecha\ =\ DateTime.Now.AddDays(-\/1);}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ InteraccionPrueba\ interaccion\ =\ \textcolor{keyword}{new}\ InteraccionPrueba(}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fecha,}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Primera\ llamada\ al\ cliente"{}},}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Cliente\ pidió\ más\ información"{}},}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}099876543"{}}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificar\ asignación\ de\ fecha}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (interaccion.Fecha\ ==\ fecha)}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Constructor\ asigna\ correctamente\ la\ fecha."{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error:\ la\ fecha\ no\ se\ asignó\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificar\ propiedad\ Respondida}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ interaccion.Respondida\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (interaccion.Respondida)}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Propiedad\ Respondida\ funciona\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ propiedad\ Respondida."{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prueba\ del\ método\ AgregarNota()}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ interaccion.AgregarNota(\textcolor{stringliteral}{"{}Se\ acordó\ enviar\ presupuesto\ el\ lunes."{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ interaccion.AgregarNota(\textcolor{stringliteral}{"{}Cliente\ confirmó\ recepción\ del\ correo."{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ interaccion.AgregarNota(\textcolor{stringliteral}{"{}"{}});\ \textcolor{comment}{//\ Nota\ vacía,\ no\ debe\ afectar}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}agregarNota\ ejecutado\ correctamente\ (sin\ errores)."{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Confirmación\ de\ funcionamiento\ general}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Interaccion\ base\ probada\ con\ éxito.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_interaccion_8cs_source_l00073}00073\ \}}
+
+\end{DoxyCode}

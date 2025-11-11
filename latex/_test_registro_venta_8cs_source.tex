@@ -1,0 +1,51 @@
+\doxysection{Test\+Registro\+Venta.\+cs}
+\hypertarget{_test_registro_venta_8cs_source}{}\label{_test_registro_venta_8cs_source}\index{test/LibraryTests/TestRegistroVenta.cs@{test/LibraryTests/TestRegistroVenta.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestRegistroVenta}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestRegistroVenta\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lista\ simulada\ de\ ventas\ (como\ base\ de\ datos\ temporal)}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ List<Venta>\ listaVentas\ =\ \textcolor{keyword}{new}\ List<Venta>();}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Instancia\ de\ RegistroVenta\ con\ la\ lista\ creada}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ RegistroVenta\ registro\ =\ \textcolor{keyword}{new}\ RegistroVenta(listaVentas);}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ crean\ tres\ ventas\ con\ todos\ los\ parámetros\ requeridos}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ Venta\ v1\ =\ \textcolor{keyword}{new}\ Venta(1000,\ DateTime.Now.AddDays(-\/10),\ \textcolor{stringliteral}{"{}Venta\ antigua"{}},\ \textcolor{stringliteral}{"{}sin\ notas"{}},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}Sucursal\ A"{}});}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ Venta\ v2\ =\ \textcolor{keyword}{new}\ Venta(2000,\ DateTime.Now.AddDays(-\/5),\ \textcolor{stringliteral}{"{}Venta\ intermedia"{}},\ \textcolor{stringliteral}{"{}ninguna"{}},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}Sucursal\ B"{}});}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ Venta\ v3\ =\ \textcolor{keyword}{new}\ Venta(3000,\ DateTime.Now,\ \textcolor{stringliteral}{"{}Venta\ reciente"{}},\ \textcolor{stringliteral}{"{}ninguna"{}},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}Sucursal\ C"{}});}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ agregan\ las\ ventas\ a\ la\ lista\ general}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ listaVentas.Add(v1);}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ listaVentas.Add(v2);}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ listaVentas.Add(v3);}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Definimos\ el\ rango\ de\ fechas\ de\ búsqueda}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ desde\ =\ DateTime.Now.AddDays(-\/7);}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ hasta\ =\ DateTime.Now;}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ obtienen\ las\ ventas\ entre\ esas\ fechas}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ List<Venta>\ resultado\ =\ registro.\mbox{\hyperlink{class_library_1_1_registro_venta_a4a1b1f8c7e7aab95f37d2c49495e3f1e}{getVentasEntre}}(desde,\ hasta);}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificamos\ si\ se\ filtraron\ correctamente\ (esperamos\ 2\ ventas)}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resultado.Count\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}GetVentasEntre\ filtra\ correctamente\ por\ fechas."{}});}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Error:\ se\ esperaban\ 2\ ventas\ y\ se\ obtuvieron\ \{resultado.Count\}."{}});}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine();}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_registro_venta_8cs_source_l00053}00053\ \}}
+
+\end{DoxyCode}

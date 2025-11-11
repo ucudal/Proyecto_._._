@@ -1,0 +1,128 @@
+\doxysection{Library.\+Vendedor Class Reference}
+\hypertarget{class_library_1_1_vendedor}{}\label{class_library_1_1_vendedor}\index{Library.Vendedor@{Library.Vendedor}}
+
+
+Representa un vendedor del sistema, implementando la interfaz \doxylink{interface_library_1_1_i_usuario}{IUsuario}. Contiene información sobre el estado del vendedor y la fecha de creación.  
+
+
+Inheritance diagram for Library.\+Vendedor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_library_1_1_vendedor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_vendedor_a3653e6b40e9d2423d0ed1631f236dbe3}{Vendedor}} (bool activo, Date\+Time fecha\+Creacion)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \doxylink{class_library_1_1_vendedor}{Vendedor} que inicializa el estado y la fecha de creación. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} $>$ \mbox{\hyperlink{class_library_1_1_vendedor_a32ba731dd1de7c808451c13b1e159833}{get\+Clientes\+Asignados}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de clientes asignados al vendedor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_library_1_1_vendedor_aa493e802cd08b0ccd0bc0be8aee131ba}{Activo}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indica si el vendedor está activo o inactivo. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_vendedor_a0be80c7c4498577ada076c2eeedcc323}{Fecha\+Creacion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha en la que el vendedor fue creado o registrado en el sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa un vendedor del sistema, implementando la interfaz \doxylink{interface_library_1_1_i_usuario}{IUsuario}. Contiene información sobre el estado del vendedor y la fecha de creación. 
+
+Definition at line \mbox{\hyperlink{_vendedor_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_vendedor_8cs_source}{Vendedor.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_library_1_1_vendedor_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_library_1_1_vendedor_a3653e6b40e9d2423d0ed1631f236dbe3}\index{Library.Vendedor@{Library.Vendedor}!Vendedor@{Vendedor}}
+\index{Vendedor@{Vendedor}!Library.Vendedor@{Library.Vendedor}}
+\doxysubsubsection{\texorpdfstring{Vendedor()}{Vendedor()}}
+{\footnotesize\ttfamily \label{class_library_1_1_vendedor_a3653e6b40e9d2423d0ed1631f236dbe3} 
+Library.\+Vendedor.\+Vendedor (\begin{DoxyParamCaption}\item[{bool}]{activo}{, }\item[{Date\+Time}]{fecha\+Creacion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de la clase \doxylink{class_library_1_1_vendedor}{Vendedor} que inicializa el estado y la fecha de creación. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activo} & Estado inicial del vendedor.\\
+\hline
+{\em fecha\+Creacion} & Fecha de creación del vendedor.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_vendedor_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_vendedor_8cs_source}{Vendedor.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_library_1_1_vendedor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_library_1_1_vendedor_a32ba731dd1de7c808451c13b1e159833}\index{Library.Vendedor@{Library.Vendedor}!getClientesAsignados@{getClientesAsignados}}
+\index{getClientesAsignados@{getClientesAsignados}!Library.Vendedor@{Library.Vendedor}}
+\doxysubsubsection{\texorpdfstring{getClientesAsignados()}{getClientesAsignados()}}
+{\footnotesize\ttfamily \label{class_library_1_1_vendedor_a32ba731dd1de7c808451c13b1e159833} 
+List$<$ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} $>$ Library.\+Vendedor.\+get\+Clientes\+Asignados (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la lista de clientes asignados al vendedor. 
+
+\begin{DoxyReturn}{Returns}
+Una lista de clientes asignados. Actualmente retorna una lista vacía.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_vendedor_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_vendedor_8cs_source}{Vendedor.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_vendedor_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_vendedor_aa493e802cd08b0ccd0bc0be8aee131ba}\index{Library.Vendedor@{Library.Vendedor}!Activo@{Activo}}
+\index{Activo@{Activo}!Library.Vendedor@{Library.Vendedor}}
+\doxysubsubsection{\texorpdfstring{Activo}{Activo}}
+{\footnotesize\ttfamily \label{class_library_1_1_vendedor_aa493e802cd08b0ccd0bc0be8aee131ba} 
+bool Library.\+Vendedor.\+Activo\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Indica si el vendedor está activo o inactivo. 
+
+
+
+Implements \mbox{\hyperlink{interface_library_1_1_i_usuario_a3e369050df5f48b6432f2d52b05eedb3}{Library.\+IUsuario}}.
+
+
+
+Definition at line \mbox{\hyperlink{_vendedor_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_vendedor_8cs_source}{Vendedor.\+cs}}.
+
+\Hypertarget{class_library_1_1_vendedor_a0be80c7c4498577ada076c2eeedcc323}\index{Library.Vendedor@{Library.Vendedor}!FechaCreacion@{FechaCreacion}}
+\index{FechaCreacion@{FechaCreacion}!Library.Vendedor@{Library.Vendedor}}
+\doxysubsubsection{\texorpdfstring{FechaCreacion}{FechaCreacion}}
+{\footnotesize\ttfamily \label{class_library_1_1_vendedor_a0be80c7c4498577ada076c2eeedcc323} 
+Date\+Time Library.\+Vendedor.\+Fecha\+Creacion\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Fecha en la que el vendedor fue creado o registrado en el sistema. 
+
+
+
+Implements \mbox{\hyperlink{interface_library_1_1_i_usuario_a8400a32209c13cc0af660e3f2207e1d7}{Library.\+IUsuario}}.
+
+
+
+Definition at line \mbox{\hyperlink{_vendedor_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_vendedor_8cs_source}{Vendedor.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Vendedor.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,132 @@
+\doxysection{Program.\+cs}
+\hypertarget{_program_8cs_source}{}\label{_program_8cs_source}\index{src/Program/Program.cs@{src/Program/Program.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_proyecto_c_r_m}{ProyectoCRM}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00015}\mbox{\hyperlink{class_proyecto_c_r_m_1_1_program}{00015}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespace_program}{Program}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Main(\textcolor{keywordtype}{string}[]\ args)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}===\ DEMOSTRACIÓN\ DEL\ CRM\ USANDO\ FACHADA\ ===\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ INICIALIZACIÓN\ DE\ FACHADA}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada}{Fachada}}\ fachada\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada}{Fachada}}();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Fachada\ inicializada.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ REGISTRO\ DE\ USUARIOS}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}-\/>\ Registrando\ usuarios..."{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idVendedor\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a8b1d36754486363866400b93833054cd}{RegistrarVendedor}}(\textcolor{keyword}{true},\ DateTime.Now);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idAdministrador\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ad59fbb5af97e24829e11a0472de048c1}{RegistrarAdministrador}}(\textcolor{keyword}{true},\ DateTime.Now);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Vendedor\ registrado\ con\ ID:\ \{idVendedor\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Administrador\ registrado\ con\ ID:\ \{idAdministrador\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ List<Usuario>\ usuarios\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a723af2dc4199055a95d28271571952e4}{ObtenerUsuarios}}();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Usuarios\ registrados:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ u\ \textcolor{keywordflow}{in}\ usuarios)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Activo:\ \{u.Activo\},\ FechaCreacion:\ \{u.FechaCreacion\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ REGISTRO\ DE\ CLIENTES}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)n-\/>\ Registrando\ clientes..."{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.RegistrarCliente(\textcolor{stringliteral}{"{}Juan"{}},\ \textcolor{stringliteral}{"{}Pérez"{}},\ \textcolor{stringliteral}{"{}099123456"{}},\ \textcolor{stringliteral}{"{}juan@example.com"{}},\ \textcolor{stringliteral}{"{}Cliente\ VIP"{}},\ \textcolor{stringliteral}{"{}Masculino"{}},\ DateTime.Now.AddYears(-\/30));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.RegistrarCliente(\textcolor{stringliteral}{"{}Ana"{}},\ \textcolor{stringliteral}{"{}Gómez"{}},\ \textcolor{stringliteral}{"{}099654321"{}},\ \textcolor{stringliteral}{"{}ana@example.com"{}},\ \textcolor{stringliteral}{"{}Cliente\ Regular"{}},\ \textcolor{stringliteral}{"{}Femenino"{}},\ DateTime.Now.AddYears(-\/25));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ List<Cliente>\ clientes\ =\ fachada.ObtenerClientes();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Clientes\ registrados:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ c\ \textcolor{keywordflow}{in}\ clientes)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Nombre:\ \{c.Nombre\}\ \{c.Apellido\},\ Email:\ \{c.Email\},\ Telefono:\ \{c.Telefono\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ REGISTRO\ DE\ INTERACCIONES\ (UN\ EJEMPLO\ DE\ CADA\ TIPO)}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)n-\/>\ Registrando\ interacciones..."{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ cliente\ \textcolor{keywordflow}{in}\ clientes)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Llamada}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}\ llamada\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_llamada}{Llamada}}(DateTime.Now,\ \textcolor{stringliteral}{"{}Llamada\ inicial"{}},\ \textcolor{stringliteral}{"{}Notas\ de\ la\ llamada"{}},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}099123456"{}},\ \textcolor{stringliteral}{"{}5\ min"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cliente.AgregarInteraccion(llamada);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Correo}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}\ correo\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_correo}{Correo}}(DateTime.Now,\ \textcolor{stringliteral}{"{}Correo\ de\ bienvenida"{}},\ \textcolor{stringliteral}{"{}Adjunto\ información"{}},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}cliente@correo.com"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cliente.AgregarInteraccion(correo);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reunión}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}\ reunion\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_reunion}{Reunion}}(DateTime.Now.AddDays(1),\ \textcolor{stringliteral}{"{}Reunión\ de\ seguimiento"{}},\ \textcolor{stringliteral}{"{}Se\ discuten\ objetivos"{}},\ \textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}Oficina\ central"{}},\ \textcolor{stringliteral}{"{}Sala\ 101"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cliente.AgregarInteraccion(reunion);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mensaje}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}\ mensaje\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_mensaje}{Mensaje}}(DateTime.Now,\ \textcolor{stringliteral}{"{}Mensaje\ de\ recordatorio"{}},\ \textcolor{stringliteral}{"{}Recordatorio\ de\ cita"{}},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}099123456"{}},\ \textcolor{stringliteral}{"{}WhatsApp"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cliente.AgregarInteraccion(mensaje);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ cliente\ \textcolor{keywordflow}{in}\ clientes)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Interaccion>\ interacciones\ =\ fachada.ObtenerInteraccionesDeCliente(cliente);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\(\backslash\)nInteracciones\ del\ cliente\ \{cliente.Nombre\}:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ i\ \textcolor{keywordflow}{in}\ interacciones)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\ -\/\ Tipo:\ \{i.GetType().Name\},\ Descripcion:\ \{i.Descripcion\},\ Fecha:\ \{i.Fecha\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ REGISTRO\ DE\ VENTAS}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)n-\/>\ Registrando\ ventas..."{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_venta}{Venta}}\ venta1\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_venta}{Venta}}(1500.50,\ DateTime.Now,\ \textcolor{stringliteral}{"{}Venta\ Producto\ A"{}},\ \textcolor{stringliteral}{"{}Pago\ recibido"{}},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}juan@example.com"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_venta}{Venta}}\ venta2\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_venta}{Venta}}(2500,\ DateTime.Now,\ \textcolor{stringliteral}{"{}Venta\ Producto\ B"{}},\ \textcolor{stringliteral}{"{}Pago\ pendiente"{}},\ \textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}ana@example.com"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.RegistrarVenta(venta1);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.RegistrarVenta(venta2);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ List<Venta>\ ventasHoy\ =\ fachada.ObtenerVentasEntre(DateTime.Now.AddDays(-\/1),\ DateTime.Now);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Ventas\ registradas:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ v\ \textcolor{keywordflow}{in}\ ventasHoy)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Venta:\ \{v.Descripcion\},\ Total:\ \{v.Total\},\ Fecha:\ \{v.Fecha\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CREACIÓN\ DE\ ETIQUETAS}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ =====================================}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)n-\/>\ Creando\ etiquetas..."{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.CrearEtiqueta(\textcolor{stringliteral}{"{}VIP"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.CrearEtiqueta(\textcolor{stringliteral}{"{}Regular"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ List<Etiqueta>\ etiquetas\ =\ fachada.ObtenerEtiquetas();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Etiquetas\ creadas:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ e\ \textcolor{keywordflow}{in}\ etiquetas)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}\ -\/\ \{e.ObtenerNombre()\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)n===\ DEMOSTRACIÓN\ COMPLETA\ ==="{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Usuarios,\ clientes,\ interacciones,\ ventas\ y\ etiquetas\ han\ sido\ registrados\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)nPulse\ cualquier\ tecla\ para\ salir..."{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ Console.ReadKey();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00137}00137\ \}}
+
+\end{DoxyCode}
