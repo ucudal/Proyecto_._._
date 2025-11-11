@@ -1,0 +1,51 @@
+\doxysection{Test\+Llamada.\+cs}
+\hypertarget{_test_llamada_8cs_source}{}\label{_test_llamada_8cs_source}\index{test/LibraryTests/TestLlamada.cs@{test/LibraryTests/TestLlamada.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestLlamada}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestLlamada\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Datos\ de\ ejemplo\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ fecha\ =\ DateTime.Now.AddDays(-\/1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fecha\ de\ la\ llamada\ (ayer)}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ descripcion\ =\ \textcolor{stringliteral}{"{}Llamada\ de\ seguimiento"{}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Breve\ descripción}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ notas\ =\ \textcolor{stringliteral}{"{}Cliente\ interesado\ en\ renovar\ contrato"{}};\ \textcolor{comment}{//\ Notas\ iniciales}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ respondida\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Indica\ si\ fue\ respondida}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ direccion\ =\ \textcolor{stringliteral}{"{}Oficina\ Central"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lugar\ o\ dirección\ asociada}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ duracion\ =\ \textcolor{stringliteral}{"{}15\ minutos"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Duración\ de\ la\ llamada}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Creación\ del\ objeto\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ instancia\ una\ llamada\ usando\ todos\ los\ datos\ de\ ejemplo}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ Llamada\ llamada\ =\ \textcolor{keyword}{new}\ Llamada(fecha,\ descripcion,\ notas,\ respondida,\ direccion,\ duracion);}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Verificación\ de\ creación\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (llamada\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Instancia\ creada\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ al\ crear\ la\ instancia\ de\ Llamada."{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificar\ asignación\ de\ la\ fecha}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (llamada.\mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}\ ==\ fecha)}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Fecha\ asignada\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error:\ la\ fecha\ no\ coincide."{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Prueba\ del\ método\ heredado\ AgregarNota()\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ agregan\ notas\ adicionales\ para\ verificar\ el\ funcionamiento}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ llamada.\mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{AgregarNota}}(\textcolor{stringliteral}{"{}Se\ acordó\ próxima\ reunión."{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ llamada.\mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{AgregarNota}}(\textcolor{stringliteral}{"{}Cliente\ confirmó\ asistencia."{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Método\ AgregarNota\ ejecutado\ sin\ errores."{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Notas\ agregadas\ correctamente\ a\ la\ interacción.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_llamada_8cs_source_l00053}00053\ \}}
+
+\end{DoxyCode}

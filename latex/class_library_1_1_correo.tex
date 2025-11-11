@@ -1,0 +1,106 @@
+\doxysection{Library.\+Correo Class Reference}
+\hypertarget{class_library_1_1_correo}{}\label{class_library_1_1_correo}\index{Library.Correo@{Library.Correo}}
+
+
+Representa un correo electrónico enviado o recibido como interacción con un cliente. Hereda de la clase \doxylink{class_library_1_1_interaccion}{Interaccion}.  
+
+
+Inheritance diagram for Library.\+Correo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_library_1_1_correo}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_correo_a9f01b84782e64f77b92342de6b7f4563}{Correo}} (Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion)
+\begin{DoxyCompactList}\small\item\em Constructor que inicializa todas las propiedades de la interacción. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_correo_aa03520068fbce22374fc1208b18b825b}{Correo}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío para permitir crear un objeto sin inicializar propiedades. Útil, por ejemplo, al usar \doxylink{class_library_1_1_gestor_interacciones}{Gestor\+Interacciones}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{Agregar\+Nota}} (string nota)
+\begin{DoxyCompactList}\small\item\em Agrega una nueva nota a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}{Interaccion}} (Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion)
+\begin{DoxyCompactList}\small\item\em Constructor protegido\+: inicializa los valores principales de la interacción. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f}{Interaccion}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío\+: permite crear una interacción sin parámetros (por ejemplo, desde un gestor). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identificador único de la interacción. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha en la que ocurrió la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{Descripcion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Breve descripción del contenido o propósito de la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Notas adicionales o detalles de la interacción. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{Respondida}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indica si la interacción fue respondida o no. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{Direccion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dirección o ubicación asociada a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa un correo electrónico enviado o recibido como interacción con un cliente. Hereda de la clase \doxylink{class_library_1_1_interaccion}{Interaccion}. 
+
+Definition at line \mbox{\hyperlink{_correo_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_correo_8cs_source}{Correo.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_library_1_1_correo_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_library_1_1_correo_a9f01b84782e64f77b92342de6b7f4563}\index{Library.Correo@{Library.Correo}!Correo@{Correo}}
+\index{Correo@{Correo}!Library.Correo@{Library.Correo}}
+\doxysubsubsection{\texorpdfstring{Correo()}{Correo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_correo_a9f01b84782e64f77b92342de6b7f4563} 
+Library.\+Correo.\+Correo (\begin{DoxyParamCaption}\item[{Date\+Time}]{fecha}{, }\item[{string}]{descripcion}{, }\item[{string}]{notas}{, }\item[{bool}]{respondida}{, }\item[{string}]{direccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que inicializa todas las propiedades de la interacción. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fecha} & Fecha de la interacción.\\
+\hline
+{\em descripcion} & Breve descripción del correo.\\
+\hline
+{\em notas} & Notas adicionales relacionadas con el correo.\\
+\hline
+{\em respondida} & Indica si la interacción fue respondida.\\
+\hline
+{\em direccion} & Dirección de correo asociada.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_correo_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_correo_8cs_source}{Correo.\+cs}}.
+
+\Hypertarget{class_library_1_1_correo_aa03520068fbce22374fc1208b18b825b}\index{Library.Correo@{Library.Correo}!Correo@{Correo}}
+\index{Correo@{Correo}!Library.Correo@{Library.Correo}}
+\doxysubsubsection{\texorpdfstring{Correo()}{Correo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_correo_aa03520068fbce22374fc1208b18b825b} 
+Library.\+Correo.\+Correo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor vacío para permitir crear un objeto sin inicializar propiedades. Útil, por ejemplo, al usar \doxylink{class_library_1_1_gestor_interacciones}{Gestor\+Interacciones}. 
+
+
+
+Definition at line \mbox{\hyperlink{_correo_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_correo_8cs_source}{Correo.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Correo.\+cs\end{DoxyCompactItemize}

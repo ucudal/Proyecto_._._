@@ -1,0 +1,399 @@
+\doxysection{Library.\+Cliente Class Reference}
+\hypertarget{class_library_1_1_cliente}{}\label{class_library_1_1_cliente}\index{Library.Cliente@{Library.Cliente}}
+
+
+Representa un cliente dentro del sistema CRM. Contiene información personal, etiquetas, interacciones y un vendedor asignado.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_cliente_afc7e48dc2151d1e78d6695327d0ec6ce}{Cliente}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. Inicializa la fecha de última interacción con la fecha actual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_cliente_a66fd4326be029f73a9c7af2a94d13486}{Cliente}} (string nombre, string apellido, string telefono, string email, string observaciones, string genero, Date\+Time fecha\+Nacimiento, Date\+Time fecha\+Ultima\+Interaccion)
+\begin{DoxyCompactList}\small\item\em Constructor completo del cliente. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_etiqueta}{Etiqueta}} $>$ \mbox{\hyperlink{class_library_1_1_cliente_aa0f143ea9b0de8e66893187b16a1f4d2}{Get\+Etiquetas}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve una copia de la lista de etiquetas del cliente. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} $>$ \mbox{\hyperlink{class_library_1_1_cliente_a02eed46abe59154cdfc85a9fe994353a}{Get\+Interacciones}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve una copia de la lista de interacciones del cliente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_library_1_1_cliente_a1e3920f067b94c3b2900229958d8a2b2}{agregar\+Etiqueta}} (\mbox{\hyperlink{class_library_1_1_etiqueta}{Etiqueta}} etiqueta)
+\begin{DoxyCompactList}\small\item\em Agrega una etiqueta al cliente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_library_1_1_cliente_a3f5e3080facd9ab37a5872772b05f7b3}{asignar\+AVendedor}} (\mbox{\hyperlink{interface_library_1_1_i_usuario}{IUsuario}} usuario)
+\begin{DoxyCompactList}\small\item\em Asigna un vendedor al cliente. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} $>$ \mbox{\hyperlink{class_library_1_1_cliente_aa46b56683ae6e20e04bc5726c5c27bb4}{get\+Interacciones\+Filtradas}} (string filtro1, string filtro2, string filtro3)
+\begin{DoxyCompactList}\small\item\em Devuelve una lista filtrada de interacciones según los parámetros dados. (Actualmente devuelve todas las interacciones sin filtrar.) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_cliente_a9037dbd435cd248703a37989d188e566}{tiene\+Interacciones\+Sin\+Respuesta}} ()
+\begin{DoxyCompactList}\small\item\em Verifica si el cliente tiene alguna interacción pendiente de respuesta. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_cliente_aae6927cadd187bc73828856c060558e0}{es\+Inactivo}} (string dias)
+\begin{DoxyCompactList}\small\item\em Determina si el cliente se considera inactivo según la cantidad de días especificada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_library_1_1_cliente_a369fe84032aed6645c6f1cb9c291d0ea}{Agregar\+Interaccion}} (\mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} interaccion)
+\begin{DoxyCompactList}\small\item\em Agrega una nueva interacción al cliente y actualiza la fecha de última interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_cliente_ae7d51a7d8b68818dccd954de7a3da4b3}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identificador único del cliente. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_cliente_a331e1d120f7facded0de35d2d73665b3}{Nombre}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Nombre del cliente. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_cliente_a19531353dcaa991239a9a5a1e7951c53}{Apellido}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Apellido del cliente. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_cliente_a68f6bde9002eb4779e31226363312dcb}{Telefono}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Teléfono de contacto del cliente. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_cliente_af4135ffcfd0c66b842b0978012a0712d}{Email}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_library_1_1_correo}{Correo} electrónico del cliente. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_cliente_a38b1f1360a98d7ae6a784d0a0aa08b0e}{Observaciones}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Observaciones adicionales sobre el cliente. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_cliente_a06bce37a648e32f68ccb1878ef96e68f}{Genero}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Género del cliente. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_cliente_a9be5cae98a7f1c6631277d06338f962e}{Fecha\+Nacimiento}} = Date\+Time.\+Min\+Value\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha de nacimiento del cliente. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_cliente_abdceb4c927e91699c21933b72648d1b2}{Fecha\+Ultima\+Interaccion}} = Date\+Time.\+Min\+Value\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha de la última interacción registrada con el cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa un cliente dentro del sistema CRM. Contiene información personal, etiquetas, interacciones y un vendedor asignado. 
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_library_1_1_cliente_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_library_1_1_cliente_afc7e48dc2151d1e78d6695327d0ec6ce}\index{Library.Cliente@{Library.Cliente}!Cliente@{Cliente}}
+\index{Cliente@{Cliente}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Cliente()}{Cliente()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_afc7e48dc2151d1e78d6695327d0ec6ce} 
+Library.\+Cliente.\+Cliente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor por defecto. Inicializa la fecha de última interacción con la fecha actual. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00077}{77}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a66fd4326be029f73a9c7af2a94d13486}\index{Library.Cliente@{Library.Cliente}!Cliente@{Cliente}}
+\index{Cliente@{Cliente}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Cliente()}{Cliente()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a66fd4326be029f73a9c7af2a94d13486} 
+Library.\+Cliente.\+Cliente (\begin{DoxyParamCaption}\item[{string}]{nombre}{, }\item[{string}]{apellido}{, }\item[{string}]{telefono}{, }\item[{string}]{email}{, }\item[{string}]{observaciones}{, }\item[{string}]{genero}{, }\item[{Date\+Time}]{fecha\+Nacimiento}{, }\item[{Date\+Time}]{fecha\+Ultima\+Interaccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor completo del cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & Nombre del cliente.\\
+\hline
+{\em apellido} & Apellido del cliente.\\
+\hline
+{\em telefono} & Teléfono de contacto.\\
+\hline
+{\em email} & \doxylink{class_library_1_1_correo}{Correo} electrónico.\\
+\hline
+{\em observaciones} & Observaciones adicionales.\\
+\hline
+{\em genero} & Género del cliente.\\
+\hline
+{\em fecha\+Nacimiento} & Fecha de nacimiento.\\
+\hline
+{\em fecha\+Ultima\+Interaccion} & Fecha de última interacción.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00093}{93}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_library_1_1_cliente_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_library_1_1_cliente_a1e3920f067b94c3b2900229958d8a2b2}\index{Library.Cliente@{Library.Cliente}!agregarEtiqueta@{agregarEtiqueta}}
+\index{agregarEtiqueta@{agregarEtiqueta}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{agregarEtiqueta()}{agregarEtiqueta()}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a1e3920f067b94c3b2900229958d8a2b2} 
+void Library.\+Cliente.\+agregar\+Etiqueta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_library_1_1_etiqueta}{Etiqueta}}}]{etiqueta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega una etiqueta al cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em etiqueta} & \doxylink{class_library_1_1_etiqueta}{Etiqueta} a agregar.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00125}{125}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a369fe84032aed6645c6f1cb9c291d0ea}\index{Library.Cliente@{Library.Cliente}!AgregarInteraccion@{AgregarInteraccion}}
+\index{AgregarInteraccion@{AgregarInteraccion}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{AgregarInteraccion()}{AgregarInteraccion()}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a369fe84032aed6645c6f1cb9c291d0ea} 
+void Library.\+Cliente.\+Agregar\+Interaccion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}}]{interaccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega una nueva interacción al cliente y actualiza la fecha de última interacción. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interaccion} & Interacción a agregar.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00187}{187}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a3f5e3080facd9ab37a5872772b05f7b3}\index{Library.Cliente@{Library.Cliente}!asignarAVendedor@{asignarAVendedor}}
+\index{asignarAVendedor@{asignarAVendedor}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{asignarAVendedor()}{asignarAVendedor()}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a3f5e3080facd9ab37a5872772b05f7b3} 
+void Library.\+Cliente.\+asignar\+AVendedor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_library_1_1_i_usuario}{IUsuario}}}]{usuario}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asigna un vendedor al cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usuario} & \doxylink{class_library_1_1_usuario}{Usuario} vendedor a asignar.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00137}{137}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_aae6927cadd187bc73828856c060558e0}\index{Library.Cliente@{Library.Cliente}!esInactivo@{esInactivo}}
+\index{esInactivo@{esInactivo}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{esInactivo()}{esInactivo()}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_aae6927cadd187bc73828856c060558e0} 
+bool Library.\+Cliente.\+es\+Inactivo (\begin{DoxyParamCaption}\item[{string}]{dias}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determina si el cliente se considera inactivo según la cantidad de días especificada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dias} & Cantidad de días de inactividad.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si supera el umbral, False en caso contrario.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00174}{174}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_aa0f143ea9b0de8e66893187b16a1f4d2}\index{Library.Cliente@{Library.Cliente}!GetEtiquetas@{GetEtiquetas}}
+\index{GetEtiquetas@{GetEtiquetas}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{GetEtiquetas()}{GetEtiquetas()}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_aa0f143ea9b0de8e66893187b16a1f4d2} 
+List$<$ \mbox{\hyperlink{class_library_1_1_etiqueta}{Etiqueta}} $>$ Library.\+Cliente.\+Get\+Etiquetas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve una copia de la lista de etiquetas del cliente. 
+
+\begin{DoxyReturn}{Returns}
+Lista de etiquetas.
+\end{DoxyReturn}
+\Hypertarget{class_library_1_1_cliente_a02eed46abe59154cdfc85a9fe994353a}\index{Library.Cliente@{Library.Cliente}!GetInteracciones@{GetInteracciones}}
+\index{GetInteracciones@{GetInteracciones}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{GetInteracciones()}{GetInteracciones()}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a02eed46abe59154cdfc85a9fe994353a} 
+List$<$ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} $>$ Library.\+Cliente.\+Get\+Interacciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve una copia de la lista de interacciones del cliente. 
+
+\begin{DoxyReturn}{Returns}
+Lista de interacciones.
+\end{DoxyReturn}
+\Hypertarget{class_library_1_1_cliente_aa46b56683ae6e20e04bc5726c5c27bb4}\index{Library.Cliente@{Library.Cliente}!getInteraccionesFiltradas@{getInteraccionesFiltradas}}
+\index{getInteraccionesFiltradas@{getInteraccionesFiltradas}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{getInteraccionesFiltradas()}{getInteraccionesFiltradas()}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_aa46b56683ae6e20e04bc5726c5c27bb4} 
+List$<$ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} $>$ Library.\+Cliente.\+get\+Interacciones\+Filtradas (\begin{DoxyParamCaption}\item[{string}]{filtro1}{, }\item[{string}]{filtro2}{, }\item[{string}]{filtro3}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve una lista filtrada de interacciones según los parámetros dados. (Actualmente devuelve todas las interacciones sin filtrar.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filtro1} & Primer criterio de filtro.\\
+\hline
+{\em filtro2} & Segundo criterio de filtro.\\
+\hline
+{\em filtro3} & Tercer criterio de filtro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista filtrada de interacciones.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00150}{150}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a9037dbd435cd248703a37989d188e566}\index{Library.Cliente@{Library.Cliente}!tieneInteraccionesSinRespuesta@{tieneInteraccionesSinRespuesta}}
+\index{tieneInteraccionesSinRespuesta@{tieneInteraccionesSinRespuesta}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{tieneInteraccionesSinRespuesta()}{tieneInteraccionesSinRespuesta()}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a9037dbd435cd248703a37989d188e566} 
+bool Library.\+Cliente.\+tiene\+Interacciones\+Sin\+Respuesta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica si el cliente tiene alguna interacción pendiente de respuesta. 
+
+\begin{DoxyReturn}{Returns}
+True si existen interacciones sin respuesta, False en caso contrario.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00159}{159}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_cliente_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_cliente_a19531353dcaa991239a9a5a1e7951c53}\index{Library.Cliente@{Library.Cliente}!Apellido@{Apellido}}
+\index{Apellido@{Apellido}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Apellido}{Apellido}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a19531353dcaa991239a9a5a1e7951c53} 
+string Library.\+Cliente.\+Apellido = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Apellido del cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_af4135ffcfd0c66b842b0978012a0712d}\index{Library.Cliente@{Library.Cliente}!Email@{Email}}
+\index{Email@{Email}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Email}{Email}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_af4135ffcfd0c66b842b0978012a0712d} 
+string Library.\+Cliente.\+Email = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\doxylink{class_library_1_1_correo}{Correo} electrónico del cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a9be5cae98a7f1c6631277d06338f962e}\index{Library.Cliente@{Library.Cliente}!FechaNacimiento@{FechaNacimiento}}
+\index{FechaNacimiento@{FechaNacimiento}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{FechaNacimiento}{FechaNacimiento}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a9be5cae98a7f1c6631277d06338f962e} 
+Date\+Time Library.\+Cliente.\+Fecha\+Nacimiento = Date\+Time.\+Min\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Fecha de nacimiento del cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_abdceb4c927e91699c21933b72648d1b2}\index{Library.Cliente@{Library.Cliente}!FechaUltimaInteraccion@{FechaUltimaInteraccion}}
+\index{FechaUltimaInteraccion@{FechaUltimaInteraccion}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{FechaUltimaInteraccion}{FechaUltimaInteraccion}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_abdceb4c927e91699c21933b72648d1b2} 
+Date\+Time Library.\+Cliente.\+Fecha\+Ultima\+Interaccion = Date\+Time.\+Min\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Fecha de la última interacción registrada con el cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00056}{56}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a06bce37a648e32f68ccb1878ef96e68f}\index{Library.Cliente@{Library.Cliente}!Genero@{Genero}}
+\index{Genero@{Genero}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Genero}{Genero}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a06bce37a648e32f68ccb1878ef96e68f} 
+string Library.\+Cliente.\+Genero = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Género del cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_ae7d51a7d8b68818dccd954de7a3da4b3}\index{Library.Cliente@{Library.Cliente}!Id@{Id}}
+\index{Id@{Id}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_ae7d51a7d8b68818dccd954de7a3da4b3} 
+int Library.\+Cliente.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Identificador único del cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a331e1d120f7facded0de35d2d73665b3}\index{Library.Cliente@{Library.Cliente}!Nombre@{Nombre}}
+\index{Nombre@{Nombre}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Nombre}{Nombre}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a331e1d120f7facded0de35d2d73665b3} 
+string Library.\+Cliente.\+Nombre = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Nombre del cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a38b1f1360a98d7ae6a784d0a0aa08b0e}\index{Library.Cliente@{Library.Cliente}!Observaciones@{Observaciones}}
+\index{Observaciones@{Observaciones}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Observaciones}{Observaciones}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a38b1f1360a98d7ae6a784d0a0aa08b0e} 
+string Library.\+Cliente.\+Observaciones = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Observaciones adicionales sobre el cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+\Hypertarget{class_library_1_1_cliente_a68f6bde9002eb4779e31226363312dcb}\index{Library.Cliente@{Library.Cliente}!Telefono@{Telefono}}
+\index{Telefono@{Telefono}!Library.Cliente@{Library.Cliente}}
+\doxysubsubsection{\texorpdfstring{Telefono}{Telefono}}
+{\footnotesize\ttfamily \label{class_library_1_1_cliente_a68f6bde9002eb4779e31226363312dcb} 
+string Library.\+Cliente.\+Telefono = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Teléfono de contacto del cliente. 
+
+
+
+Definition at line \mbox{\hyperlink{_cliente_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_cliente_8cs_source}{Cliente.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Cliente.\+cs\end{DoxyCompactItemize}

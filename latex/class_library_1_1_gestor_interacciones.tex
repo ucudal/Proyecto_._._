@@ -1,0 +1,173 @@
+\doxysection{Library.\+Gestor\+Interacciones Class Reference}
+\hypertarget{class_library_1_1_gestor_interacciones}{}\label{class_library_1_1_gestor_interacciones}\index{Library.GestorInteracciones@{Library.GestorInteracciones}}
+
+
+Gestor de todas las interacciones (llamadas, reuniones, mensajes, correos) del sistema. Implementa el patrón Singleton.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a11ede1f8b86f1b41845ce7c0f3922fba}{Agregar\+Interaccion}} (string tipo, Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion)
+\begin{DoxyCompactList}\small\item\em Agrega una nueva interacción al sistema según el tipo especificado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} \mbox{\hyperlink{class_library_1_1_gestor_interacciones_ae96370c92ee070ef010bcca1f7191095}{Obtener\+Interaccion}} (int id)
+\begin{DoxyCompactList}\small\item\em Obtiene una interacción por su ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_library_1_1_gestor_interacciones_ad4693b61e289060d06d45a254b1bbbe9}{Mostrar\+Todas\+Interacciones}} ()
+\begin{DoxyCompactList}\small\item\em Muestra todas las interacciones registradas por consola. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a7f58ce74ae1e3ac084889d529848bd17}{Eliminar\+Interaccion}} (int id)
+\begin{DoxyCompactList}\small\item\em Elimina una interacción por su ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} $>$ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}} = new List$<$\mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}$>$()
+\begin{DoxyCompactList}\small\item\em Lista que almacena todas las interacciones registradas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_library_1_1_gestor_interacciones}{Gestor\+Interacciones}} \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a9e01c02b28c0e3a746684072bfdadc9e}{Instancia}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Propiedad para acceder al Singleton del gestor de interacciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestor de todas las interacciones (llamadas, reuniones, mensajes, correos) del sistema. Implementa el patrón Singleton. 
+
+Definition at line \mbox{\hyperlink{_gestor_interaccion_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_gestor_interaccion_8cs_source}{Gestor\+Interaccion.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_library_1_1_gestor_interacciones_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_library_1_1_gestor_interacciones_a11ede1f8b86f1b41845ce7c0f3922fba}\index{Library.GestorInteracciones@{Library.GestorInteracciones}!AgregarInteraccion@{AgregarInteraccion}}
+\index{AgregarInteraccion@{AgregarInteraccion}!Library.GestorInteracciones@{Library.GestorInteracciones}}
+\doxysubsubsection{\texorpdfstring{AgregarInteraccion()}{AgregarInteraccion()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_interacciones_a11ede1f8b86f1b41845ce7c0f3922fba} 
+int Library.\+Gestor\+Interacciones.\+Agregar\+Interaccion (\begin{DoxyParamCaption}\item[{string}]{tipo}{, }\item[{Date\+Time}]{fecha}{, }\item[{string}]{descripcion}{, }\item[{string}]{notas}{, }\item[{bool}]{respondida}{, }\item[{string}]{direccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega una nueva interacción al sistema según el tipo especificado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tipo} & Tipo de interacción\+: "{}llamada"{}, "{}reunion"{}, "{}mensaje"{}, "{}correo"{}.\\
+\hline
+{\em fecha} & Fecha de la interacción.\\
+\hline
+{\em descripcion} & Descripción de la interacción.\\
+\hline
+{\em notas} & Notas adicionales de la interacción.\\
+\hline
+{\em respondida} & Indica si la interacción fue respondida.\\
+\hline
+{\em direccion} & Dirección asociada a la interacción.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID asignado a la nueva interacción o -\/1 si el tipo es inválido.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_interaccion_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_gestor_interaccion_8cs_source}{Gestor\+Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_interacciones_a7f58ce74ae1e3ac084889d529848bd17}\index{Library.GestorInteracciones@{Library.GestorInteracciones}!EliminarInteraccion@{EliminarInteraccion}}
+\index{EliminarInteraccion@{EliminarInteraccion}!Library.GestorInteracciones@{Library.GestorInteracciones}}
+\doxysubsubsection{\texorpdfstring{EliminarInteraccion()}{EliminarInteraccion()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_interacciones_a7f58ce74ae1e3ac084889d529848bd17} 
+bool Library.\+Gestor\+Interacciones.\+Eliminar\+Interaccion (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina una interacción por su ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID de la interacción a eliminar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si se eliminó correctamente; false si no se encontró.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_interaccion_8cs_source_l00120}{120}} of file \mbox{\hyperlink{_gestor_interaccion_8cs_source}{Gestor\+Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_interacciones_ad4693b61e289060d06d45a254b1bbbe9}\index{Library.GestorInteracciones@{Library.GestorInteracciones}!MostrarTodasInteracciones@{MostrarTodasInteracciones}}
+\index{MostrarTodasInteracciones@{MostrarTodasInteracciones}!Library.GestorInteracciones@{Library.GestorInteracciones}}
+\doxysubsubsection{\texorpdfstring{MostrarTodasInteracciones()}{MostrarTodasInteracciones()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_interacciones_ad4693b61e289060d06d45a254b1bbbe9} 
+void Library.\+Gestor\+Interacciones.\+Mostrar\+Todas\+Interacciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra todas las interacciones registradas por consola. 
+
+
+
+Definition at line \mbox{\hyperlink{_gestor_interaccion_8cs_source_l00101}{101}} of file \mbox{\hyperlink{_gestor_interaccion_8cs_source}{Gestor\+Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_interacciones_ae96370c92ee070ef010bcca1f7191095}\index{Library.GestorInteracciones@{Library.GestorInteracciones}!ObtenerInteraccion@{ObtenerInteraccion}}
+\index{ObtenerInteraccion@{ObtenerInteraccion}!Library.GestorInteracciones@{Library.GestorInteracciones}}
+\doxysubsubsection{\texorpdfstring{ObtenerInteraccion()}{ObtenerInteraccion()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_interacciones_ae96370c92ee070ef010bcca1f7191095} 
+\mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} Library.\+Gestor\+Interacciones.\+Obtener\+Interaccion (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene una interacción por su ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID de la interacción a buscar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La interacción encontrada o null si no existe.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_interaccion_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_gestor_interaccion_8cs_source}{Gestor\+Interaccion.\+cs}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_library_1_1_gestor_interacciones_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}\index{Library.GestorInteracciones@{Library.GestorInteracciones}!interacciones@{interacciones}}
+\index{interacciones@{interacciones}!Library.GestorInteracciones@{Library.GestorInteracciones}}
+\doxysubsubsection{\texorpdfstring{interacciones}{interacciones}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb} 
+List$<$\mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}$>$ Library.\+Gestor\+Interacciones.\+interacciones = new List$<$\mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}$>$()}
+
+
+
+Lista que almacena todas las interacciones registradas. 
+
+
+
+Definition at line \mbox{\hyperlink{_gestor_interaccion_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_gestor_interaccion_8cs_source}{Gestor\+Interaccion.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_gestor_interacciones_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_gestor_interacciones_a9e01c02b28c0e3a746684072bfdadc9e}\index{Library.GestorInteracciones@{Library.GestorInteracciones}!Instancia@{Instancia}}
+\index{Instancia@{Instancia}!Library.GestorInteracciones@{Library.GestorInteracciones}}
+\doxysubsubsection{\texorpdfstring{Instancia}{Instancia}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_interacciones_a9e01c02b28c0e3a746684072bfdadc9e} 
+\mbox{\hyperlink{class_library_1_1_gestor_interacciones}{Gestor\+Interacciones}} Library.\+Gestor\+Interacciones.\+Instancia\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Propiedad para acceder al Singleton del gestor de interacciones. 
+
+
+
+Definition at line \mbox{\hyperlink{_gestor_interaccion_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_gestor_interaccion_8cs_source}{Gestor\+Interaccion.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Gestor\+Interaccion.\+cs\end{DoxyCompactItemize}

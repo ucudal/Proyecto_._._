@@ -1,0 +1,168 @@
+\doxysection{Library.\+Cotizacion Class Reference}
+\hypertarget{class_library_1_1_cotizacion}{}\label{class_library_1_1_cotizacion}\index{Library.Cotizacion@{Library.Cotizacion}}
+
+
+Representa una cotización asociada a un cliente o interacción. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion}.  
+
+
+Inheritance diagram for Library.\+Cotizacion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_library_1_1_cotizacion}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_cotizacion_a14ce1cec5350fbbd94dec8e80970169d}{Cotizacion}} (string estado, Date\+Time fecha\+Envio, double importe\+Total, Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion)
+\begin{DoxyCompactList}\small\item\em Constructor que inicializa todos los campos de la cotización. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_cotizacion_ab6fbaf145e0b43a43fa0557518654ad1}{Cotizacion}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío para crear una cotización sin inicializar valores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{Agregar\+Nota}} (string nota)
+\begin{DoxyCompactList}\small\item\em Agrega una nueva nota a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_library_1_1_cotizacion_a927554bbc2b978738cab087a829ac492}{Estado}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Estado de la cotización (por ejemplo\+: Pendiente, Aceptada, Rechazada). \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_cotizacion_a4d54e0e982a39f4f1e52e275a8d87678}{Fecha\+Envio}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha en que se envió la cotización. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_library_1_1_cotizacion_a1ac4641624d87775dee3705a9215ef73}{Importe\+Total}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Importe total de la cotización. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identificador único de la interacción. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha en la que ocurrió la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{Descripcion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Breve descripción del contenido o propósito de la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Notas adicionales o detalles de la interacción. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{Respondida}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indica si la interacción fue respondida o no. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{Direccion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dirección o ubicación asociada a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}{Interaccion}} (Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion)
+\begin{DoxyCompactList}\small\item\em Constructor protegido\+: inicializa los valores principales de la interacción. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f}{Interaccion}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío\+: permite crear una interacción sin parámetros (por ejemplo, desde un gestor). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa una cotización asociada a un cliente o interacción. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion}. 
+
+Definition at line \mbox{\hyperlink{_cotizacion_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_cotizacion_8cs_source}{Cotizacion.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_library_1_1_cotizacion_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_library_1_1_cotizacion_a14ce1cec5350fbbd94dec8e80970169d}\index{Library.Cotizacion@{Library.Cotizacion}!Cotizacion@{Cotizacion}}
+\index{Cotizacion@{Cotizacion}!Library.Cotizacion@{Library.Cotizacion}}
+\doxysubsubsection{\texorpdfstring{Cotizacion()}{Cotizacion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_cotizacion_a14ce1cec5350fbbd94dec8e80970169d} 
+Library.\+Cotizacion.\+Cotizacion (\begin{DoxyParamCaption}\item[{string}]{estado}{, }\item[{Date\+Time}]{fecha\+Envio}{, }\item[{double}]{importe\+Total}{, }\item[{Date\+Time}]{fecha}{, }\item[{string}]{descripcion}{, }\item[{string}]{notas}{, }\item[{bool}]{respondida}{, }\item[{string}]{direccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que inicializa todos los campos de la cotización. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em estado} & Estado de la cotización.\\
+\hline
+{\em fecha\+Envio} & Fecha de envío de la cotización.\\
+\hline
+{\em importe\+Total} & Importe total de la cotización.\\
+\hline
+{\em fecha} & Fecha de la interacción.\\
+\hline
+{\em descripcion} & Descripción de la interacción.\\
+\hline
+{\em notas} & Notas adicionales de la interacción.\\
+\hline
+{\em respondida} & Indica si la interacción fue respondida.\\
+\hline
+{\em direccion} & Dirección asociada a la interacción.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cotizacion_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_cotizacion_8cs_source}{Cotizacion.\+cs}}.
+
+\Hypertarget{class_library_1_1_cotizacion_ab6fbaf145e0b43a43fa0557518654ad1}\index{Library.Cotizacion@{Library.Cotizacion}!Cotizacion@{Cotizacion}}
+\index{Cotizacion@{Cotizacion}!Library.Cotizacion@{Library.Cotizacion}}
+\doxysubsubsection{\texorpdfstring{Cotizacion()}{Cotizacion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_cotizacion_ab6fbaf145e0b43a43fa0557518654ad1} 
+Library.\+Cotizacion.\+Cotizacion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor vacío para crear una cotización sin inicializar valores. 
+
+
+
+Definition at line \mbox{\hyperlink{_cotizacion_8cs_source_l00056}{56}} of file \mbox{\hyperlink{_cotizacion_8cs_source}{Cotizacion.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_cotizacion_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_cotizacion_a927554bbc2b978738cab087a829ac492}\index{Library.Cotizacion@{Library.Cotizacion}!Estado@{Estado}}
+\index{Estado@{Estado}!Library.Cotizacion@{Library.Cotizacion}}
+\doxysubsubsection{\texorpdfstring{Estado}{Estado}}
+{\footnotesize\ttfamily \label{class_library_1_1_cotizacion_a927554bbc2b978738cab087a829ac492} 
+string Library.\+Cotizacion.\+Estado\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Estado de la cotización (por ejemplo\+: Pendiente, Aceptada, Rechazada). 
+
+
+
+Definition at line \mbox{\hyperlink{_cotizacion_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_cotizacion_8cs_source}{Cotizacion.\+cs}}.
+
+\Hypertarget{class_library_1_1_cotizacion_a4d54e0e982a39f4f1e52e275a8d87678}\index{Library.Cotizacion@{Library.Cotizacion}!FechaEnvio@{FechaEnvio}}
+\index{FechaEnvio@{FechaEnvio}!Library.Cotizacion@{Library.Cotizacion}}
+\doxysubsubsection{\texorpdfstring{FechaEnvio}{FechaEnvio}}
+{\footnotesize\ttfamily \label{class_library_1_1_cotizacion_a4d54e0e982a39f4f1e52e275a8d87678} 
+Date\+Time Library.\+Cotizacion.\+Fecha\+Envio\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Fecha en que se envió la cotización. 
+
+
+
+Definition at line \mbox{\hyperlink{_cotizacion_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_cotizacion_8cs_source}{Cotizacion.\+cs}}.
+
+\Hypertarget{class_library_1_1_cotizacion_a1ac4641624d87775dee3705a9215ef73}\index{Library.Cotizacion@{Library.Cotizacion}!ImporteTotal@{ImporteTotal}}
+\index{ImporteTotal@{ImporteTotal}!Library.Cotizacion@{Library.Cotizacion}}
+\doxysubsubsection{\texorpdfstring{ImporteTotal}{ImporteTotal}}
+{\footnotesize\ttfamily \label{class_library_1_1_cotizacion_a1ac4641624d87775dee3705a9215ef73} 
+double Library.\+Cotizacion.\+Importe\+Total\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Importe total de la cotización. 
+
+
+
+Definition at line \mbox{\hyperlink{_cotizacion_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_cotizacion_8cs_source}{Cotizacion.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Cotizacion.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,190 @@
+\doxysection{Library.\+Gestor\+Clientes Class Reference}
+\hypertarget{class_library_1_1_gestor_clientes}{}\label{class_library_1_1_gestor_clientes}\index{Library.GestorClientes@{Library.GestorClientes}}
+
+
+Clase que gestiona la lista de clientes del sistema. Implementa el patrón Singleton para asegurar una sola instancia. Permite agregar, obtener, mostrar, actualizar y eliminar clientes.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_gestor_clientes_a98f90d9b7d7655e032c099d17a6857eb}{Agregar\+Cliente}} (string nombre, string apellido, string email, string telefono)
+\begin{DoxyCompactList}\small\item\em Agrega un nuevo cliente al sistema. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} \mbox{\hyperlink{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}{Obtener\+Cliente}} (int id)
+\begin{DoxyCompactList}\small\item\em Obtiene un cliente por su ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_library_1_1_gestor_clientes_a6f22a8dae168fe675c8ec0d039ab2b41}{Mostrar\+Todos\+Clientes}} ()
+\begin{DoxyCompactList}\small\item\em Muestra todos los clientes registrados en la consola. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_gestor_clientes_a665222158ae12ad68530adb0bcc52516}{Actualizar\+Email}} (int id, string nuevo\+Email)
+\begin{DoxyCompactList}\small\item\em Actualiza el correo electrónico de un cliente. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_gestor_clientes_a8e70cd5215406f4732c0a1d5c0b6e3cf}{Eliminar\+Cliente}} (int id)
+\begin{DoxyCompactList}\small\item\em Elimina un cliente por su ID. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} $>$ \mbox{\hyperlink{class_library_1_1_gestor_clientes_a0b501d9cef45346fce1956e866c8678c}{Obtener\+Todos\+Clientes}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene una copia de todos los clientes registrados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_library_1_1_gestor_clientes}{Gestor\+Clientes}} \mbox{\hyperlink{class_library_1_1_gestor_clientes_ac9a0ce42a89934bcdbb13193af316522}{Instancia}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Propiedad para acceder al Singleton de \doxylink{class_library_1_1_gestor_clientes}{Gestor\+Clientes}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que gestiona la lista de clientes del sistema. Implementa el patrón Singleton para asegurar una sola instancia. Permite agregar, obtener, mostrar, actualizar y eliminar clientes. 
+
+Definition at line \mbox{\hyperlink{_gestor_clientes_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_gestor_clientes_8cs_source}{Gestor\+Clientes.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_library_1_1_gestor_clientes_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_library_1_1_gestor_clientes_a665222158ae12ad68530adb0bcc52516}\index{Library.GestorClientes@{Library.GestorClientes}!ActualizarEmail@{ActualizarEmail}}
+\index{ActualizarEmail@{ActualizarEmail}!Library.GestorClientes@{Library.GestorClientes}}
+\doxysubsubsection{\texorpdfstring{ActualizarEmail()}{ActualizarEmail()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_clientes_a665222158ae12ad68530adb0bcc52516} 
+bool Library.\+Gestor\+Clientes.\+Actualizar\+Email (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{string}]{nuevo\+Email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Actualiza el correo electrónico de un cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del cliente a actualizar.\\
+\hline
+{\em nuevo\+Email} & Nuevo correo electrónico.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si se actualizó correctamente, false si no se encontró el cliente.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_clientes_8cs_source_l00102}{102}} of file \mbox{\hyperlink{_gestor_clientes_8cs_source}{Gestor\+Clientes.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_clientes_a98f90d9b7d7655e032c099d17a6857eb}\index{Library.GestorClientes@{Library.GestorClientes}!AgregarCliente@{AgregarCliente}}
+\index{AgregarCliente@{AgregarCliente}!Library.GestorClientes@{Library.GestorClientes}}
+\doxysubsubsection{\texorpdfstring{AgregarCliente()}{AgregarCliente()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_clientes_a98f90d9b7d7655e032c099d17a6857eb} 
+int Library.\+Gestor\+Clientes.\+Agregar\+Cliente (\begin{DoxyParamCaption}\item[{string}]{nombre}{, }\item[{string}]{apellido}{, }\item[{string}]{email}{, }\item[{string}]{telefono}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega un nuevo cliente al sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & Nombre del cliente.\\
+\hline
+{\em apellido} & Apellido del cliente.\\
+\hline
+{\em email} & \doxylink{class_library_1_1_correo}{Correo} electrónico del cliente.\\
+\hline
+{\em telefono} & Teléfono del cliente.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID asignado al nuevo cliente.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_clientes_8cs_source_l00053}{53}} of file \mbox{\hyperlink{_gestor_clientes_8cs_source}{Gestor\+Clientes.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_clientes_a8e70cd5215406f4732c0a1d5c0b6e3cf}\index{Library.GestorClientes@{Library.GestorClientes}!EliminarCliente@{EliminarCliente}}
+\index{EliminarCliente@{EliminarCliente}!Library.GestorClientes@{Library.GestorClientes}}
+\doxysubsubsection{\texorpdfstring{EliminarCliente()}{EliminarCliente()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_clientes_a8e70cd5215406f4732c0a1d5c0b6e3cf} 
+bool Library.\+Gestor\+Clientes.\+Eliminar\+Cliente (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Elimina un cliente por su ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del cliente a eliminar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si se eliminó correctamente, false si no se encontró.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_clientes_8cs_source_l00118}{118}} of file \mbox{\hyperlink{_gestor_clientes_8cs_source}{Gestor\+Clientes.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_clientes_a6f22a8dae168fe675c8ec0d039ab2b41}\index{Library.GestorClientes@{Library.GestorClientes}!MostrarTodosClientes@{MostrarTodosClientes}}
+\index{MostrarTodosClientes@{MostrarTodosClientes}!Library.GestorClientes@{Library.GestorClientes}}
+\doxysubsubsection{\texorpdfstring{MostrarTodosClientes()}{MostrarTodosClientes()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_clientes_a6f22a8dae168fe675c8ec0d039ab2b41} 
+void Library.\+Gestor\+Clientes.\+Mostrar\+Todos\+Clientes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muestra todos los clientes registrados en la consola. 
+
+
+
+Definition at line \mbox{\hyperlink{_gestor_clientes_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_gestor_clientes_8cs_source}{Gestor\+Clientes.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa}\index{Library.GestorClientes@{Library.GestorClientes}!ObtenerCliente@{ObtenerCliente}}
+\index{ObtenerCliente@{ObtenerCliente}!Library.GestorClientes@{Library.GestorClientes}}
+\doxysubsubsection{\texorpdfstring{ObtenerCliente()}{ObtenerCliente()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_clientes_a597950792ba54d4599e72785c09718fa} 
+\mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} Library.\+Gestor\+Clientes.\+Obtener\+Cliente (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene un cliente por su ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del cliente a buscar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_library_1_1_cliente}{Cliente} encontrado o null si no existe.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_clientes_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_gestor_clientes_8cs_source}{Gestor\+Clientes.\+cs}}.
+
+\Hypertarget{class_library_1_1_gestor_clientes_a0b501d9cef45346fce1956e866c8678c}\index{Library.GestorClientes@{Library.GestorClientes}!ObtenerTodosClientes@{ObtenerTodosClientes}}
+\index{ObtenerTodosClientes@{ObtenerTodosClientes}!Library.GestorClientes@{Library.GestorClientes}}
+\doxysubsubsection{\texorpdfstring{ObtenerTodosClientes()}{ObtenerTodosClientes()}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_clientes_a0b501d9cef45346fce1956e866c8678c} 
+List$<$ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} $>$ Library.\+Gestor\+Clientes.\+Obtener\+Todos\+Clientes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene una copia de todos los clientes registrados. 
+
+\begin{DoxyReturn}{Returns}
+Lista de clientes.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_gestor_clientes_8cs_source_l00132}{132}} of file \mbox{\hyperlink{_gestor_clientes_8cs_source}{Gestor\+Clientes.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_gestor_clientes_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_gestor_clientes_ac9a0ce42a89934bcdbb13193af316522}\index{Library.GestorClientes@{Library.GestorClientes}!Instancia@{Instancia}}
+\index{Instancia@{Instancia}!Library.GestorClientes@{Library.GestorClientes}}
+\doxysubsubsection{\texorpdfstring{Instancia}{Instancia}}
+{\footnotesize\ttfamily \label{class_library_1_1_gestor_clientes_ac9a0ce42a89934bcdbb13193af316522} 
+\mbox{\hyperlink{class_library_1_1_gestor_clientes}{Gestor\+Clientes}} Library.\+Gestor\+Clientes.\+Instancia\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Propiedad para acceder al Singleton de \doxylink{class_library_1_1_gestor_clientes}{Gestor\+Clientes}. 
+
+
+
+Definition at line \mbox{\hyperlink{_gestor_clientes_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_gestor_clientes_8cs_source}{Gestor\+Clientes.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Gestor\+Clientes.\+cs\end{DoxyCompactItemize}

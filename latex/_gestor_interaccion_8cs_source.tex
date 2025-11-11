@@ -1,0 +1,100 @@
+\doxysection{Gestor\+Interaccion.\+cs}
+\hypertarget{_gestor_interaccion_8cs_source}{}\label{_gestor_interaccion_8cs_source}\index{src/Library/GestorInteraccion.cs@{src/Library/GestorInteraccion.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_library}{Library}}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00010}\mbox{\hyperlink{class_library_1_1_gestor_interacciones}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GestorInteracciones}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00015}\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Interaccion>\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}\ =\ \textcolor{keyword}{new}\ List<Interaccion>();}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ proximoId\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ GestorInteracciones\ instancia;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00027}\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a9e01c02b28c0e3a746684072bfdadc9e}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ GestorInteracciones\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a9e01c02b28c0e3a746684072bfdadc9e}{Instancia}}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ instancia\ ??\ (instancia\ =\ \textcolor{keyword}{new}\ GestorInteracciones());\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones}{GestorInteracciones}}()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00047}\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a11ede1f8b86f1b41845ce7c0f3922fba}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a11ede1f8b86f1b41845ce7c0f3922fba}{AgregarInteraccion}}(\textcolor{keywordtype}{string}\ tipo,\ DateTime\ fecha,\ \textcolor{keywordtype}{string}\ descripcion,\ \textcolor{keywordtype}{string}\ notas,\ \textcolor{keywordtype}{bool}\ respondida,\ \textcolor{keywordtype}{string}\ direccion)}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}\ nueva\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (tipo.ToLower())}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}llamada"{}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nueva\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_llamada}{Llamada}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}reunion"{}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nueva\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_reunion}{Reunion}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}mensaje"{}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nueva\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_mensaje}{Mensaje}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}correo"{}}:}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nueva\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_library_1_1_correo}{Correo}}();}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Tipo\ de\ interacción\ no\ válido."{}});}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ nueva.Id\ =\ proximoId;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ nueva.Fecha\ =\ fecha;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ nueva.Descripcion\ =\ descripcion;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ nueva.Notas\ =\ notas;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ nueva.Respondida\ =\ respondida;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ nueva.Direccion\ =\ direccion;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}.Add(nueva);}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ proximoId++;}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nueva.\mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00088}\mbox{\hyperlink{class_library_1_1_gestor_interacciones_ae96370c92ee070ef010bcca1f7191095}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_ae96370c92ee070ef010bcca1f7191095}{ObtenerInteraccion}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}[i].Id\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}[i];}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00101}\mbox{\hyperlink{class_library_1_1_gestor_interacciones_ad4693b61e289060d06d45a254b1bbbe9}{00101}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_ad4693b61e289060d06d45a254b1bbbe9}{MostrarTodasInteracciones}}()}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}}\ inter\ =\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}[i];}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}ID:\ "{}}\ +\ inter.\mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}}\ +}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\ Tipo:\ "{}}\ +\ inter.GetType().Name\ +}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\ Fecha:\ "{}}\ +\ inter.\mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}.ToShortDateString()\ +}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\ Descripción:\ "{}}\ +\ inter.\mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{Descripcion}}\ +}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\ Respondida:\ "{}}\ +\ (inter.\mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{Respondida}}\ ?\ \textcolor{stringliteral}{"{}Sí"{}}\ :\ \textcolor{stringliteral}{"{}No"{}})\ +}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\ Dirección:\ "{}}\ +\ inter.\mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{Direccion}});}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00120}\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a7f58ce74ae1e3ac084889d529848bd17}{00120}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a7f58ce74ae1e3ac084889d529848bd17}{EliminarInteraccion}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}[i].Id\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_library_1_1_gestor_interacciones_a644b273dfc99c3b348ca25a26df396cb}{interacciones}}.RemoveAt(i);}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gestor_interaccion_8cs_source_l00133}00133\ \}}
+
+\end{DoxyCode}

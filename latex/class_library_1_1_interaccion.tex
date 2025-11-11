@@ -1,0 +1,198 @@
+\doxysection{Library.\+Interaccion Class Reference}
+\hypertarget{class_library_1_1_interaccion}{}\label{class_library_1_1_interaccion}\index{Library.Interaccion@{Library.Interaccion}}
+
+
+Clase base abstracta que representa una interacción genérica con un cliente, como una llamada, correo, mensaje, reunión, etc.  
+
+
+Inheritance diagram for Library.\+Interaccion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.458333cm]{class_library_1_1_interaccion}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{Agregar\+Nota}} (string nota)
+\begin{DoxyCompactList}\small\item\em Agrega una nueva nota a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}{Interaccion}} (Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion)
+\begin{DoxyCompactList}\small\item\em Constructor protegido\+: inicializa los valores principales de la interacción. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f}{Interaccion}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío\+: permite crear una interacción sin parámetros (por ejemplo, desde un gestor). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identificador único de la interacción. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha en la que ocurrió la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{Descripcion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Breve descripción del contenido o propósito de la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Notas adicionales o detalles de la interacción. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{Respondida}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indica si la interacción fue respondida o no. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{Direccion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dirección o ubicación asociada a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase base abstracta que representa una interacción genérica con un cliente, como una llamada, correo, mensaje, reunión, etc. 
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_library_1_1_interaccion_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}\index{Library.Interaccion@{Library.Interaccion}!Interaccion@{Interaccion}}
+\index{Interaccion@{Interaccion}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{Interaccion()}{Interaccion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def} 
+Library.\+Interaccion.\+Interaccion (\begin{DoxyParamCaption}\item[{Date\+Time}]{fecha}{, }\item[{string}]{descripcion}{, }\item[{string}]{notas}{, }\item[{bool}]{respondida}{, }\item[{string}]{direccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructor protegido\+: inicializa los valores principales de la interacción. 
+
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f}\index{Library.Interaccion@{Library.Interaccion}!Interaccion@{Interaccion}}
+\index{Interaccion@{Interaccion}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{Interaccion()}{Interaccion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f} 
+Library.\+Interaccion.\+Interaccion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructor vacío\+: permite crear una interacción sin parámetros (por ejemplo, desde un gestor). 
+
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_library_1_1_interaccion_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}\index{Library.Interaccion@{Library.Interaccion}!AgregarNota@{AgregarNota}}
+\index{AgregarNota@{AgregarNota}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{AgregarNota()}{AgregarNota()}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393} 
+void Library.\+Interaccion.\+Agregar\+Nota (\begin{DoxyParamCaption}\item[{string}]{nota}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega una nueva nota a la interacción. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nota} & Texto de la nota a agregar.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_interaccion_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}\index{Library.Interaccion@{Library.Interaccion}!Descripcion@{Descripcion}}
+\index{Descripcion@{Descripcion}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{Descripcion}{Descripcion}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7} 
+string Library.\+Interaccion.\+Descripcion\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Breve descripción del contenido o propósito de la interacción. 
+
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}\index{Library.Interaccion@{Library.Interaccion}!Direccion@{Direccion}}
+\index{Direccion@{Direccion}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{Direccion}{Direccion}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16} 
+string Library.\+Interaccion.\+Direccion\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Dirección o ubicación asociada a la interacción. 
+
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}\index{Library.Interaccion@{Library.Interaccion}!Fecha@{Fecha}}
+\index{Fecha@{Fecha}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{Fecha}{Fecha}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587} 
+Date\+Time Library.\+Interaccion.\+Fecha\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Fecha en la que ocurrió la interacción. 
+
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}\index{Library.Interaccion@{Library.Interaccion}!Id@{Id}}
+\index{Id@{Id}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab} 
+int Library.\+Interaccion.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Identificador único de la interacción. 
+
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}\index{Library.Interaccion@{Library.Interaccion}!Notas@{Notas}}
+\index{Notas@{Notas}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{Notas}{Notas}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b} 
+string Library.\+Interaccion.\+Notas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Notas adicionales o detalles de la interacción. 
+
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+\Hypertarget{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}\index{Library.Interaccion@{Library.Interaccion}!Respondida@{Respondida}}
+\index{Respondida@{Respondida}!Library.Interaccion@{Library.Interaccion}}
+\doxysubsubsection{\texorpdfstring{Respondida}{Respondida}}
+{\footnotesize\ttfamily \label{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534} 
+bool Library.\+Interaccion.\+Respondida\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Indica si la interacción fue respondida o no. 
+
+
+
+Definition at line \mbox{\hyperlink{_interaccion_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_interaccion_8cs_source}{Interaccion.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Interaccion.\+cs\end{DoxyCompactItemize}

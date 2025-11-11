@@ -1,0 +1,305 @@
+\doxysection{Proyecto\+CRM.\+Fachada Class Reference}
+\hypertarget{class_proyecto_c_r_m_1_1_fachada}{}\label{class_proyecto_c_r_m_1_1_fachada}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+
+
+Clase fachada que unifica el acceso a los distintos gestores del sistema CRM. Permite operar con usuarios, clientes, ventas, etiquetas e interacciones.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a19dd9ab96dbca4c648b1a71be5e568b3}{Fachada}} ()
+\begin{DoxyCompactList}\small\item\em Constructor\+: inicializa los gestores y listas internas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a8b1d36754486363866400b93833054cd}{Registrar\+Vendedor}} (bool activo, Date\+Time fecha\+Creacion)
+\begin{DoxyCompactList}\small\item\em Registra un nuevo vendedor en el sistema. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ad59fbb5af97e24829e11a0472de048c1}{Registrar\+Administrador}} (bool activo, Date\+Time fecha\+Creacion)
+\begin{DoxyCompactList}\small\item\em Registra un nuevo administrador en el sistema. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}} $>$ \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a723af2dc4199055a95d28271571952e4}{Obtener\+Usuarios}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene todos los usuarios registrados en el sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a19b1eed9645573fa771c3d13df9b1eb0}{Registrar\+Cliente}} (string nombre, string apellido, string telefono, string correo, string descripcion, string genero, Date\+Time nacimiento)
+\begin{DoxyCompactList}\small\item\em Registra un nuevo cliente en el sistema. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} $>$ \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a5742c649ac12a703d277918b0ead6e02}{Obtener\+Clientes}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de clientes registrados. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ac3f9fcbd52b4e3734530d31dab2361f2}{Registrar\+Venta}} (\mbox{\hyperlink{class_library_1_1_venta}{Venta}} venta)
+\begin{DoxyCompactList}\small\item\em Registra una nueva venta en el sistema. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_venta}{Venta}} $>$ \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a5f0805caaf85b6cfe9d78edb3c774993}{Obtener\+Ventas\+Entre}} (Date\+Time desde, Date\+Time hasta)
+\begin{DoxyCompactList}\small\item\em Obtiene las ventas registradas entre dos fechas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_af841b498a68e04b90b7a6ead3ec8f348}{Crear\+Etiqueta}} (string nombre)
+\begin{DoxyCompactList}\small\item\em Crea una nueva etiqueta y la agrega al listado interno. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_etiqueta}{Etiqueta}} $>$ \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ad012aab4ae53eb3cf80382d25ba27289}{Obtener\+Etiquetas}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene todas las etiquetas creadas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ae41a1341f4aee0f8d4f818337e698387}{Registrar\+Interaccion}} (\mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} cliente, string descripcion)
+\begin{DoxyCompactList}\small\item\em Registra una interacción de un cliente. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} $>$ \mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a9f11d97936539f64b8148ae6253ff4a9}{Obtener\+Interacciones\+De\+Cliente}} (\mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} cliente)
+\begin{DoxyCompactList}\small\item\em Obtiene todas las interacciones asociadas a un cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase fachada que unifica el acceso a los distintos gestores del sistema CRM. Permite operar con usuarios, clientes, ventas, etiquetas e interacciones. 
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_a19dd9ab96dbca4c648b1a71be5e568b3}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!Fachada@{Fachada}}
+\index{Fachada@{Fachada}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{Fachada()}{Fachada()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_a19dd9ab96dbca4c648b1a71be5e568b3} 
+Proyecto\+CRM.\+Fachada.\+Fachada (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor\+: inicializa los gestores y listas internas. 
+
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_af841b498a68e04b90b7a6ead3ec8f348}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!CrearEtiqueta@{CrearEtiqueta}}
+\index{CrearEtiqueta@{CrearEtiqueta}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{CrearEtiqueta()}{CrearEtiqueta()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_af841b498a68e04b90b7a6ead3ec8f348} 
+void Proyecto\+CRM.\+Fachada.\+Crear\+Etiqueta (\begin{DoxyParamCaption}\item[{string}]{nombre}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea una nueva etiqueta y la agrega al listado interno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & Nombre de la etiqueta.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00147}{147}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_a5742c649ac12a703d277918b0ead6e02}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!ObtenerClientes@{ObtenerClientes}}
+\index{ObtenerClientes@{ObtenerClientes}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{ObtenerClientes()}{ObtenerClientes()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_a5742c649ac12a703d277918b0ead6e02} 
+List$<$ \mbox{\hyperlink{class_library_1_1_cliente}{Cliente}} $>$ Proyecto\+CRM.\+Fachada.\+Obtener\+Clientes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la lista de clientes registrados. 
+
+\begin{DoxyReturn}{Returns}
+Lista de clientes.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00105}{105}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_ad012aab4ae53eb3cf80382d25ba27289}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!ObtenerEtiquetas@{ObtenerEtiquetas}}
+\index{ObtenerEtiquetas@{ObtenerEtiquetas}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{ObtenerEtiquetas()}{ObtenerEtiquetas()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_ad012aab4ae53eb3cf80382d25ba27289} 
+List$<$ \mbox{\hyperlink{class_library_1_1_etiqueta}{Etiqueta}} $>$ Proyecto\+CRM.\+Fachada.\+Obtener\+Etiquetas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene todas las etiquetas creadas. 
+
+\begin{DoxyReturn}{Returns}
+Lista de etiquetas.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00159}{159}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_a9f11d97936539f64b8148ae6253ff4a9}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!ObtenerInteraccionesDeCliente@{ObtenerInteraccionesDeCliente}}
+\index{ObtenerInteraccionesDeCliente@{ObtenerInteraccionesDeCliente}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{ObtenerInteraccionesDeCliente()}{ObtenerInteraccionesDeCliente()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_a9f11d97936539f64b8148ae6253ff4a9} 
+List$<$ \mbox{\hyperlink{class_library_1_1_interaccion}{Interaccion}} $>$ Proyecto\+CRM.\+Fachada.\+Obtener\+Interacciones\+De\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_library_1_1_cliente}{Cliente}}}]{cliente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene todas las interacciones asociadas a un cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cliente} & \doxylink{class_library_1_1_cliente}{Cliente} cuyo historial se desea obtener.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista de interacciones del cliente.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00190}{190}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_a723af2dc4199055a95d28271571952e4}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!ObtenerUsuarios@{ObtenerUsuarios}}
+\index{ObtenerUsuarios@{ObtenerUsuarios}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{ObtenerUsuarios()}{ObtenerUsuarios()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_a723af2dc4199055a95d28271571952e4} 
+List$<$ \mbox{\hyperlink{class_library_1_1_usuario}{Usuario}} $>$ Proyecto\+CRM.\+Fachada.\+Obtener\+Usuarios (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene todos los usuarios registrados en el sistema. 
+
+\begin{DoxyReturn}{Returns}
+Lista de usuarios.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_a5f0805caaf85b6cfe9d78edb3c774993}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!ObtenerVentasEntre@{ObtenerVentasEntre}}
+\index{ObtenerVentasEntre@{ObtenerVentasEntre}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{ObtenerVentasEntre()}{ObtenerVentasEntre()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_a5f0805caaf85b6cfe9d78edb3c774993} 
+List$<$ \mbox{\hyperlink{class_library_1_1_venta}{Venta}} $>$ Proyecto\+CRM.\+Fachada.\+Obtener\+Ventas\+Entre (\begin{DoxyParamCaption}\item[{Date\+Time}]{desde}{, }\item[{Date\+Time}]{hasta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene las ventas registradas entre dos fechas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desde} & Fecha inicial del rango.\\
+\hline
+{\em hasta} & Fecha final del rango.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista de ventas filtradas por fecha.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00134}{134}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_ad59fbb5af97e24829e11a0472de048c1}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!RegistrarAdministrador@{RegistrarAdministrador}}
+\index{RegistrarAdministrador@{RegistrarAdministrador}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{RegistrarAdministrador()}{RegistrarAdministrador()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_ad59fbb5af97e24829e11a0472de048c1} 
+int Proyecto\+CRM.\+Fachada.\+Registrar\+Administrador (\begin{DoxyParamCaption}\item[{bool}]{activo}{, }\item[{Date\+Time}]{fecha\+Creacion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un nuevo administrador en el sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activo} & Indica si el administrador está activo.\\
+\hline
+{\em fecha\+Creacion} & Fecha de creación del usuario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID asignado al administrador.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_a19b1eed9645573fa771c3d13df9b1eb0}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!RegistrarCliente@{RegistrarCliente}}
+\index{RegistrarCliente@{RegistrarCliente}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{RegistrarCliente()}{RegistrarCliente()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_a19b1eed9645573fa771c3d13df9b1eb0} 
+void Proyecto\+CRM.\+Fachada.\+Registrar\+Cliente (\begin{DoxyParamCaption}\item[{string}]{nombre}{, }\item[{string}]{apellido}{, }\item[{string}]{telefono}{, }\item[{string}]{correo}{, }\item[{string}]{descripcion}{, }\item[{string}]{genero}{, }\item[{Date\+Time}]{nacimiento}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un nuevo cliente en el sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & Nombre del cliente.\\
+\hline
+{\em apellido} & Apellido del cliente.\\
+\hline
+{\em telefono} & Teléfono del cliente.\\
+\hline
+{\em correo} & \doxylink{class_library_1_1_correo}{Correo} electrónico.\\
+\hline
+{\em descripcion} & Descripción u observaciones del cliente.\\
+\hline
+{\em genero} & Género del cliente.\\
+\hline
+{\em nacimiento} & Fecha de nacimiento del cliente.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00084}{84}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_ae41a1341f4aee0f8d4f818337e698387}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!RegistrarInteraccion@{RegistrarInteraccion}}
+\index{RegistrarInteraccion@{RegistrarInteraccion}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{RegistrarInteraccion()}{RegistrarInteraccion()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_ae41a1341f4aee0f8d4f818337e698387} 
+void Proyecto\+CRM.\+Fachada.\+Registrar\+Interaccion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_library_1_1_cliente}{Cliente}}}]{cliente}{, }\item[{string}]{descripcion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra una interacción de un cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cliente} & \doxylink{class_library_1_1_cliente}{Cliente} al que se le asocia la interacción.\\
+\hline
+{\em descripcion} & Descripción de la interacción.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00173}{173}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_a8b1d36754486363866400b93833054cd}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!RegistrarVendedor@{RegistrarVendedor}}
+\index{RegistrarVendedor@{RegistrarVendedor}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{RegistrarVendedor()}{RegistrarVendedor()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_a8b1d36754486363866400b93833054cd} 
+int Proyecto\+CRM.\+Fachada.\+Registrar\+Vendedor (\begin{DoxyParamCaption}\item[{bool}]{activo}{, }\item[{Date\+Time}]{fecha\+Creacion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra un nuevo vendedor en el sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em activo} & Indica si el vendedor está activo.\\
+\hline
+{\em fecha\+Creacion} & Fecha de creación del usuario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID asignado al vendedor.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+\Hypertarget{class_proyecto_c_r_m_1_1_fachada_ac3f9fcbd52b4e3734530d31dab2361f2}\index{ProyectoCRM.Fachada@{ProyectoCRM.Fachada}!RegistrarVenta@{RegistrarVenta}}
+\index{RegistrarVenta@{RegistrarVenta}!ProyectoCRM.Fachada@{ProyectoCRM.Fachada}}
+\doxysubsubsection{\texorpdfstring{RegistrarVenta()}{RegistrarVenta()}}
+{\footnotesize\ttfamily \label{class_proyecto_c_r_m_1_1_fachada_ac3f9fcbd52b4e3734530d31dab2361f2} 
+void Proyecto\+CRM.\+Fachada.\+Registrar\+Venta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_library_1_1_venta}{Venta}}}]{venta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra una nueva venta en el sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em venta} & Instancia de venta a registrar.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_fachada_8cs_source_l00118}{118}} of file \mbox{\hyperlink{_fachada_8cs_source}{Fachada.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Fachada.\+cs\end{DoxyCompactItemize}

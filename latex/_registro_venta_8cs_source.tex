@@ -1,0 +1,39 @@
+\doxysection{Registro\+Venta.\+cs}
+\hypertarget{_registro_venta_8cs_source}{}\label{_registro_venta_8cs_source}\index{src/Library/RegistroVenta.cs@{src/Library/RegistroVenta.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_library}{Library}}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00010}\mbox{\hyperlink{class_library_1_1_registro_venta}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_library_1_1_registro_venta_a578d0d55f0ec6d77684b18e75beaaa7e}{RegistroVenta}}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ List<Venta>\ ventas;}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00021}\mbox{\hyperlink{class_library_1_1_registro_venta_a578d0d55f0ec6d77684b18e75beaaa7e}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_library_1_1_registro_venta_a578d0d55f0ec6d77684b18e75beaaa7e}{RegistroVenta}}(List<Venta>\ ventas)}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ this.ventas\ =\ ventas\ ??\ \textcolor{keyword}{new}\ List<Venta>();}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00032}\mbox{\hyperlink{class_library_1_1_registro_venta_a4a1b1f8c7e7aab95f37d2c49495e3f1e}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Venta>\ \mbox{\hyperlink{class_library_1_1_registro_venta_a4a1b1f8c7e7aab95f37d2c49495e3f1e}{getVentasEntre}}(DateTime\ desde,\ DateTime\ hasta)}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ List<Venta>\ resultado\ =\ \textcolor{keyword}{new}\ List<Venta>();}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Recorre\ todas\ las\ ventas\ registradas}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ v\ \textcolor{keywordflow}{in}\ ventas)}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Agrega\ la\ venta\ si\ su\ fecha\ está\ dentro\ del\ rango\ indicado}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v.Fecha\ >=\ desde\ \&\&\ v.Fecha\ <=\ hasta)}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultado.Add(v);}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Devuelve\ la\ lista\ de\ ventas\ filtradas}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultado;}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registro_venta_8cs_source_l00050}00050\ \}}
+
+\end{DoxyCode}

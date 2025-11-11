@@ -1,0 +1,132 @@
+\doxysection{Library.\+Llamada Class Reference}
+\hypertarget{class_library_1_1_llamada}{}\label{class_library_1_1_llamada}\index{Library.Llamada@{Library.Llamada}}
+
+
+Representa una interacción del tipo llamada dentro del sistema CRM. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion} y agrega información sobre la duración de la llamada.  
+
+
+Inheritance diagram for Library.\+Llamada\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_library_1_1_llamada}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_llamada_a7dbb06872254057d3c98bc6d18020866}{Llamada}} (Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion, string duracion)
+\begin{DoxyCompactList}\small\item\em Constructor que inicializa una nueva instancia de la clase \doxylink{class_library_1_1_llamada}{Llamada}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_llamada_a1d43bd4c675b0effb11c2ec2806afd73}{Llamada}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío que permite crear una instancia sin inicializar los valores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_library_1_1_interaccion_a31f29a3c24d282aa468431105e2ce393}{Agregar\+Nota}} (string nota)
+\begin{DoxyCompactList}\small\item\em Agrega una nueva nota a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_library_1_1_llamada_a533d9024bb7b98963c462a15721bfabc}{Duracion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Duración total de la llamada (por ejemplo, "{}5 minutos"{}, "{}00\+:03\+:45"{}, etc.). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_library_1_1_interaccion_a200405a84fa38987f1ab6fa6086338ab}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identificador único de la interacción. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_library_1_1_interaccion_a384dd69d4ea9b2ca241ab424c02cc587}{Fecha}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fecha en la que ocurrió la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a4095f6a02b4f94508584a1605514cdb7}{Descripcion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Breve descripción del contenido o propósito de la interacción. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_aa3f06037772b2d2f27aebec848f1259b}{Notas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Notas adicionales o detalles de la interacción. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_library_1_1_interaccion_a9aac54ef1debec96a599245ef8b1c534}{Respondida}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indica si la interacción fue respondida o no. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_library_1_1_interaccion_a5ef082ac80577894ae622aa278f19e16}{Direccion}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dirección o ubicación asociada a la interacción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_library_1_1_interaccion}{Library.\+Interaccion}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a9894d0a39eed9200612adacebddf3def}{Interaccion}} (Date\+Time fecha, string descripcion, string notas, bool respondida, string direccion)
+\begin{DoxyCompactList}\small\item\em Constructor protegido\+: inicializa los valores principales de la interacción. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_library_1_1_interaccion_a5eb77cf44a199035b5faf0cdd4e8071f}{Interaccion}} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío\+: permite crear una interacción sin parámetros (por ejemplo, desde un gestor). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa una interacción del tipo llamada dentro del sistema CRM. Hereda de \doxylink{class_library_1_1_interaccion}{Interaccion} y agrega información sobre la duración de la llamada. 
+
+Definition at line \mbox{\hyperlink{_llamada_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_llamada_8cs_source}{Llamada.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_library_1_1_llamada_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_library_1_1_llamada_a7dbb06872254057d3c98bc6d18020866}\index{Library.Llamada@{Library.Llamada}!Llamada@{Llamada}}
+\index{Llamada@{Llamada}!Library.Llamada@{Library.Llamada}}
+\doxysubsubsection{\texorpdfstring{Llamada()}{Llamada()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_llamada_a7dbb06872254057d3c98bc6d18020866} 
+Library.\+Llamada.\+Llamada (\begin{DoxyParamCaption}\item[{Date\+Time}]{fecha}{, }\item[{string}]{descripcion}{, }\item[{string}]{notas}{, }\item[{bool}]{respondida}{, }\item[{string}]{direccion}{, }\item[{string}]{duracion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor que inicializa una nueva instancia de la clase \doxylink{class_library_1_1_llamada}{Llamada}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fecha} & Fecha en que se realizó la llamada.\\
+\hline
+{\em descripcion} & Descripción breve de la llamada.\\
+\hline
+{\em notas} & Notas adicionales asociadas a la llamada.\\
+\hline
+{\em respondida} & Indica si la llamada fue respondida.\\
+\hline
+{\em direccion} & Dirección o número de contacto del destinatario.\\
+\hline
+{\em duracion} & Duración total de la llamada.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_llamada_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_llamada_8cs_source}{Llamada.\+cs}}.
+
+\Hypertarget{class_library_1_1_llamada_a1d43bd4c675b0effb11c2ec2806afd73}\index{Library.Llamada@{Library.Llamada}!Llamada@{Llamada}}
+\index{Llamada@{Llamada}!Library.Llamada@{Library.Llamada}}
+\doxysubsubsection{\texorpdfstring{Llamada()}{Llamada()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_library_1_1_llamada_a1d43bd4c675b0effb11c2ec2806afd73} 
+Library.\+Llamada.\+Llamada (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor vacío que permite crear una instancia sin inicializar los valores. 
+
+
+
+Definition at line \mbox{\hyperlink{_llamada_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_llamada_8cs_source}{Llamada.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_library_1_1_llamada_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_library_1_1_llamada_a533d9024bb7b98963c462a15721bfabc}\index{Library.Llamada@{Library.Llamada}!Duracion@{Duracion}}
+\index{Duracion@{Duracion}!Library.Llamada@{Library.Llamada}}
+\doxysubsubsection{\texorpdfstring{Duracion}{Duracion}}
+{\footnotesize\ttfamily \label{class_library_1_1_llamada_a533d9024bb7b98963c462a15721bfabc} 
+string Library.\+Llamada.\+Duracion\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Duración total de la llamada (por ejemplo, "{}5 minutos"{}, "{}00\+:03\+:45"{}, etc.). 
+
+
+
+Definition at line \mbox{\hyperlink{_llamada_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_llamada_8cs_source}{Llamada.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/Llamada.\+cs\end{DoxyCompactItemize}

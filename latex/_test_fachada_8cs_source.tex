@@ -1,0 +1,128 @@
+\doxysection{Test\+Fachada.\+cs}
+\hypertarget{_test_fachada_8cs_source}{}\label{_test_fachada_8cs_source}\index{test/LibraryTests/TestFachada.cs@{test/LibraryTests/TestFachada.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_library}{Library}};}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_proyecto_c_r_m}{ProyectoCRM}};}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_program_1_1_tests}{Program.Tests}}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }TestFachada}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestFachada\ =="{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ crea\ una\ nueva\ instancia\ de\ la\ fachada}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ Fachada\ fachada\ =\ \textcolor{keyword}{new}\ Fachada();}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRUEBA:\ Registrar\ usuarios}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}-\/-\/\ Prueba\ de\ registro\ de\ usuarios\ -\/-\/"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idVendedor\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a8b1d36754486363866400b93833054cd}{RegistrarVendedor}}(\textcolor{keyword}{true},\ DateTime.Now);}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idAdmin\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ad59fbb5af97e24829e11a0472de048c1}{RegistrarAdministrador}}(\textcolor{keyword}{true},\ DateTime.Now);}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idVendedor\ >\ 0\ \&\&\ idAdmin\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Usuarios\ (vendedor\ y\ administrador)\ registrados\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ al\ registrar\ usuarios."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRUEBA:\ Obtener\ usuarios}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ List<Usuario>\ usuarios\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a723af2dc4199055a95d28271571952e4}{ObtenerUsuarios}}();}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (usuarios\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Se\ obtuvieron\ \{usuarios.Count\}\ usuarios\ del\ sistema."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ al\ obtener\ usuarios."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRUEBA:\ Registrar\ cliente}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}-\/-\/\ Prueba\ de\ registro\ de\ cliente\ -\/-\/"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a19b1eed9645573fa771c3d13df9b1eb0}{RegistrarCliente}}(}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nombre:\ \textcolor{stringliteral}{"{}Juan"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ apellido:\ \textcolor{stringliteral}{"{}Pérez"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ telefono:\ \textcolor{stringliteral}{"{}099123456"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ correo:\ \textcolor{stringliteral}{"{}juan@correo.com"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ descripcion:\ \textcolor{stringliteral}{"{}Cliente\ nuevo\ interesado\ en\ servicios\ premium."{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ genero:\ \textcolor{stringliteral}{"{}Masculino"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nacimiento:\ \textcolor{keyword}{new}\ DateTime(1990,\ 5,\ 10)}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ List<Cliente>\ clientes\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a5742c649ac12a703d277918b0ead6e02}{ObtenerClientes}}();}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clientes\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Clientes\ obtenidos\ correctamente\ (total:\ \{clientes.Count\})."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ al\ obtener\ clientes."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRUEBA:\ Registrar\ etiqueta}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}-\/-\/\ Prueba\ de\ etiquetas\ -\/-\/"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_af841b498a68e04b90b7a6ead3ec8f348}{CrearEtiqueta}}(\textcolor{stringliteral}{"{}Importante"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_af841b498a68e04b90b7a6ead3ec8f348}{CrearEtiqueta}}(\textcolor{stringliteral}{"{}Nuevo"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ List<Etiqueta>\ etiquetas\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ad012aab4ae53eb3cf80382d25ba27289}{ObtenerEtiquetas}}();}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (etiquetas.Count\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Etiquetas\ creadas\ y\ recuperadas\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ en\ la\ gestión\ de\ etiquetas."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRUEBA:\ Registrar\ venta}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}-\/-\/\ Prueba\ de\ registro\ de\ venta\ -\/-\/"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ Venta\ venta\ =\ \textcolor{keyword}{new}\ Venta(1500,\ DateTime.Now,\ \textcolor{stringliteral}{"{}Venta\ de\ producto\ A"{}},\ \textcolor{stringliteral}{"{}Pago\ en\ efectivo"{}},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}Sucursal\ Montevideo"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ac3f9fcbd52b4e3734530d31dab2361f2}{RegistrarVenta}}(venta);}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ List<Venta>\ ventas\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a5f0805caaf85b6cfe9d78edb3c774993}{ObtenerVentasEntre}}(DateTime.Now.AddDays(-\/1),\ DateTime.Now.AddDays(1));}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ventas\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Método\ de\ obtención\ de\ ventas\ ejecutado\ correctamente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ al\ obtener\ ventas."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRUEBA:\ Registrar\ interacción}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}-\/-\/\ Prueba\ de\ interacciones\ -\/-\/"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ Cliente\ clienteTest\ =\ \textcolor{keyword}{new}\ Cliente()}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Nombre\ =\ \textcolor{stringliteral}{"{}Laura"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Apellido\ =\ \textcolor{stringliteral}{"{}Rodríguez"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}laura@correo.com"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Telefono\ =\ \textcolor{stringliteral}{"{}094567890"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FechaNacimiento\ =\ \textcolor{keyword}{new}\ DateTime(1985,\ 3,\ 12),}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Genero\ =\ \textcolor{stringliteral}{"{}Femenino"{}},}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FechaUltimaInteraccion\ =\ DateTime.Now}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_ae41a1341f4aee0f8d4f818337e698387}{RegistrarInteraccion}}(clienteTest,\ \textcolor{stringliteral}{"{}Primera\ interacción\ de\ prueba."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ List<Interaccion>\ interacciones\ =\ fachada.\mbox{\hyperlink{class_proyecto_c_r_m_1_1_fachada_a9f11d97936539f64b8148ae6253ff4a9}{ObtenerInteraccionesDeCliente}}(clienteTest);}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (interacciones.Count\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Interacción\ registrada\ correctamente\ para\ el\ cliente."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Error\ al\ registrar\ interacción."{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FIN\ DE\ TEST}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine();}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}==\ TestFachada\ finalizado\ correctamente\ ==\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_fachada_8cs_source_l00141}00141\ \}}
+
+\end{DoxyCode}
