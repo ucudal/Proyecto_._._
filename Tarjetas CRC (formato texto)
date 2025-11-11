@@ -1,0 +1,97 @@
+Tarjetas CRC
+
+1. IUsuario
+Responsabilidades:
+Indicar si el usuario está activo.
+Registrar la fecha de creación del usuario.
+Colaboradores:
+Administrador
+Vendedor
+
+2. Administrador
+Responsabilidades:
+Implementar los atributos de la interfaz IUsuario.
+Colaboradores:
+IUsuario
+
+3. Vendedor
+Responsabilidades:
+Implementar los atributos de la interfaz IUsuario.
+Obtener la lista de clientes asignados.
+Colaboradores:
+IUsuario
+Cliente
+
+4. Cliente
+Responsabilidades:
+Registrar datos personales y de contacto.
+Agregar etiquetas a un cliente.
+Asignar un vendedor al cliente.
+Obtener interacciones filtradas.
+Verificar si tiene interacciones sin respuesta.
+Comprobar si el cliente está inactivo.
+Colaboradores:
+Etiqueta
+IUsuario
+Interaccion
+
+5. Etiqueta
+Responsabilidades:
+Almacenar el nombre de la etiqueta.
+Devolver el nombre de la etiqueta.
+Colaboradores:
+Cliente
+
+6. Cotizacion
+Responsabilidades:
+Registrar el estado de la cotización.
+Guardar la fecha de envío.
+Guardar el importe total.
+Colaboradores:
+Cliente
+
+7. Venta
+Responsabilidades:
+Registrar el total y la fecha de una venta.
+Obtener los totales según parámetros.
+Colaboradores:
+RegistroVenta
+
+8. RegistroVenta
+Responsabilidades:
+Almacenar la lista de ventas.
+Obtener las ventas entre fechas determinadas.
+Colaboradores:
+Venta
+
+9. Interaccion
+Responsabilidades:
+Guardar la fecha, descripción, notas, estado de respuesta y dirección.
+Agregar una nota a la interacción.
+Colaboradores:
+Cliente
+
+10. Llamada
+Responsabilidades:
+Registrar la duración de la llamada.
+Colaboradores:
+Interaccion
+
+11. Reunion
+Responsabilidades:
+Registrar el lugar de la reunión.
+Indicar si la reunión es próxima.
+Colaboradores:
+Interaccion
+
+12. Mensaje
+Responsabilidades:
+Registrar el medio del mensaje.
+Colaboradores:
+Interaccion
+
+13. Correo
+Responsabilidades:
+Heredar las propiedades de Interaccion.
+Colaboradores:
+Interaccion
