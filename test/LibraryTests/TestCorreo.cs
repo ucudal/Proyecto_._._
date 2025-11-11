@@ -3,8 +3,16 @@ using Library;
 
 namespace Program.Tests
 {
+    /// <summary>
+    /// Clase de prueba para verificar el correcto funcionamiento de la clase <see cref="Correo"/>.
+    /// Contiene pruebas sobre la creación de correos y la correcta asignación de sus propiedades.
+    /// </summary>
     public static class TestCorreo
     {
+        /// <summary>
+        /// Ejecuta todas las pruebas de la clase <see cref="Correo"/>.
+        /// Valida el constructor y la correcta inicialización de los atributos.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestCorreo ==");

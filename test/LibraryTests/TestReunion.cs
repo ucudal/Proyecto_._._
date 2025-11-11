@@ -3,8 +3,15 @@ using Library;
 
 namespace Program.Tests
 {
+    /// <summary>
+    /// Clase de prueba unitaria para verificar el correcto funcionamiento de la clase <see cref="Reunion"/>.
+    /// </summary>
     public static class TestReunion
     {
+        /// <summary>
+        /// Ejecuta pruebas sobre la clase <see cref="Reunion"/> comprobando la creación de instancias,
+        /// el método <see cref="Reunion.EsProxima"/> y el método heredado <see cref="Interaccion.AgregarNota"/>.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestReunion ==");
@@ -28,7 +35,7 @@ namespace Program.Tests
             else
                 Console.WriteLine("Error al crear una o ambas instancias de Reunion.");
 
-            // --- Prueba del método esProxima() ---
+            // --- Prueba del método EsProxima() ---
             if (!reunionPasada.EsProxima())
                 Console.WriteLine("EsProxima() correctamente devuelve false para una reunión pasada.");
             else
@@ -39,7 +46,7 @@ namespace Program.Tests
             else
                 Console.WriteLine("Error: EsProxima() debería devolver true.");
 
-            // --- Prueba del método heredado agregarNota() ---
+            // --- Prueba del método heredado AgregarNota() ---
             reunionFutura.AgregarNota("Confirmar asistencia del equipo de ventas.");
             reunionFutura.AgregarNota("Preparar proyector y materiales.");
 

@@ -3,8 +3,15 @@ using Library;
 
 namespace Program.Tests
 {
+    /// <summary>
+    /// Clase de prueba unitaria para verificar el correcto funcionamiento de la clase <see cref="Usuario"/>.
+    /// </summary>
     public static class TestUsuario
     {
+        /// <summary>
+        /// Ejecuta pruebas sobre la clase <see cref="Usuario"/> comprobando la inicialización,
+        /// asignación de propiedades y actualización de ID.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestUsuario ==");

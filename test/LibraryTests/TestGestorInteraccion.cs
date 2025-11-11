@@ -3,18 +3,28 @@ using Library;
 
 namespace Program.Tests
 {
-    // Clase de prueba para verificar el correcto funcionamiento de GestorInteracciones
+    /// <summary>
+    /// Clase de prueba para verificar el correcto funcionamiento de <see cref="GestorInteracciones"/>.
+    /// Contiene pruebas sobre la creación, obtención, eliminación y manejo de tipos inválidos de interacciones.
+    /// </summary>
     public static class TestGestorInteracciones
     {
-        // Método principal que ejecuta las pruebas del gestor de interacciones
+        /// <summary>
+        /// Ejecuta todas las pruebas del gestor de interacciones.
+        /// Valida los métodos <see cref="GestorInteracciones.AgregarInteraccion"/>,
+        /// <see cref="GestorInteracciones.ObtenerInteraccion"/>,
+        /// <see cref="GestorInteracciones.MostrarTodasInteracciones"/> y
+        /// <see cref="GestorInteracciones.EliminarInteraccion"/>.
+        /// También verifica el manejo de tipos de interacción no válidos.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestGestorInteracciones ==");
 
-            // Se obtiene la instancia única del gestor (Singleton)
+            // Obtener instancia única del GestorInteracciones (Singleton)
             GestorInteracciones gestor = GestorInteracciones.Instancia;
 
-            // AgregarInteraccion 
+            // AgregarInteraccion: crear una llamada
             int idLlamada = gestor.AgregarInteraccion(
                 "llamada",
                 DateTime.Now.AddDays(-2),
@@ -24,14 +34,14 @@ namespace Program.Tests
                 "099123456"
             );
 
-            // Se verifica que la llamada haya sido agregada correctamente
+            // Verificar creación correcta
             Interaccion interaccion = gestor.ObtenerInteraccion(idLlamada);
             if (interaccion != null && interaccion.GetType().Name == "Llamada")
                 Console.WriteLine("AgregarInteraccion crea correctamente una interacción de tipo Llamada.");
             else
                 Console.WriteLine("Error al crear la interacción de tipo Llamada.");
 
-            //  AgregarInteraccion 
+            // AgregarInteraccion con tipo inválido
             int idInvalido = gestor.AgregarInteraccion(
                 "video",
                 DateTime.Now,
@@ -45,27 +55,25 @@ namespace Program.Tests
             else
                 Console.WriteLine("Error: se aceptó un tipo de interacción inválido.");
 
-            //  ObtenerInteraccion 
+            // ObtenerInteraccion: validar obtención correcta
             Interaccion encontrada = gestor.ObtenerInteraccion(idLlamada);
             if (encontrada != null && encontrada.Id == idLlamada)
                 Console.WriteLine("ObtenerInteraccion devuelve la interacción correcta.");
             else
                 Console.WriteLine("Error en ObtenerInteraccion.");
 
-            // MostrarTodasInteracciones 
+            // MostrarTodasInteracciones: mostrar todas las interacciones registradas
             Console.WriteLine("Mostrando todas las interacciones registradas:");
             gestor.MostrarTodasInteracciones();
 
-            // EliminarInteraccion 
+            // EliminarInteraccion: eliminar la interacción creada
             bool eliminada = gestor.EliminarInteraccion(idLlamada);
             Interaccion eliminadaCheck = gestor.ObtenerInteraccion(idLlamada);
-
             if (eliminada && eliminadaCheck == null)
                 Console.WriteLine("EliminarInteraccion elimina correctamente la interacción.");
             else
                 Console.WriteLine("Error en EliminarInteraccion.");
 
-            // Línea vacía para mantener ordenada la salida en consola
             Console.WriteLine();
         }
     }

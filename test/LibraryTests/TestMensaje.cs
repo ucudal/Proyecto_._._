@@ -3,8 +3,16 @@ using Library;
 
 namespace Program.Tests
 {
+    /// <summary>
+    /// Clase de prueba unitaria para verificar el correcto funcionamiento de la clase <see cref="Mensaje"/>.
+    /// Permite comprobar la creación de un mensaje y la funcionalidad del método <see cref="Interaccion.AgregarNota"/>.
+    /// </summary>
     public static class TestMensaje
     {
+        /// <summary>
+        /// Ejecuta las pruebas de la clase <see cref="Mensaje"/>, creando un mensaje de ejemplo
+        /// y validando la asignación de propiedades y el método heredado <see cref="Interaccion.AgregarNota"/>.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestMensaje ==");

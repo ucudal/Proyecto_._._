@@ -3,48 +3,56 @@ using Library;
 
 namespace Program.Tests
 {
-    // Clase de prueba para verificar el correcto funcionamiento de GestorClientes
+    /// <summary>
+    /// Clase de prueba para verificar el correcto funcionamiento de <see cref="GestorClientes"/>.
+    /// Contiene pruebas sobre la creación, obtención, actualización, eliminación y visualización de clientes.
+    /// </summary>
     public static class TestGestorClientes
     {
-        // Método principal que ejecuta todas las pruebas del gestor de clientes
+        /// <summary>
+        /// Ejecuta todas las pruebas del gestor de clientes.
+        /// Valida los métodos <see cref="GestorClientes.AgregarCliente"/>,
+        /// <see cref="GestorClientes.ObtenerCliente"/>,
+        /// <see cref="GestorClientes.ActualizarEmail"/>,
+        /// <see cref="GestorClientes.MostrarTodosClientes"/> y
+        /// <see cref="GestorClientes.EliminarCliente"/>.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestGestorClientes ==");
 
-            // Se obtiene la instancia única (Singleton) del gestor
+            // Obtener instancia única del GestorClientes (Singleton)
             GestorClientes gestor = GestorClientes.Instancia;
 
-            //  AgregarCliente 
+            // AgregarCliente: crear un nuevo cliente
             int idCliente = gestor.AgregarCliente("Ana", "García", "ana@mail.com", "099111222");
 
-            // Se obtiene el cliente recién agregado
+            // Verificar creación correcta
             Cliente cliente = gestor.ObtenerCliente(idCliente);
-
-            // Se verifica que se haya agregado correctamente
             if (cliente != null && cliente.Nombre == "Ana" && cliente.Apellido == "García")
                 Console.WriteLine("AgregarCliente funciona correctamente.");
             else
                 Console.WriteLine("Error en AgregarCliente.");
 
-            //  ObtenerCliente
+            // ObtenerCliente: validar obtención correcta
             Cliente clienteObtenido = gestor.ObtenerCliente(idCliente);
             if (clienteObtenido != null && clienteObtenido.Id == idCliente)
                 Console.WriteLine("ObtenerCliente devuelve el cliente correcto.");
             else
                 Console.WriteLine("Error en ObtenerCliente.");
 
-            // ActualizarEmail
+            // ActualizarEmail: actualizar correo electrónico del cliente
             bool actualizado = gestor.ActualizarEmail(idCliente, "nuevo@mail.com");
             if (actualizado && cliente.Email == "nuevo@mail.com")
                 Console.WriteLine("ActualizarEmail actualiza correctamente el correo.");
             else
                 Console.WriteLine("Error en ActualizarEmail.");
 
-            // MostrarTodosClientes 
+            // MostrarTodosClientes: mostrar todos los clientes registrados
             Console.WriteLine("Mostrando todos los clientes registrados:");
             gestor.MostrarTodosClientes();
 
-            // EliminarCliente 
+            // EliminarCliente: eliminar cliente recién creado
             bool eliminado = gestor.EliminarCliente(idCliente);
             Cliente clienteEliminado = gestor.ObtenerCliente(idCliente);
             if (eliminado && clienteEliminado == null)
@@ -52,7 +60,6 @@ namespace Program.Tests
             else
                 Console.WriteLine("Error en EliminarCliente.");
 
-            // Línea vacía para mantener ordenada la salida en consola
             Console.WriteLine();
         }
     }

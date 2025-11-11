@@ -3,10 +3,18 @@ using Library;
 
 namespace Program.Tests
 {
-    // Clase de prueba para verificar el correcto funcionamiento de la clase Administrador
+    /// <summary>
+    /// Clase de prueba para verificar el correcto funcionamiento de la clase <see cref="Administrador"/>.
+    /// Contiene pruebas sobre la inicialización de propiedades, creación de usuarios y métodos de gestión de usuarios.
+    /// </summary>
     public static class TestAdministrador
     {
-        // Método principal que ejecuta todas las pruebas de la clase Administrador
+        /// <summary>
+        /// Ejecuta todas las pruebas relacionadas con la clase <see cref="Administrador"/>.
+        /// Valida la creación de administradores, la creación de usuarios con <see cref="Administrador.CrearUsuario"/>,
+        /// la suspensión de usuarios con <see cref="Administrador.SuspenderUsuario"/> y 
+        /// la eliminación de usuarios con <see cref="Administrador.EliminarUsuario"/>.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestAdministrador ==");

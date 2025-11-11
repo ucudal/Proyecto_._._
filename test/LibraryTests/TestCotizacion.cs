@@ -3,8 +3,16 @@ using Library;
 
 namespace Program.Tests
 {
+    /// <summary>
+    /// Clase de prueba para verificar el correcto funcionamiento de la clase <see cref="Cotizacion"/>.
+    /// Contiene pruebas sobre la creación de cotizaciones y la asignación de sus propiedades.
+    /// </summary>
     public static class TestCotizacion
     {
+        /// <summary>
+        /// Ejecuta todas las pruebas de la clase <see cref="Cotizacion"/>.
+        /// Valida el constructor y la correcta inicialización de los atributos.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestCotizacion ==");

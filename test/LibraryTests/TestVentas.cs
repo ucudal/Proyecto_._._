@@ -3,8 +3,14 @@ using Library;
 
 namespace Program.Tests
 {
+    /// <summary>
+    /// Clase de prueba unitaria para verificar el correcto funcionamiento de la clase <see cref="Venta"/>.
+    /// </summary>
     public static class TestVenta
     {
+        /// <summary>
+        /// Ejecuta una serie de pruebas sobre la clase <see cref="Venta"/> para validar su comportamiento.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestVenta ==");

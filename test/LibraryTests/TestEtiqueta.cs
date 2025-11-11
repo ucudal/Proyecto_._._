@@ -3,19 +3,25 @@ using Library;
 
 namespace Program.Tests
 {
-    // Clase de prueba para verificar el correcto funcionamiento de la clase Etiqueta
+    /// <summary>
+    /// Clase de prueba para verificar el correcto funcionamiento de la clase <see cref="Etiqueta"/>.
+    /// Contiene pruebas sobre la creación de etiquetas y la obtención de su nombre.
+    /// </summary>
     public static class TestEtiqueta
     {
-        // Método principal que ejecuta las pruebas de la clase Etiqueta
+        /// <summary>
+        /// Ejecuta todas las pruebas de la clase <see cref="Etiqueta"/>.
+        /// Valida el constructor y el método <see cref="Etiqueta.ObtenerNombre"/>.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestEtiqueta ==");
 
-            // Se crea una nueva etiqueta con un nombre de ejemplo
+            // Crear una nueva etiqueta con nombre de ejemplo
             string nombreEsperado = "Importante";
             Etiqueta etiqueta = new Etiqueta(nombreEsperado);
 
-            // Se verifica que el método ObtenerNombre devuelva el valor correcto
+            // Verificar que ObtenerNombre devuelva el valor correcto
             string nombreObtenido = etiqueta.ObtenerNombre();
 
             if (nombreObtenido == nombreEsperado)

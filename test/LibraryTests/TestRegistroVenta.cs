@@ -4,10 +4,16 @@ using Library;
 
 namespace Program.Tests
 {
-    // Clase de prueba para verificar el correcto funcionamiento del registro de ventas
+    /// <summary>
+    /// Clase de prueba unitaria para verificar el correcto funcionamiento de la clase <see cref="RegistroVenta"/>.
+    /// Permite comprobar la creación de ventas y la filtración por fechas mediante <see cref="RegistroVenta.getVentasEntre"/>.
+    /// </summary>
     public static class TestRegistroVenta
     {
-        // Método principal que ejecuta las pruebas de la clase RegistroVenta
+        /// <summary>
+        /// Ejecuta las pruebas de la clase <see cref="RegistroVenta"/>, creando ventas de ejemplo y validando
+        /// que el método <see cref="RegistroVenta.getVentasEntre"/> filtre correctamente por rango de fechas.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestRegistroVenta ==");

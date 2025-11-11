@@ -4,10 +4,17 @@ using Library;
 
 namespace Program.Tests
 {
-    // Clase de prueba para verificar el correcto funcionamiento de la clase Cliente
+    /// <summary>
+    /// Clase de prueba para verificar el correcto funcionamiento de la clase <see cref="Cliente"/>.
+    /// Contiene pruebas sobre la creación de clientes, verificación de estado inactivo y manejo de etiquetas.
+    /// </summary>
     public static class TestClientes
     {
-        // Método principal que ejecuta las pruebas relacionadas con clientes
+        /// <summary>
+        /// Ejecuta todas las pruebas relacionadas con la clase <see cref="Cliente"/>.
+        /// Valida la inicialización de los atributos, el método <see cref="Cliente.esInactivo"/> 
+        /// y el método <see cref="Cliente.agregarEtiqueta"/>.
+        /// </summary>
         public static void Run()
         {
             Console.WriteLine("== TestClientes ==");
