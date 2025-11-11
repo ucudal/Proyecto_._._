@@ -2,30 +2,50 @@ using System;
 
 namespace Library
 {
-    // Clase abstracta que representa una interacción general (por ejemplo, un mensaje, llamada, etc.)
+    /// <summary>
+    /// Clase base abstracta que representa una interacción genérica con un cliente,
+    /// como una llamada, correo, mensaje, reunión, etc.
+    /// </summary>
     public abstract class Interaccion
     {
-        // Identificador único de la interacción
+        /// <summary>
+        /// Identificador único de la interacción.
+        /// </summary>
         public int Id { get; set; }
 
-        // Propiedad pública que almacena la fecha de la interacción
+        /// <summary>
+        /// Fecha en la que ocurrió la interacción.
+        /// </summary>
         public DateTime Fecha { get; set; }
 
-        // Descripción breve de la interacción
+        /// <summary>
+        /// Breve descripción del contenido o propósito de la interacción.
+        /// </summary>
         public string Descripcion { get; set; }
 
-        // Notas adicionales asociadas a la interacción
+        /// <summary>
+        /// Notas adicionales o detalles de la interacción.
+        /// </summary>
         public string Notas { get; set; }
 
-        // Indica si la interacción fue respondida o no
+        /// <summary>
+        /// Indica si la interacción fue respondida o no.
+        /// </summary>
         public bool Respondida { get; set; }
 
-        // Dirección asociada a la interacción 
+        /// <summary>
+        /// Dirección o ubicación asociada a la interacción.
+        /// </summary>
         public string Direccion { get; set; }
 
-        // Constructor protegido (solo accesible desde clases que hereden)
+        /// <summary>
+        /// Constructor protegido: inicializa los valores principales de la interacción.
+        /// </summary>
         protected Interaccion(DateTime fecha, string descripcion, string notas, bool respondida, string direccion)
         {
+            if (string.IsNullOrWhiteSpace(descripcion))
+                throw new InteraccionSinDescripcionException("La descripción de la interacción no puede estar vacía.");
+
             Fecha = fecha;
             Descripcion = descripcion;
             Notas = notas;
@@ -33,21 +53,23 @@ namespace Library
             Direccion = direccion;
         }
 
-        // Constructor vacío (para poder crear instancias sin parámetros desde el Gestor)
+        /// <summary>
+        /// Constructor vacío: permite crear una interacción sin parámetros (por ejemplo, desde un gestor).
+        /// </summary>
         protected Interaccion() { }
 
-        // Método que permite agregar una nueva nota a la interacción
+        /// <summary>
+        /// Agrega una nueva nota a la interacción.
+        /// </summary>
+        /// <param name="nota">Texto de la nota a agregar.</param>
         public void AgregarNota(string nota)
         {
-            // Si la nota está vacía, no hace nada
-            if (string.IsNullOrEmpty(nota))
+            if (string.IsNullOrWhiteSpace(nota))
                 return;
 
-            // Si no había notas previas, asigna la nueva nota directamente
             if (string.IsNullOrEmpty(Notas))
                 Notas = nota;
             else
-                // Si ya existían notas, agrega la nueva en una nueva línea
                 Notas += Environment.NewLine + nota;
         }
     }

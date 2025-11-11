@@ -3,12 +3,21 @@ using System.Collections.Generic;
 
 namespace Library
 {
+    /// <summary>
+    /// Clase encargada de gestionar las operaciones relacionadas con los usuarios del sistema.
+    /// Implementa el patrón Singleton para asegurar que solo exista una instancia.
+    /// </summary>
     public class GestorUsuarios
     {
-        // Instancia única (Singleton)
+        /// <summary>
+        /// Instancia única del gestor (patrón Singleton).
+        /// </summary>
         private static GestorUsuarios instancia;
 
-        // Propiedad para acceder al Singleton 
+        /// <summary>
+        /// Propiedad pública para acceder a la instancia única del gestor.
+        /// Si no existe, la crea automáticamente.
+        /// </summary>
         public static GestorUsuarios Instancia
         {
             get
@@ -18,15 +27,27 @@ namespace Library
             }
         }
 
-        // Constructor privado (impide instanciación externa)
+        /// <summary>
+        /// Constructor privado para evitar la creación de instancias fuera de la clase.
+        /// </summary>
         private GestorUsuarios() { }
 
-        // Lista que actúa como "base de datos"
+        /// <summary>
+        /// Lista interna que actúa como base de datos de usuarios.
+        /// </summary>
         private readonly List<Usuario> usuarios = new List<Usuario>();
 
+        /// <summary>
+        /// Contador utilizado para asignar IDs automáticos a los usuarios nuevos.
+        /// </summary>
         private int proximoId = 1;
 
-        // Agregar un nuevo usuario
+        /// <summary>
+        /// Agrega un nuevo usuario al sistema.
+        /// </summary>
+        /// <param name="activo">Indica si el usuario está activo.</param>
+        /// <param name="fechaCreacion">Fecha en la que se crea el usuario.</param>
+        /// <returns>El ID asignado al nuevo usuario.</returns>
         public int AgregarUsuario(bool activo, DateTime fechaCreacion)
         {
             Usuario nuevo = new Usuario(activo, fechaCreacion)
@@ -39,7 +60,11 @@ namespace Library
             return nuevo.Id;
         }
 
-        // Obtener usuario por ID
+        /// <summary>
+        /// Obtiene un usuario a partir de su ID.
+        /// </summary>
+        /// <param name="id">Identificador único del usuario.</param>
+        /// <returns>El objeto <see cref="Usuario"/> si se encuentra; de lo contrario, null.</returns>
         public Usuario ObtenerUsuario(int id)
         {
             foreach (var usuario in usuarios)
@@ -50,7 +75,9 @@ namespace Library
             return null;
         }
 
-        // Mostrar todos los usuarios
+        /// <summary>
+        /// Muestra todos los usuarios registrados en la consola.
+        /// </summary>
         public void MostrarTodosUsuarios()
         {
             foreach (var usuario in usuarios)
@@ -59,7 +86,12 @@ namespace Library
             }
         }
 
-        // Actualizar estado de usuario
+        /// <summary>
+        /// Actualiza el estado de actividad de un usuario.
+        /// </summary>
+        /// <param name="id">Identificador del usuario.</param>
+        /// <param name="nuevoActivo">Nuevo valor de estado (activo/inactivo).</param>
+        /// <returns>True si se actualizó correctamente; false si no se encontró el usuario.</returns>
         public bool ActualizarActivo(int id, bool nuevoActivo)
         {
             Usuario usuario = ObtenerUsuario(id);
@@ -71,7 +103,11 @@ namespace Library
             return false;
         }
 
-        // Eliminar usuario por ID
+        /// <summary>
+        /// Elimina un usuario de la lista a partir de su ID.
+        /// </summary>
+        /// <param name="id">Identificador del usuario a eliminar.</param>
+        /// <returns>True si se eliminó correctamente; false si no se encontró el usuario.</returns>
         public bool EliminarUsuario(int id)
         {
             Usuario usuario = ObtenerUsuario(id);

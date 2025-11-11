@@ -1,18 +1,28 @@
 ﻿namespace Library
 {
+    /// <summary>
+    /// Representa una etiqueta que puede asociarse a clientes u otros elementos del sistema.
+    /// </summary>
     public class Etiqueta
     {
-        // Atributo privado donde guardo el nombre de la etiqueta
+        /// <summary>
+        /// Nombre de la etiqueta.
+        /// </summary>
         private string nombre;
 
-        // Constructor que recibe el nombre al crear la etiqueta
+        /// <summary>
+        /// Constructor que inicializa la etiqueta con un nombre.
+        /// </summary>
+        /// <param name="nombre">Nombre de la etiqueta.</param>
         public Etiqueta(string nombre)
         {
-            // Asigno el valor del parámetro al atributo de la clase
             this.nombre = nombre;
         }
 
-        // Método que devuelve el nombre de la etiqueta
+        /// <summary>
+        /// Devuelve el nombre de la etiqueta.
+        /// </summary>
+        /// <returns>Nombre de la etiqueta.</returns>
         public string ObtenerNombre()
         {
             return nombre;

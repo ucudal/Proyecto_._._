@@ -4,19 +4,31 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    // Esta clase gestiona la lista de clientes del sistema
-    // Permite agregar, obtener, mostrar, actualizar y eliminar clientes
+    /// <summary>
+    /// Clase que gestiona la lista de clientes del sistema.
+    /// Implementa el patrón Singleton para asegurar una sola instancia.
+    /// Permite agregar, obtener, mostrar, actualizar y eliminar clientes.
+    /// </summary>
     public class GestorClientes
     {
-        // Lista que actúa como nuestra "base de datos"
+        /// <summary>
+        /// Lista que actúa como "base de datos" de clientes.
+        /// </summary>
         private readonly List<Cliente> clientes = new List<Cliente>();
 
-        // Contador interno para asignar IDs automáticos a los clientes nuevos
+        /// <summary>
+        /// Contador interno para asignar IDs automáticos a los clientes nuevos.
+        /// </summary>
         private int proximoId = 1;
 
-        // Singleton para asegurar una sola instancia de GestorClientes
+        /// <summary>
+        /// Instancia única del gestor (Singleton).
+        /// </summary>
         private static GestorClientes instancia;
 
+        /// <summary>
+        /// Propiedad para acceder al Singleton de GestorClientes.
+        /// </summary>
         public static GestorClientes Instancia
         {
             get
@@ -25,11 +37,19 @@ namespace Library
             }
         }
 
-        // Constructor privado, esto evita la creación de instancias externas.
+        /// <summary>
+        /// Constructor privado para evitar instanciación externa.
+        /// </summary>
         private GestorClientes() { }
 
-        // Método para agregar un nuevo cliente
-        // Recibe los datos principales del cliente
+        /// <summary>
+        /// Agrega un nuevo cliente al sistema.
+        /// </summary>
+        /// <param name="nombre">Nombre del cliente.</param>
+        /// <param name="apellido">Apellido del cliente.</param>
+        /// <param name="email">Correo electrónico del cliente.</param>
+        /// <param name="telefono">Teléfono del cliente.</param>
+        /// <returns>ID asignado al nuevo cliente.</returns>
         public int AgregarCliente(string nombre, string apellido, string email, string telefono)
         {
             Cliente nuevo = new Cliente
@@ -47,7 +67,11 @@ namespace Library
             return nuevo.Id;
         }
 
-        // Método para obtener un cliente por su ID
+        /// <summary>
+        /// Obtiene un cliente por su ID.
+        /// </summary>
+        /// <param name="id">ID del cliente a buscar.</param>
+        /// <returns>Cliente encontrado o null si no existe.</returns>
         public Cliente ObtenerCliente(int id)
         {
             foreach (var c in clientes)
@@ -58,7 +82,9 @@ namespace Library
             return null;
         }
 
-        // Método para mostrar todos los clientes por consola
+        /// <summary>
+        /// Muestra todos los clientes registrados en la consola.
+        /// </summary>
         public void MostrarTodosClientes()
         {
             foreach (var c in clientes)
@@ -67,7 +93,12 @@ namespace Library
             }
         }
 
-        // Método para actualizar el email de un cliente
+        /// <summary>
+        /// Actualiza el correo electrónico de un cliente.
+        /// </summary>
+        /// <param name="id">ID del cliente a actualizar.</param>
+        /// <param name="nuevoEmail">Nuevo correo electrónico.</param>
+        /// <returns>True si se actualizó correctamente, false si no se encontró el cliente.</returns>
         public bool ActualizarEmail(int id, string nuevoEmail)
         {
             Cliente cliente = ObtenerCliente(id);
@@ -79,7 +110,11 @@ namespace Library
             return false;
         }
 
-        // Método para eliminar un cliente por su ID
+        /// <summary>
+        /// Elimina un cliente por su ID.
+        /// </summary>
+        /// <param name="id">ID del cliente a eliminar.</param>
+        /// <returns>True si se eliminó correctamente, false si no se encontró.</returns>
         public bool EliminarCliente(int id)
         {
             var cliente = ObtenerCliente(id);
@@ -90,7 +125,10 @@ namespace Library
             return false;
         }
 
-        // Opcional: exponer una copia de la lista de clientes (si se necesita fuera)
+        /// <summary>
+        /// Obtiene una copia de todos los clientes registrados.
+        /// </summary>
+        /// <returns>Lista de clientes.</returns>
         public List<Cliente> ObtenerTodosClientes()
         {
             return new List<Cliente>(clientes);

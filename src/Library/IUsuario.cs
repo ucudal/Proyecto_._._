@@ -2,16 +2,21 @@ using System;
 
 namespace Library
 {
-    // La interfaz IUsuario define las propiedades básicas
-    // que deben tener todos los tipos de usuario del sistema.
-    // Sirve como contrato para asegurar que cualquier clase que la implemente
-    // tenga un estado de "Activo" y una "FechaCreacion".
+    /// <summary>
+    /// Define las propiedades básicas que deben tener todos los tipos de usuario del sistema.
+    /// Sirve como contrato para asegurar que cualquier clase que la implemente
+    /// mantenga información sobre su estado de actividad y su fecha de creación.
+    /// </summary>
     public interface IUsuario
     {
-        // Indica si el usuario está activo o no 
+        /// <summary>
+        /// Indica si el usuario está activo o no.
+        /// </summary>
         bool Activo { get; set; }
 
-        // Fecha en la que el usuario fue creado 
+        /// <summary>
+        /// Fecha en la que el usuario fue creado o registrado en el sistema.
+        /// </summary>
         DateTime FechaCreacion { get; set; }
     }
 }
