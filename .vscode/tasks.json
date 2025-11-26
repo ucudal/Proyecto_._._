@@ -7,19 +7,21 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}",
+                "${workspaceFolder}/DiscordBotDemo.sln",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "clean",
+            "label": "publish",
             "command": "dotnet",
             "type": "process",
             "args": [
-                "clean",
-                "${workspaceFolder}"
+                "publish",
+                "${workspaceFolder}/DiscordBotDemo.sln",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -30,40 +32,10 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/src/Program/Program.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "--project",
+                "${workspaceFolder}/DiscordBotDemo.sln"
             ],
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "docs",
-            "command": "doxygen",
-            "type": "process",
-            "args": [
-                "${workspaceFolder}/docs/Doxyfile"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/docs"
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "test",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "test",
-                "${workspaceFolder}/test/LibraryTests/LibraryTests.csproj",
-                "/p:CollectCoverage=true",
-                "/p:CoverletOutputFormat=lcov",
-                "/p:CoverletOutput=lcov.info"
-            ],
-            "problemMatcher": "$msCompile",
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            }
         }
     ]
 }
