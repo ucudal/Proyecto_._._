@@ -1,49 +1,54 @@
 using System;
+using NUnit.Framework;
 using Library;
 
-namespace Program.Tests
+namespace Library.Tests
 {
-    /// <summary>
-    /// Clase de prueba para verificar el correcto funcionamiento de la clase <see cref="Correo"/>.
-    /// Contiene pruebas sobre la creación de correos y la correcta asignación de sus propiedades.
-    /// </summary>
-    public static class TestCorreo
+    [TestFixture]
+    public class CorreoTests
     {
-        /// <summary>
-        /// Ejecuta todas las pruebas de la clase <see cref="Correo"/>.
-        /// Valida el constructor y la correcta inicialización de los atributos.
-        /// </summary>
-        public static void Run()
+        [Test]
+        public void ConstructorCompleto_AsignaPropiedadesCorrectamente()
         {
-            Console.WriteLine("== TestCorreo ==");
+            var fecha = DateTime.Now;
+            string descripcion = "Correo de prueba";
+            string notas = "Notas adicionales";
+            bool respondida = true;
+            string direccion = "cliente@ejemplo.com";
 
-            // Crear una instancia de Correo con datos de ejemplo 
-            Correo correo = new Correo(
-                DateTime.Now,                  // fecha de la interacción
-                "Correo de prueba",            // descripción
-                "Mensaje enviado correctamente", // notas
-                true,                          // respondida
-                "usuario@empresa.com"          // dirección
-            );
+            var correo = new Correo(fecha, descripcion, notas, respondida, direccion);
 
-            // Verificar que el objeto fue creado correctamente 
-            if (correo != null)
-            {
-                Console.WriteLine("Correo creado correctamente.");
-            }
-            else
-            {
-                Console.WriteLine("Error: el correo no se creó correctamente.");
-            }
+            // Verificamos que todas las propiedades se asignaron correctamente
+            Assert.AreEqual(fecha, correo.Fecha);
+            Assert.AreEqual(descripcion, correo.Descripcion);
+            Assert.AreEqual(notas, correo.Notas);
+            Assert.AreEqual(respondida, correo.Respondida);
+            Assert.AreEqual(direccion, correo.Direccion);
+        }
 
-            // Mostrar los datos para validación visual
-            Console.WriteLine("Fecha: " + correo.Fecha.ToShortDateString());
-            Console.WriteLine("Descripción: Correo de prueba");
-            Console.WriteLine("Notas: Mensaje enviado correctamente");
-            Console.WriteLine("Respondida: true");
-            Console.WriteLine("Dirección: usuario@empresa.com");
+        [Test]
+        public void ConstructorVacio_CreaObjetoSinErrores()
+        {
+            // Creamos un correo usando el constructor vacío
+            var correo = new Correo();
 
-            Console.WriteLine("== Fin de TestCorreo ==\n");
+            // Verificamos que el objeto no sea nulo y tenga valores por defecto
+            Assert.IsNotNull(correo);
+            Assert.AreEqual(default(DateTime), correo.Fecha);
+            Assert.IsNull(correo.Descripcion);
+            Assert.IsNull(correo.Notas);
+            Assert.IsFalse(correo.Respondida);
+            Assert.IsNull(correo.Direccion);
+        }
+
+        [Test]
+        public void Correo_HeredadoDeInteraccion_SePuedeUsarComoInteraccion()
+        {
+            // Verificamos que un Correo es considerado una Interaccion
+            var correo = new Correo();
+            Interaccion interaccion = correo;
+
+            Assert.IsInstanceOf<Interaccion>(interaccion);
         }
     }
 }
