@@ -1,50 +1,59 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Library;
 
-namespace Library
+namespace ProyectoCRM
 {
     /// <summary>
-    /// Clase que representa un registro de ventas del sistema.
-    /// Permite almacenar y consultar ventas en un rango de fechas.
+    /// Servicio para filtrar y consultar ventas.
+    /// No almacena ventas internamente; recibe la lista desde afuera.
     /// </summary>
     public class RegistroVenta
     {
         /// <summary>
-        /// Lista que almacena todas las ventas registradas.
+        /// Lista interna opcional para almacenamiento temporal.
         /// </summary>
-        private List<Venta> ventas;
+        private readonly List<Venta> ventas;
 
         /// <summary>
-        /// Constructor que inicializa el registro de ventas.
+        /// Constructor opcional: inicializa la lista interna vacía.
         /// </summary>
-        /// <param name="ventas">Lista de ventas existente; si es null se crea una nueva lista vacía.</param>
-        public RegistroVenta(List<Venta> ventas)
+        public RegistroVenta()
         {
-            this.ventas = ventas ?? new List<Venta>();
+            ventas = new List<Venta>();
         }
 
         /// <summary>
-        /// Obtiene todas las ventas registradas dentro de un rango de fechas.
+        /// Agrega una venta a la lista interna (si se desea mantener un historial local).
         /// </summary>
-        /// <param name="desde">Fecha de inicio del rango (inclusive).</param>
-        /// <param name="hasta">Fecha de fin del rango (inclusive).</param>
-        /// <returns>Lista de ventas cuyo valor de fecha está dentro del rango especificado.</returns>
-        public List<Venta> getVentasEntre(DateTime desde, DateTime hasta)
+        /// <param name="venta">Venta a agregar.</param>
+        public void AgregarVenta(Venta venta)
         {
-            List<Venta> resultado = new List<Venta>();
-
-            // Recorre todas las ventas registradas
-            foreach (var v in ventas)
-            {
-                // Agrega la venta si su fecha está dentro del rango indicado
-                if (v.Fecha >= desde && v.Fecha <= hasta)
-                {
-                    resultado.Add(v);
-                }
-            }
-
-            // Devuelve la lista de ventas filtradas
-            return resultado;
+            if (venta == null) throw new ArgumentNullException(nameof(venta));
+            ventas.Add(venta);
         }
+
+        /// <summary>
+        /// Obtiene las ventas dentro de un rango de fechas a partir de una lista dada.
+        /// </summary>
+        /// <param name="listaVentas">Lista de ventas a filtrar.</param>
+        /// <param name="desde">Fecha de inicio.</param>
+        /// <param name="hasta">Fecha de fin.</param>
+        /// <returns>Lista de ventas filtradas.</returns>
+        public List<Venta> GetVentasEntre(IEnumerable<Venta> listaVentas, DateTime desde, DateTime hasta)
+        {
+            if (listaVentas == null) throw new ArgumentNullException(nameof(listaVentas));
+
+            return listaVentas
+                .Where(v => v.Fecha >= desde && v.Fecha <= hasta)
+                .ToList();
+        }
+
+        /// <summary>
+        /// Obtiene todas las ventas registradas en la lista interna.
+        /// </summary>
+        /// <returns>Lista de ventas internas.</returns>
+        public List<Venta> ObtenerTodas() => new List<Venta>(ventas);
     }
 }

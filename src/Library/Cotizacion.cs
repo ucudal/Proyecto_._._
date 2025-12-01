@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Library
 {
@@ -19,21 +20,18 @@ namespace Library
         public DateTime FechaEnvio { get; private set; }
 
         /// <summary>
-        /// Importe total de la cotización.
+        /// Importe total cotizado.
         /// </summary>
         public double ImporteTotal { get; private set; }
 
         /// <summary>
-        /// Constructor que inicializa todos los campos de la cotización.
+        /// Ventas generadas a partir de esta cotización.
         /// </summary>
-        /// <param name="estado">Estado de la cotización.</param>
-        /// <param name="fechaEnvio">Fecha de envío de la cotización.</param>
-        /// <param name="importeTotal">Importe total de la cotización.</param>
-        /// <param name="fecha">Fecha de la interacción.</param>
-        /// <param name="descripcion">Descripción de la interacción.</param>
-        /// <param name="notas">Notas adicionales de la interacción.</param>
-        /// <param name="respondida">Indica si la interacción fue respondida.</param>
-        /// <param name="direccion">Dirección asociada a la interacción.</param>
+        public List<Venta> VentasGeneradas { get; private set; } = new List<Venta>();
+
+        /// <summary>
+        /// Constructor principal de Cotizacion.
+        /// </summary>
         public Cotizacion(
             string estado,
             DateTime fechaEnvio,
@@ -54,5 +52,16 @@ namespace Library
         /// Constructor vacío para crear una cotización sin inicializar valores.
         /// </summary>
         public Cotizacion() : base() { }
+
+        /// <summary>
+        /// Registra una venta asociada a esta cotización.
+        /// </summary>
+        public void RegistrarVentaAsociada(Venta venta)
+        {
+            if (venta != null && !VentasGeneradas.Contains(venta))
+            {
+                VentasGeneradas.Add(venta);
+            }
+        }
     }
 }

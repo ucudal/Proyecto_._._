@@ -1,90 +1,41 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Library;
 
 namespace ProyectoCRM
 {
     /// <summary>
-    /// Clase fachada que unifica el acceso a los distintos gestores del sistema CRM.
-    /// Permite operar con usuarios, clientes, ventas, etiquetas e interacciones.
+    /// Fachada principal del CRM.
+    /// Unifica el acceso a clientes, ventas, cotizaciones, interacciones, etiquetas y usuarios.
     /// </summary>
     public class Fachada
     {
-        private GestorUsuarios gestorUsuarios;
-        private RegistroVenta registroVenta;
-        private List<Etiqueta> etiquetas;
+        private readonly GestorUsuarios gestorUsuarios;
+        private readonly RegistroVenta registroVenta;
+        private readonly List<Cliente> clientes;
+        private readonly List<Etiqueta> etiquetas;
 
         /// <summary>
-        /// Constructor: inicializa los gestores y listas internas.
+        /// Inicializa la fachada.
         /// </summary>
         public Fachada()
         {
-            // Usamos el singleton de GestorUsuarios
             gestorUsuarios = GestorUsuarios.Instancia;
-            registroVenta = new RegistroVenta(new List<Venta>());
+            registroVenta = new RegistroVenta();
+            clientes = new List<Cliente>();
             etiquetas = new List<Etiqueta>();
         }
 
-        // =============================
-        // === USUARIOS ===
-        // =============================
-
-        /// <summary>
-        /// Registra un nuevo vendedor en el sistema.
-        /// </summary>
-        /// <param name="activo">Indica si el vendedor está activo.</param>
-        /// <param name="fechaCreacion">Fecha de creación del usuario.</param>
-        /// <returns>ID asignado al vendedor.</returns>
-        public int RegistrarVendedor(bool activo, DateTime fechaCreacion)
-        {
-            return gestorUsuarios.AgregarUsuario(activo, fechaCreacion);
-        }
-
-        /// <summary>
-        /// Registra un nuevo administrador en el sistema.
-        /// </summary>
-        /// <param name="activo">Indica si el administrador está activo.</param>
-        /// <param name="fechaCreacion">Fecha de creación del usuario.</param>
-        /// <returns>ID asignado al administrador.</returns>
-        public int RegistrarAdministrador(bool activo, DateTime fechaCreacion)
-        {
-            return gestorUsuarios.AgregarUsuario(activo, fechaCreacion);
-        }
-
-        /// <summary>
-        /// Obtiene todos los usuarios registrados en el sistema.
-        /// </summary>
+        /// <summary>Obtiene todos los usuarios registrados.</summary>
         /// <returns>Lista de usuarios.</returns>
-        public List<Usuario> ObtenerUsuarios()
-        {
-            List<Usuario> lista = new List<Usuario>();
-            for (int id = 1; ; id++)
-            {
-                Usuario u = gestorUsuarios.ObtenerUsuario(id);
-                if (u == null) break;
-                lista.Add(u);
-            }
-            return lista;
-        }
+        public List<IUsuario> ObtenerUsuarios() => gestorUsuarios.ObtenerTodos();
 
-        // =============================
-        // === CLIENTES ===
-        // =============================
-
-        /// <summary>
-        /// Registra un nuevo cliente en el sistema.
-        /// </summary>
-        /// <param name="nombre">Nombre del cliente.</param>
-        /// <param name="apellido">Apellido del cliente.</param>
-        /// <param name="telefono">Teléfono del cliente.</param>
-        /// <param name="correo">Correo electrónico.</param>
-        /// <param name="descripcion">Descripción u observaciones del cliente.</param>
-        /// <param name="genero">Género del cliente.</param>
-        /// <param name="nacimiento">Fecha de nacimiento del cliente.</param>
+        /// <summary>Registra un nuevo cliente.</summary>
         public void RegistrarCliente(string nombre, string apellido, string telefono, string correo,
                                      string descripcion, string genero, DateTime nacimiento)
         {
-            Cliente nuevo = new Cliente()
+            Cliente nuevo = new Cliente
             {
                 Nombre = nombre,
                 Apellido = apellido,
@@ -95,104 +46,82 @@ namespace ProyectoCRM
                 FechaNacimiento = nacimiento,
                 FechaUltimaInteraccion = DateTime.Now
             };
-            // Podés integrar GestorClientes si querés manejar almacenamiento persistente
+            clientes.Add(nuevo);
         }
 
-        /// <summary>
-        /// Obtiene la lista de clientes registrados.
-        /// </summary>
-        /// <returns>Lista de clientes.</returns>
-        public List<Cliente> ObtenerClientes()
+        /// <summary>Modifica un cliente existente.</summary>
+        public void ModificarCliente(Cliente cliente, string nombre, string apellido, string telefono, string correo,
+                                     string descripcion, string genero, DateTime nacimiento)
         {
-            return new List<Cliente>();
+            if (cliente == null) throw new ArgumentNullException(nameof(cliente));
+
+            cliente.Nombre = nombre;
+            cliente.Apellido = apellido;
+            cliente.Telefono = telefono;
+            cliente.Email = correo;
+            cliente.Observaciones = descripcion;
+            cliente.Genero = genero;
+            cliente.FechaNacimiento = nacimiento;
         }
 
-        // =============================
-        // === VENTAS ===
-        // =============================
+        /// <summary>Elimina un cliente del sistema.</summary>
+        public bool EliminarCliente(Cliente cliente) => cliente != null && clientes.Remove(cliente);
 
-        /// <summary>
-        /// Registra una nueva venta en el sistema.
-        /// </summary>
-        /// <param name="venta">Instancia de venta a registrar.</param>
-        public void RegistrarVenta(Venta venta)
+        /// <summary>Busca clientes por nombre, apellido, teléfono o correo.</summary>
+        public List<Cliente> BuscarClientes(string criterio)
         {
-            if (venta == null)
-                throw new ArgumentNullException(nameof(venta));
+            if (string.IsNullOrWhiteSpace(criterio)) return new List<Cliente>(clientes);
 
-            // Agregamos la venta simbólicamente
-            registroVenta.getVentasEntre(venta.Fecha, venta.Fecha);
-            // Se puede agregar método AddVenta en RegistroVenta si se desea almacenamiento real
+            return clientes
+                .Where(c => c.Nombre.Contains(criterio, StringComparison.OrdinalIgnoreCase)
+                         || c.Apellido.Contains(criterio, StringComparison.OrdinalIgnoreCase)
+                         || c.Telefono.Contains(criterio)
+                         || c.Email.Contains(criterio, StringComparison.OrdinalIgnoreCase))
+                .ToList();
         }
 
-        /// <summary>
-        /// Obtiene las ventas registradas entre dos fechas.
-        /// </summary>
-        /// <param name="desde">Fecha inicial del rango.</param>
-        /// <param name="hasta">Fecha final del rango.</param>
-        /// <returns>Lista de ventas filtradas por fecha.</returns>
-        public List<Venta> ObtenerVentasEntre(DateTime desde, DateTime hasta)
+        /// <summary>Obtiene todos los clientes.</summary>
+        public List<Cliente> ObtenerClientes() => new List<Cliente>(clientes);
+
+        /// <summary>Registra una interacción de un cliente.</summary>
+        public void RegistrarInteraccion(Cliente cliente, Interaccion interaccion)
         {
-            return registroVenta.getVentasEntre(desde, hasta);
+            if (cliente == null || interaccion == null) throw new ArgumentNullException();
+
+            cliente.AgregarInteraccion(interaccion);
         }
 
-        // =============================
-        // === ETIQUETAS ===
-        // =============================
+        /// <summary>Registra una venta de un cliente.</summary>
+        public void RegistrarVenta(Cliente cliente, Venta venta)
+        {
+            if (cliente == null || venta == null) throw new ArgumentNullException();
 
-        /// <summary>
-        /// Crea una nueva etiqueta y la agrega al listado interno.
-        /// </summary>
-        /// <param name="nombre">Nombre de la etiqueta.</param>
+            cliente.AgregarInteraccion(venta);
+            registroVenta.AgregarVenta(venta);
+        }
+
+        /// <summary>Registra una cotización de un cliente.</summary>
+        public void RegistrarCotizacion(Cliente cliente, Cotizacion cotizacion)
+        {
+            if (cliente == null || cotizacion == null) throw new ArgumentNullException();
+
+            cliente.AgregarInteraccion(cotizacion);
+        }
+
+        /// <summary>Crea una nueva etiqueta.</summary>
         public void CrearEtiqueta(string nombre)
         {
-            if (!string.IsNullOrWhiteSpace(nombre))
-            {
-                etiquetas.Add(new Etiqueta(nombre));
-            }
+            if (!string.IsNullOrWhiteSpace(nombre)) etiquetas.Add(new Etiqueta(nombre));
         }
 
-        /// <summary>
-        /// Obtiene todas las etiquetas creadas.
-        /// </summary>
-        /// <returns>Lista de etiquetas.</returns>
-        public List<Etiqueta> ObtenerEtiquetas()
+        /// <summary>Obtiene todas las etiquetas.</summary>
+        public List<Etiqueta> ObtenerEtiquetas() => new List<Etiqueta>(etiquetas);
+
+        /// <summary>Agrega una etiqueta a un cliente.</summary>
+        public void AgregarEtiquetaACliente(Cliente cliente, Etiqueta etiqueta)
         {
-            return new List<Etiqueta>(etiquetas);
-        }
-
-        // =============================
-        // === INTERACCIONES ===
-        // =============================
-
-        /// <summary>
-        /// Registra una interacción de un cliente.
-        /// </summary>
-        /// <param name="cliente">Cliente al que se le asocia la interacción.</param>
-        /// <param name="descripcion">Descripción de la interacción.</param>
-        public void RegistrarInteraccion(Cliente cliente, string descripcion)
-        {
-            if (cliente == null)
-                throw new ArgumentNullException(nameof(cliente));
-            if (string.IsNullOrWhiteSpace(descripcion))
-                throw new Exception("La descripción no puede estar vacía.");
-
-            // Ejemplo: usamos Venta como tipo concreto de interacción
-            Interaccion nueva = new Venta(0, DateTime.Now, descripcion, "", false, "");
-            cliente.AgregarInteraccion(nueva);
-        }
-
-        /// <summary>
-        /// Obtiene todas las interacciones asociadas a un cliente.
-        /// </summary>
-        /// <param name="cliente">Cliente cuyo historial se desea obtener.</param>
-        /// <returns>Lista de interacciones del cliente.</returns>
-        public List<Interaccion> ObtenerInteraccionesDeCliente(Cliente cliente)
-        {
-            if (cliente == null)
-                throw new ArgumentNullException(nameof(cliente));
-
-            return cliente.GetInteracciones();
+            if (cliente == null || etiqueta == null) throw new ArgumentNullException();
+            cliente.agregarEtiqueta(etiqueta);
         }
     }
 }

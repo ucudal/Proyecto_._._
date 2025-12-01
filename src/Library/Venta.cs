@@ -14,35 +14,45 @@ namespace Library
         public double Total { get; private set; }
 
         /// <summary>
-        /// Constructor principal de <see cref="Venta"/> que inicializa todos los campos.
+        /// Cotización origen que generó esta venta (si aplica).
         /// </summary>
-        /// <param name="total">Monto total de la venta.</param>
-        /// <param name="fecha">Fecha de la venta.</param>
-        /// <param name="descripcion">Descripción de la venta.</param>
-        /// <param name="notas">Notas adicionales sobre la venta.</param>
-        /// <param name="respondida">Indica si la venta fue respondida/confirmada.</param>
-        /// <param name="direccion">Dirección asociada a la venta (ej. sucursal o cliente).</param>
-        public Venta(double total, DateTime fecha, string descripcion, string notas, bool respondida, string direccion)
-            : base(fecha, descripcion, notas, respondida, direccion)
+        public Cotizacion CotizacionOrigen { get; private set; }
+
+        /// <summary>
+        /// Constructor principal de una Venta.
+        /// </summary>
+        public Venta(
+            double total,
+            DateTime fecha,
+            string descripcion,
+            string notas,
+            bool respondida,
+            string direccion,
+            Cotizacion cotizacionOrigen = null
+        ) : base(fecha, descripcion, notas, respondida, direccion)
         {
             Total = total;
+            CotizacionOrigen = cotizacionOrigen;
+
+            // Si viene de una cotización, registramos relación bidireccional
+            cotizacionOrigen?.RegistrarVentaAsociada(this);
         }
 
         /// <summary>
-        /// Constructor por defecto de <see cref="Venta"/>.
+        /// Asocia una cotización a esta venta (si se creó sin una).
         /// </summary>
-        public Venta() : base() { }
+        public void AsociarCotizacion(Cotizacion cotizacion)
+        {
+            CotizacionOrigen = cotizacion;
+
+            cotizacion?.RegistrarVentaAsociada(this);
+        }
 
         /// <summary>
         /// Obtiene el total de la venta.
         /// </summary>
-        /// <param name="criterio1">Criterio opcional para filtrar (no implementado actualmente).</param>
-        /// <param name="criterio2">Criterio opcional para filtrar (no implementado actualmente).</param>
-        /// <returns>Devuelve el total de la venta.</returns>
         public double GetTotales(string criterio1, string criterio2)
         {
-            // Por ahora, solo devuelve el total. 
-            // Podés agregar lógica filtrando por criterio si lo necesitás más adelante.
             return Total;
         }
     }
