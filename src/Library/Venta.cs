@@ -3,8 +3,8 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// Representa una venta realizada, heredando de la clase <see cref="Interaccion"/>.
-    /// Contiene información sobre el total de la venta, fecha, descripción, notas, estado de respuesta y dirección.
+    /// Representa una venta realizada dentro del sistema.
+    /// Hereda de Interaccion porque comparte algunos datos (fecha, descripcion, notas).
     /// </summary>
     public class Venta : Interaccion
     {
@@ -14,36 +14,42 @@ namespace Library
         public double Total { get; private set; }
 
         /// <summary>
-        /// Constructor principal de <see cref="Venta"/> que inicializa todos los campos.
+        /// Cotización desde la cual se originó la venta.
         /// </summary>
-        /// <param name="total">Monto total de la venta.</param>
-        /// <param name="fecha">Fecha de la venta.</param>
-        /// <param name="descripcion">Descripción de la venta.</param>
-        /// <param name="notas">Notas adicionales sobre la venta.</param>
-        /// <param name="respondida">Indica si la venta fue respondida/confirmada.</param>
-        /// <param name="direccion">Dirección asociada a la venta (ej. sucursal o cliente).</param>
+        public Cotizacion CotizacionOrigen { get; private set; }
+
+        /// <summary>
+        /// Constructor que recibe todos los datos necesarios para crear la venta.
+        /// </summary>
         public Venta(double total, DateTime fecha, string descripcion, string notas, bool respondida, string direccion)
             : base(fecha, descripcion, notas, respondida, direccion)
         {
-            Total = total;
+            this.Total = total;
         }
 
         /// <summary>
-        /// Constructor por defecto de <see cref="Venta"/>.
+        /// Constructor por defecto.
         /// </summary>
-        public Venta() : base() { }
+        public Venta() : base()
+        {
+            // Este constructor existe solo por si se necesita crear una venta vacía.
+        }
 
         /// <summary>
-        /// Obtiene el total de la venta.
+        /// Asigna una cotización como origen de la venta.
         /// </summary>
-        /// <param name="criterio1">Criterio opcional para filtrar (no implementado actualmente).</param>
-        /// <param name="criterio2">Criterio opcional para filtrar (no implementado actualmente).</param>
-        /// <returns>Devuelve el total de la venta.</returns>
+        /// <param name="cotizacion">Cotización desde la cual se generó la venta.</param>
+        public void AsignarCotizacion(Cotizacion cotizacion)
+        {
+            this.CotizacionOrigen = cotizacion;
+        }
+
+        /// <summary>
+        /// Devuelve el total de la venta.
+        /// </summary>
         public double GetTotales(string criterio1, string criterio2)
         {
-            // Por ahora, solo devuelve el total. 
-            // Podés agregar lógica filtrando por criterio si lo necesitás más adelante.
-            return Total;
+            return this.Total;
         }
     }
 }

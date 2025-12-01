@@ -13,6 +13,7 @@ namespace ProyectoCRM
         private GestorUsuarios gestorUsuarios;
         private RegistroVenta registroVenta;
         private List<Etiqueta> etiquetas;
+        private List<Cliente> clientes;
 
         /// <summary>
         /// Constructor: inicializa los gestores y listas internas.
@@ -23,6 +24,7 @@ namespace ProyectoCRM
             gestorUsuarios = GestorUsuarios.Instancia;
             registroVenta = new RegistroVenta(new List<Venta>());
             etiquetas = new List<Etiqueta>();
+            clientes = new List<Cliente>();
         }
 
         // =============================
@@ -37,6 +39,7 @@ namespace ProyectoCRM
         /// <returns>ID asignado al vendedor.</returns>
         public int RegistrarVendedor(bool activo, DateTime fechaCreacion)
         {
+            // Más adelante podríamos diferenciar tipos de usuario (vendedor/administrador)
             return gestorUsuarios.AgregarUsuario(activo, fechaCreacion);
         }
 
@@ -48,6 +51,7 @@ namespace ProyectoCRM
         /// <returns>ID asignado al administrador.</returns>
         public int RegistrarAdministrador(bool activo, DateTime fechaCreacion)
         {
+            // Idem comentario en RegistrarVendedor
             return gestorUsuarios.AgregarUsuario(activo, fechaCreacion);
         }
 
@@ -58,12 +62,15 @@ namespace ProyectoCRM
         public List<Usuario> ObtenerUsuarios()
         {
             List<Usuario> lista = new List<Usuario>();
+
+            // Este esquema asume IDs consecutivos comenzando en 1
             for (int id = 1; ; id++)
             {
                 Usuario u = gestorUsuarios.ObtenerUsuario(id);
                 if (u == null) break;
                 lista.Add(u);
             }
+
             return lista;
         }
 
@@ -95,7 +102,10 @@ namespace ProyectoCRM
                 FechaNacimiento = nacimiento,
                 FechaUltimaInteraccion = DateTime.Now
             };
-            // Podés integrar GestorClientes si querés manejar almacenamiento persistente
+
+            // Por ahora lo almacenamos en la lista interna de la fachada.
+            // Más adelante se puede delegar a un GestorClientes.
+            clientes.Add(nuevo);
         }
 
         /// <summary>
@@ -104,7 +114,8 @@ namespace ProyectoCRM
         /// <returns>Lista de clientes.</returns>
         public List<Cliente> ObtenerClientes()
         {
-            return new List<Cliente>();
+            // Devolvemos una copia para no exponer la lista interna.
+            return new List<Cliente>(clientes);
         }
 
         // =============================
@@ -118,11 +129,42 @@ namespace ProyectoCRM
         public void RegistrarVenta(Venta venta)
         {
             if (venta == null)
+            {
                 throw new ArgumentNullException(nameof(venta));
+            }
 
-            // Agregamos la venta simbólicamente
-            registroVenta.getVentasEntre(venta.Fecha, venta.Fecha);
-            // Se puede agregar método AddVenta en RegistroVenta si se desea almacenamiento real
+            // La responsabilidad de almacenar la venta es de RegistroVenta.
+            registroVenta.AgregarVenta(venta);
+        }
+
+        /// <summary>
+        /// Registra una nueva venta a partir de una cotización.
+        /// De esta forma se mantiene la relación entre Venta y Cotizacion.
+        /// </summary>
+        /// <param name="cotizacion">Cotización desde la cual se genera la venta.</param>
+        /// <param name="total">Total de la venta.</param>
+        public void RegistrarVentaDesdeCotizacion(Cotizacion cotizacion, double total)
+        {
+            if (cotizacion == null)
+            {
+                throw new ArgumentNullException(nameof(cotizacion));
+            }
+
+            // Creamos la venta a partir de la cotización
+            Venta venta = new Venta(
+                total,
+                DateTime.Now,
+                "Venta desde cotización",
+                "",
+                false,
+                ""
+            );
+
+            // Relacionamos la venta con la cotización de origen
+            venta.AsignarCotizacion(cotizacion);
+
+            // Registramos la venta en el registro de ventas
+            registroVenta.AgregarVenta(venta);
         }
 
         /// <summary>
@@ -133,6 +175,7 @@ namespace ProyectoCRM
         /// <returns>Lista de ventas filtradas por fecha.</returns>
         public List<Venta> ObtenerVentasEntre(DateTime desde, DateTime hasta)
         {
+            // Este método delega en RegistroVenta.
             return registroVenta.getVentasEntre(desde, hasta);
         }
 
@@ -166,20 +209,24 @@ namespace ProyectoCRM
         // =============================
 
         /// <summary>
-        /// Registra una interacción de un cliente.
+        /// Registra una interacción asociada a un cliente.
+        /// La interacción concreta (llamada, mensaje, reunión, etc.) se construye fuera de la fachada.
         /// </summary>
         /// <param name="cliente">Cliente al que se le asocia la interacción.</param>
-        /// <param name="descripcion">Descripción de la interacción.</param>
-        public void RegistrarInteraccion(Cliente cliente, string descripcion)
+        /// <param name="interaccion">Interacción ya construida.</param>
+        public void RegistrarInteraccion(Cliente cliente, Interaccion interaccion)
         {
             if (cliente == null)
+            {
                 throw new ArgumentNullException(nameof(cliente));
-            if (string.IsNullOrWhiteSpace(descripcion))
-                throw new Exception("La descripción no puede estar vacía.");
+            }
 
-            // Ejemplo: usamos Venta como tipo concreto de interacción
-            Interaccion nueva = new Venta(0, DateTime.Now, descripcion, "", false, "");
-            cliente.AgregarInteraccion(nueva);
+            if (interaccion == null)
+            {
+                throw new ArgumentNullException(nameof(interaccion));
+            }
+
+            cliente.AgregarInteraccion(interaccion);
         }
 
         /// <summary>
@@ -190,7 +237,9 @@ namespace ProyectoCRM
         public List<Interaccion> ObtenerInteraccionesDeCliente(Cliente cliente)
         {
             if (cliente == null)
+            {
                 throw new ArgumentNullException(nameof(cliente));
+            }
 
             return cliente.GetInteracciones();
         }

@@ -22,15 +22,20 @@ namespace Library
         {
             get
             {
-                // Crea la instancia si no existe
-                return instancia ?? (instancia = new GestorUsuarios());
+                if (instancia == null)
+                {
+                    instancia = new GestorUsuarios();
+                }
+                return instancia;
             }
         }
 
         /// <summary>
         /// Constructor privado para evitar la creación de instancias fuera de la clase.
         /// </summary>
-        private GestorUsuarios() { }
+        private GestorUsuarios()
+        {
+        }
 
         /// <summary>
         /// Lista interna que actúa como base de datos de usuarios.
@@ -52,11 +57,11 @@ namespace Library
         {
             Usuario nuevo = new Usuario(activo, fechaCreacion)
             {
-                Id = proximoId
+                Id = this.proximoId
             };
 
-            usuarios.Add(nuevo);
-            proximoId++;
+            this.usuarios.Add(nuevo);
+            this.proximoId++;
             return nuevo.Id;
         }
 
@@ -64,25 +69,30 @@ namespace Library
         /// Obtiene un usuario a partir de su ID.
         /// </summary>
         /// <param name="id">Identificador único del usuario.</param>
-        /// <returns>El objeto <see cref="Usuario"/> si se encuentra; de lo contrario, null.</returns>
+        /// <returns>El objeto Usuario si se encuentra; de lo contrario, null.</returns>
         public Usuario ObtenerUsuario(int id)
         {
-            foreach (var usuario in usuarios)
+            foreach (Usuario usuario in this.usuarios)
             {
                 if (usuario.Id == id)
+                {
                     return usuario;
+                }
             }
             return null;
         }
 
         /// <summary>
         /// Muestra todos los usuarios registrados en la consola.
+        /// Este método se puede usar para pruebas simples en la capa de presentación.
         /// </summary>
         public void MostrarTodosUsuarios()
         {
-            foreach (var usuario in usuarios)
+            foreach (Usuario usuario in this.usuarios)
             {
-                Console.WriteLine($"ID: {usuario.Id}, Activo: {(usuario.Activo ? "Sí" : "No")}, FechaCreacion: {usuario.FechaCreacion.ToShortDateString()}");
+                Console.WriteLine(
+                    $"ID: {usuario.Id}, Activo: {(usuario.Activo ? "Sí" : "No")}, FechaCreacion: {usuario.FechaCreacion.ToShortDateString()}"
+                );
             }
         }
 
@@ -94,7 +104,7 @@ namespace Library
         /// <returns>True si se actualizó correctamente; false si no se encontró el usuario.</returns>
         public bool ActualizarActivo(int id, bool nuevoActivo)
         {
-            Usuario usuario = ObtenerUsuario(id);
+            Usuario usuario = this.ObtenerUsuario(id);
             if (usuario != null)
             {
                 usuario.Activo = nuevoActivo;
@@ -110,10 +120,10 @@ namespace Library
         /// <returns>True si se eliminó correctamente; false si no se encontró el usuario.</returns>
         public bool EliminarUsuario(int id)
         {
-            Usuario usuario = ObtenerUsuario(id);
+            Usuario usuario = this.ObtenerUsuario(id);
             if (usuario != null)
             {
-                usuarios.Remove(usuario);
+                this.usuarios.Remove(usuario);
                 return true;
             }
             return false;

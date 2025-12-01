@@ -24,6 +24,18 @@ namespace Library
         }
 
         /// <summary>
+        /// Agrega una venta al registro.
+        /// </summary>
+        /// <param name="venta">Venta a registrar.</param>
+        public void AgregarVenta(Venta venta)
+        {
+            if (venta != null)
+            {
+                this.ventas.Add(venta);
+            }
+        }
+
+        /// <summary>
         /// Obtiene todas las ventas registradas dentro de un rango de fechas.
         /// </summary>
         /// <param name="desde">Fecha de inicio del rango (inclusive).</param>
@@ -33,17 +45,14 @@ namespace Library
         {
             List<Venta> resultado = new List<Venta>();
 
-            // Recorre todas las ventas registradas
-            foreach (var v in ventas)
+            foreach (Venta v in this.ventas)
             {
-                // Agrega la venta si su fecha está dentro del rango indicado
                 if (v.Fecha >= desde && v.Fecha <= hasta)
                 {
                     resultado.Add(v);
                 }
             }
 
-            // Devuelve la lista de ventas filtradas
             return resultado;
         }
     }

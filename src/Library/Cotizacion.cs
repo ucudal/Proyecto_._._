@@ -3,8 +3,8 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// Representa una cotización asociada a un cliente o interacción.
-    /// Hereda de Interaccion.
+    /// Representa una cotización realizada en el sistema.
+    /// Hereda de Interaccion porque comparte los datos básicos (fecha, descripcion, notas, etc.).
     /// </summary>
     public class Cotizacion : Interaccion
     {
@@ -24,16 +24,8 @@ namespace Library
         public double ImporteTotal { get; private set; }
 
         /// <summary>
-        /// Constructor que inicializa todos los campos de la cotización.
+        /// Constructor que permite crear una cotización con todos los datos necesarios.
         /// </summary>
-        /// <param name="estado">Estado de la cotización.</param>
-        /// <param name="fechaEnvio">Fecha de envío de la cotización.</param>
-        /// <param name="importeTotal">Importe total de la cotización.</param>
-        /// <param name="fecha">Fecha de la interacción.</param>
-        /// <param name="descripcion">Descripción de la interacción.</param>
-        /// <param name="notas">Notas adicionales de la interacción.</param>
-        /// <param name="respondida">Indica si la interacción fue respondida.</param>
-        /// <param name="direccion">Dirección asociada a la interacción.</param>
         public Cotizacion(
             string estado,
             DateTime fechaEnvio,
@@ -45,14 +37,17 @@ namespace Library
             string direccion
         ) : base(fecha, descripcion, notas, respondida, direccion)
         {
-            Estado = estado;
-            FechaEnvio = fechaEnvio;
-            ImporteTotal = importeTotal;
+            this.Estado = estado;
+            this.FechaEnvio = fechaEnvio;
+            this.ImporteTotal = importeTotal;
         }
 
         /// <summary>
-        /// Constructor vacío para crear una cotización sin inicializar valores.
+        /// Constructor por defecto.
         /// </summary>
-        public Cotizacion() : base() { }
+        public Cotizacion() : base()
+        {
+            // Este constructor deja los valores por defecto.
+        }
     }
 }
