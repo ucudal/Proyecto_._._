@@ -3,8 +3,8 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// Representa una venta realizada dentro del sistema.
-    /// Hereda de Interaccion porque comparte algunos datos (fecha, descripcion, notas).
+    /// Representa una venta realizada, heredando de la clase <see cref="Interaccion"/>.
+    /// Contiene información sobre el total de la venta, fecha, descripción, notas, estado de respuesta y dirección.
     /// </summary>
     public class Venta : Interaccion
     {
@@ -14,42 +14,46 @@ namespace Library
         public double Total { get; private set; }
 
         /// <summary>
-        /// Cotización desde la cual se originó la venta.
+        /// Cotización origen que generó esta venta (si aplica).
         /// </summary>
         public Cotizacion CotizacionOrigen { get; private set; }
 
         /// <summary>
-        /// Constructor que recibe todos los datos necesarios para crear la venta.
+        /// Constructor principal de una Venta.
         /// </summary>
-        public Venta(double total, DateTime fecha, string descripcion, string notas, bool respondida, string direccion)
-            : base(fecha, descripcion, notas, respondida, direccion)
+        public Venta(
+            double total,
+            DateTime fecha,
+            string descripcion,
+            string notas,
+            bool respondida,
+            string direccion,
+            Cotizacion cotizacionOrigen = null
+        ) : base(fecha, descripcion, notas, respondida, direccion)
         {
-            this.Total = total;
+            Total = total;
+            CotizacionOrigen = cotizacionOrigen;
+
+            // Si viene de una cotización, registramos relación bidireccional
+            cotizacionOrigen?.RegistrarVentaAsociada(this);
         }
 
         /// <summary>
-        /// Constructor por defecto.
+        /// Asocia una cotización a esta venta (si se creó sin una).
         /// </summary>
-        public Venta() : base()
+        public void AsociarCotizacion(Cotizacion cotizacion)
         {
-            // Este constructor existe solo por si se necesita crear una venta vacía.
+            CotizacionOrigen = cotizacion;
+
+            cotizacion?.RegistrarVentaAsociada(this);
         }
 
         /// <summary>
-        /// Asigna una cotización como origen de la venta.
-        /// </summary>
-        /// <param name="cotizacion">Cotización desde la cual se generó la venta.</param>
-        public void AsignarCotizacion(Cotizacion cotizacion)
-        {
-            this.CotizacionOrigen = cotizacion;
-        }
-
-        /// <summary>
-        /// Devuelve el total de la venta.
+        /// Obtiene el total de la venta.
         /// </summary>
         public double GetTotales(string criterio1, string criterio2)
         {
-            return this.Total;
+            return Total;
         }
     }
 }

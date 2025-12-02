@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace Library
 {
     /// <summary>
-    /// Representa una cotización realizada en el sistema.
-    /// Hereda de Interaccion porque comparte los datos básicos (fecha, descripcion, notas, etc.).
+    /// Representa una cotización asociada a un cliente o interacción.
+    /// Hereda de Interaccion.
     /// </summary>
     public class Cotizacion : Interaccion
     {
@@ -19,12 +20,17 @@ namespace Library
         public DateTime FechaEnvio { get; private set; }
 
         /// <summary>
-        /// Importe total de la cotización.
+        /// Importe total cotizado.
         /// </summary>
         public double ImporteTotal { get; private set; }
 
         /// <summary>
-        /// Constructor que permite crear una cotización con todos los datos necesarios.
+        /// Ventas generadas a partir de esta cotización.
+        /// </summary>
+        public List<Venta> VentasGeneradas { get; private set; } = new List<Venta>();
+
+        /// <summary>
+        /// Constructor principal de Cotizacion.
         /// </summary>
         public Cotizacion(
             string estado,
@@ -37,17 +43,25 @@ namespace Library
             string direccion
         ) : base(fecha, descripcion, notas, respondida, direccion)
         {
-            this.Estado = estado;
-            this.FechaEnvio = fechaEnvio;
-            this.ImporteTotal = importeTotal;
+            Estado = estado;
+            FechaEnvio = fechaEnvio;
+            ImporteTotal = importeTotal;
         }
 
         /// <summary>
-        /// Constructor por defecto.
+        /// Constructor vacío para crear una cotización sin inicializar valores.
         /// </summary>
-        public Cotizacion() : base()
+        public Cotizacion() : base() { }
+
+        /// <summary>
+        /// Registra una venta asociada a esta cotización.
+        /// </summary>
+        public void RegistrarVentaAsociada(Venta venta)
         {
-            // Este constructor deja los valores por defecto.
+            if (venta != null && !VentasGeneradas.Contains(venta))
+            {
+                VentasGeneradas.Add(venta);
+            }
         }
     }
 }

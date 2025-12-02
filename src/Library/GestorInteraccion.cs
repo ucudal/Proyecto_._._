@@ -9,30 +9,27 @@ namespace Library
     /// </summary>
     public class GestorInteracciones
     {
-        /// <summary>
-        /// Lista que almacena todas las interacciones registradas.
-        /// </summary>
-        public List<Interaccion> interacciones = new List<Interaccion>();
-
+        private static GestorInteracciones instancia;
         private int proximoId = 1;
 
         /// <summary>
-        /// Instancia única del gestor (Singleton).
+        /// Lista que almacena todas las interacciones registradas.
         /// </summary>
-        private static GestorInteracciones instancia;
+        public List<Interaccion> interacciones { get; } = new List<Interaccion>();
+
+        private GestorInteracciones() { }
 
         /// <summary>
-        /// Propiedad para acceder al Singleton del gestor de interacciones.
+        /// Obtiene la instancia única del gestor.
         /// </summary>
         public static GestorInteracciones Instancia
         {
-            get { return instancia ?? (instancia = new GestorInteracciones()); }
+            get
+            {
+                if (instancia == null) instancia = new GestorInteracciones();
+                return instancia;
+            }
         }
-
-        /// <summary>
-        /// Constructor privado para impedir instanciación externa.
-        /// </summary>
-        private GestorInteracciones() { }
 
         /// <summary>
         /// Agrega una nueva interacción al sistema según el tipo especificado.
@@ -43,31 +40,37 @@ namespace Library
         /// <param name="notas">Notas adicionales de la interacción.</param>
         /// <param name="respondida">Indica si la interacción fue respondida.</param>
         /// <param name="direccion">Dirección asociada a la interacción.</param>
-        /// <returns>ID asignado a la nueva interacción o -1 si el tipo es inválido.</returns>
+        /// <returns>ID asignado a la nueva interacción.</returns>
+        /// <exception cref="ArgumentException">Si el tipo de interacción no es válido.</exception>
         public int AgregarInteraccion(string tipo, DateTime fecha, string descripcion, string notas, bool respondida, string direccion)
         {
-            Interaccion nueva = null;
+            if (string.IsNullOrWhiteSpace(tipo)) throw new ArgumentNullException(nameof(tipo));
 
-            switch (tipo.ToLower())
+            Interaccion nueva;
+
+            switch (tipo.Trim().ToLowerInvariant())
             {
                 case "llamada":
                     nueva = new Llamada();
                     break;
                 case "reunion":
+                case "reunión":
                     nueva = new Reunion();
                     break;
                 case "mensaje":
                     nueva = new Mensaje();
                     break;
                 case "correo":
+                case "e-mail":
+                case "email":
                     nueva = new Correo();
                     break;
                 default:
-                    Console.WriteLine("Tipo de interacción no válido.");
-                    return -1;
+                    // En lugar de escribir en consola, lanzamos una excepción (la UI deberá capturarla).
+                    throw new ArgumentException($"Tipo de interacción no válido: '{tipo}'", nameof(tipo));
             }
 
-            nueva.Id = proximoId;
+            nueva.Id = proximoId++;
             nueva.Fecha = fecha;
             nueva.Descripcion = descripcion;
             nueva.Notas = notas;
@@ -75,59 +78,31 @@ namespace Library
             nueva.Direccion = direccion;
 
             interacciones.Add(nueva);
-            proximoId++;
-
             return nueva.Id;
         }
 
         /// <summary>
-        /// Obtiene una interacción por su ID.
+        /// Obtiene una interacción por su id.
         /// </summary>
-        /// <param name="id">ID de la interacción a buscar.</param>
-        /// <returns>La interacción encontrada o null si no existe.</returns>
-        public Interaccion ObtenerInteraccion(int id)
+        public Interaccion ObtenerPorId(int id)
         {
-            for (int i = 0; i < interacciones.Count; i++)
-            {
-                if (interacciones[i].Id == id)
-                    return interacciones[i];
-            }
-            return null;
+            return interacciones.Find(i => i.Id == id);
         }
 
         /// <summary>
-        /// Muestra todas las interacciones registradas por consola.
+        /// Elimina una interacción por su id.
         /// </summary>
-        public void MostrarTodasInteracciones()
-        {
-            for (int i = 0; i < interacciones.Count; i++)
-            {
-                Interaccion inter = interacciones[i];
-                Console.WriteLine("ID: " + inter.Id +
-                                  ", Tipo: " + inter.GetType().Name +
-                                  ", Fecha: " + inter.Fecha.ToShortDateString() +
-                                  ", Descripción: " + inter.Descripcion +
-                                  ", Respondida: " + (inter.Respondida ? "Sí" : "No") +
-                                  ", Dirección: " + inter.Direccion);
-            }
-        }
-
-        /// <summary>
-        /// Elimina una interacción por su ID.
-        /// </summary>
-        /// <param name="id">ID de la interacción a eliminar.</param>
-        /// <returns>True si se eliminó correctamente; false si no se encontró.</returns>
+        /// <returns>True si se eliminó; false si no se encontró.</returns>
         public bool EliminarInteraccion(int id)
         {
-            for (int i = 0; i < interacciones.Count; i++)
+            var idx = interacciones.FindIndex(i => i.Id == id);
+            if (idx >= 0)
             {
-                if (interacciones[i].Id == id)
-                {
-                    interacciones.RemoveAt(i);
-                    return true;
-                }
+                interacciones.RemoveAt(idx);
+                return true;
             }
             return false;
         }
+
     }
 }

@@ -1,59 +1,86 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Library;
 
-namespace Library
+namespace ProyectoCRM
 {
     /// <summary>
-    /// Clase que representa un registro de ventas del sistema.
-    /// Permite almacenar y consultar ventas en un rango de fechas.
+    /// Servicio para filtrar y consultar ventas.
+    /// Puede operar sobre una lista externa (proporcionada) o mantener una lista interna.
     /// </summary>
     public class RegistroVenta
     {
         /// <summary>
-        /// Lista que almacena todas las ventas registradas.
+        /// Lista interna opcional para almacenamiento temporal. Puede ser null si se desea solo operar con listas externas.
         /// </summary>
-        private List<Venta> ventas;
+        private readonly List<Venta> ventas;
 
         /// <summary>
-        /// Constructor que inicializa el registro de ventas.
+        /// Crea una instancia de RegistroVenta sin almacenamiento interno.
         /// </summary>
-        /// <param name="ventas">Lista de ventas existente; si es null se crea una nueva lista vacía.</param>
-        public RegistroVenta(List<Venta> ventas)
+        public RegistroVenta()
         {
-            this.ventas = ventas ?? new List<Venta>();
+            this.ventas = new List<Venta>();
         }
 
         /// <summary>
-        /// Agrega una venta al registro.
+        /// Crea una instancia de RegistroVenta con una lista inicial opcional.
+        /// </summary>
+        /// <param name="ventasIniciales">Lista inicial de ventas (puede ser null).</param>
+        public RegistroVenta(IEnumerable<Venta> ventasIniciales)
+        {
+            this.ventas = ventasIniciales != null ? new List<Venta>(ventasIniciales) : new List<Venta>();
+        }
+
+        /// <summary>
+        /// Registra una venta en la lista interna.
         /// </summary>
         /// <param name="venta">Venta a registrar.</param>
-        public void AgregarVenta(Venta venta)
+        public void RegistrarVentaInterna(Venta venta)
         {
-            if (venta != null)
+            if (venta == null) throw new ArgumentNullException(nameof(venta));
+            if (!ventas.Contains(venta))
             {
-                this.ventas.Add(venta);
+                ventas.Add(venta);
             }
         }
 
         /// <summary>
-        /// Obtiene todas las ventas registradas dentro de un rango de fechas.
+        /// Busca ventas dentro de una lista proporcionada entre dos fechas (inclusive).
         /// </summary>
-        /// <param name="desde">Fecha de inicio del rango (inclusive).</param>
-        /// <param name="hasta">Fecha de fin del rango (inclusive).</param>
-        /// <returns>Lista de ventas cuyo valor de fecha está dentro del rango especificado.</returns>
-        public List<Venta> getVentasEntre(DateTime desde, DateTime hasta)
+        /// <param name="listaVentas">Lista de ventas donde buscar. No puede ser null.</param>
+        /// <param name="desde">Fecha desde (inclusive).</param>
+        /// <param name="hasta">Fecha hasta (inclusive).</param>
+        /// <returns>Lista de ventas que cumplen el criterio.</returns>
+        public List<Venta> BuscarPorRango(IEnumerable<Venta> listaVentas, DateTime desde, DateTime hasta)
         {
-            List<Venta> resultado = new List<Venta>();
+            if (listaVentas == null) throw new ArgumentNullException(nameof(listaVentas));
+            if (desde > hasta) throw new ArgumentException("La fecha 'desde' no puede ser posterior a 'hasta'.");
 
-            foreach (Venta v in this.ventas)
-            {
-                if (v.Fecha >= desde && v.Fecha <= hasta)
-                {
-                    resultado.Add(v);
-                }
-            }
+            return listaVentas
+                .Where(v => v != null && v.Fecha >= desde && v.Fecha <= hasta)
+                .ToList();
+        }
 
-            return resultado;
+        /// <summary>
+        /// Busca ventas en la lista interna entre dos fechas (inclusive).
+        /// </summary>
+        /// <param name="desde">Fecha desde (inclusive).</param>
+        /// <param name="hasta">Fecha hasta (inclusive).</param>
+        /// <returns>Lista de ventas internas que cumplen el criterio.</returns>
+        public List<Venta> BuscarEnInternasPorRango(DateTime desde, DateTime hasta)
+        {
+            return BuscarPorRango(this.ventas, desde, hasta);
+        }
+
+        /// <summary>
+        /// Obtiene todas las ventas registradas en la lista interna.
+        /// </summary>
+        /// <returns>Lista de ventas internas (copia).</returns>
+        public List<Venta> ObtenerTodas()
+        {
+            return new List<Venta>(ventas);
         }
     }
 }

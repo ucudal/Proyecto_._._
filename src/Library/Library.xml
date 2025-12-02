@@ -4,32 +4,766 @@
         <name>Library</name>
     </assembly>
     <members>
-        <member name="T:ClassLibrary.Train">
+        <member name="T:Library.Administrador">
             <summary>
-            Esta clase representa un tren muy básico.
+            Representa un administrador del sistema.
+            Puede crear y administrar usuarios.
             </summary>
         </member>
-        <member name="P:ClassLibrary.Train.IsEngineStarted">
+        <member name="M:Library.Administrador.CrearVendedor">
             <summary>
-            Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
+            Solicita crear un nuevo vendedor.
             </summary>
-            <value><c>true</c> si las máquinas fueron encendidas, <c>false</c> en caso contrario.</value>
         </member>
-        <member name="M:ClassLibrary.Train.StartEngines">
+        <member name="M:Library.Administrador.CrearAdministrador">
             <summary>
-            Enciende las máquinas del tren.
+            Solicita crear otro administrador.
             </summary>
-            <returns>
-            <c>true</c> si las máquinas pueden ser encendidas, <c>false</c> en caso contrario.
-            </returns>
         </member>
-        <member name="M:ClassLibrary.Train.StopEngines">
+        <member name="M:Library.Administrador.SuspenderUsuario(System.Int32)">
             <summary>
-            Detiene las máquinas del tren.
+            Suspende a un usuario (Activa = false).
             </summary>
-            <returns>
-            <c>true</c> si las máquinas pueden ser detenidas, <c>false</c> en caso contrario.
-            </returns>
+            <returns>true si la operación tuvo éxito.</returns>
+        </member>
+        <member name="M:Library.Administrador.EliminarUsuario(System.Int32)">
+            <summary>
+            Elimina a un usuario del sistema.
+            </summary>
+        </member>
+        <member name="M:Library.Administrador.ObtenerUsuarios">
+            <summary>
+            Devuelve la lista de usuarios registrados en el sistema.
+            </summary>
+        </member>
+        <member name="T:Library.Cliente">
+            <summary>
+            Representa un cliente dentro del sistema CRM.
+            Contiene información personal, etiquetas, interacciones y un vendedor asignado.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.Id">
+            <summary>
+            Identificador único del cliente.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.Nombre">
+            <summary>
+            Nombre del cliente.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.Apellido">
+            <summary>
+            Apellido del cliente.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.Telefono">
+            <summary>
+            Teléfono de contacto del cliente.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.Email">
+            <summary>
+            Correo electrónico del cliente.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.Observaciones">
+            <summary>
+            Observaciones adicionales sobre el cliente.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.Genero">
+            <summary>
+            Género del cliente.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.FechaNacimiento">
+            <summary>
+            Fecha de nacimiento del cliente.
+            </summary>
+        </member>
+        <member name="P:Library.Cliente.FechaUltimaInteraccion">
+            <summary>
+            Fecha de la última interacción registrada con el cliente.
+            </summary>
+        </member>
+        <member name="F:Library.Cliente.etiquetas">
+            <summary>
+            Lista interna de etiquetas asociadas al cliente.
+            </summary>
+        </member>
+        <member name="F:Library.Cliente.interacciones">
+            <summary>
+            Lista interna de interacciones asociadas al cliente.
+            </summary>
+        </member>
+        <member name="F:Library.Cliente.vendedorAsignado">
+            <summary>
+            Vendedor asignado al cliente. Puede ser nulo si no hay uno asignado.
+            </summary>
+        </member>
+        <member name="M:Library.Cliente.#ctor">
+            <summary>
+            Constructor por defecto.
+            Inicializa la fecha de última interacción con la fecha actual.
+            </summary>
+        </member>
+        <member name="M:Library.Cliente.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Constructor completo del cliente.
+            </summary>
+            <param name="nombre">Nombre del cliente.</param>
+            <param name="apellido">Apellido del cliente.</param>
+            <param name="telefono">Teléfono de contacto.</param>
+            <param name="email">Correo electrónico.</param>
+            <param name="observaciones">Observaciones adicionales.</param>
+            <param name="genero">Género del cliente.</param>
+            <param name="fechaNacimiento">Fecha de nacimiento.</param>
+            <param name="fechaUltimaInteraccion">Fecha de última interacción.</param>
+        </member>
+        <member name="M:Library.Cliente.GetEtiquetas">
+            <summary>
+            Devuelve una copia de la lista de etiquetas del cliente.
+            </summary>
+            <returns>Lista de etiquetas.</returns>
+        </member>
+        <member name="M:Library.Cliente.GetInteracciones">
+            <summary>
+            Devuelve una copia de la lista de interacciones del cliente.
+            </summary>
+            <returns>Lista de interacciones.</returns>
+        </member>
+        <member name="M:Library.Cliente.agregarEtiqueta(Library.Etiqueta)">
+            <summary>
+            Agrega una etiqueta al cliente.
+            </summary>
+            <param name="etiqueta">Etiqueta a agregar.</param>
+        </member>
+        <member name="M:Library.Cliente.asignarAVendedor(Library.IUsuario)">
+            <summary>
+            Asigna un vendedor al cliente.
+            </summary>
+            <param name="usuario">Usuario vendedor a asignar.</param>
+        </member>
+        <member name="M:Library.Cliente.getInteraccionesFiltradas(System.String,System.String,System.String)">
+            <summary>
+            Devuelve una lista filtrada de interacciones según los parámetros dados.
+            (Actualmente devuelve todas las interacciones sin filtrar.)
+            </summary>
+            <param name="filtro1">Primer criterio de filtro.</param>
+            <param name="filtro2">Segundo criterio de filtro.</param>
+            <param name="filtro3">Tercer criterio de filtro.</param>
+            <returns>Lista filtrada de interacciones.</returns>
+        </member>
+        <member name="M:Library.Cliente.tieneInteraccionesSinRespuesta">
+            <summary>
+            Verifica si el cliente tiene alguna interacción pendiente de respuesta.
+            </summary>
+            <returns>True si existen interacciones sin respuesta, False en caso contrario.</returns>
+        </member>
+        <member name="M:Library.Cliente.esInactivo(System.String)">
+            <summary>
+            Determina si el cliente se considera inactivo según la cantidad de días especificada.
+            </summary>
+            <param name="dias">Cantidad de días de inactividad.</param>
+            <returns>True si supera el umbral, False en caso contrario.</returns>
+        </member>
+        <member name="M:Library.Cliente.AgregarInteraccion(Library.Interaccion)">
+            <summary>
+            Agrega una nueva interacción al cliente y actualiza la fecha de última interacción.
+            </summary>
+            <param name="interaccion">Interacción a agregar.</param>
+        </member>
+        <member name="T:Library.Correo">
+            <summary>
+            Representa un correo electrónico enviado o recibido como interacción con un cliente.
+            Hereda de la clase Interaccion.
+            </summary>
+        </member>
+        <member name="M:Library.Correo.#ctor(System.DateTime,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Constructor que inicializa todas las propiedades de la interacción.
+            </summary>
+            <param name="fecha">Fecha de la interacción.</param>
+            <param name="descripcion">Breve descripción del correo.</param>
+            <param name="notas">Notas adicionales relacionadas con el correo.</param>
+            <param name="respondida">Indica si la interacción fue respondida.</param>
+            <param name="direccion">Dirección de correo asociada.</param>
+        </member>
+        <member name="M:Library.Correo.#ctor">
+            <summary>
+            Constructor vacío para permitir crear un objeto sin inicializar propiedades.
+            Útil, por ejemplo, al usar GestorInteracciones.
+            </summary>
+        </member>
+        <member name="T:Library.Cotizacion">
+            <summary>
+            Representa una cotización asociada a un cliente o interacción.
+            Hereda de Interaccion.
+            </summary>
+        </member>
+        <member name="P:Library.Cotizacion.Estado">
+            <summary>
+            Estado de la cotización (por ejemplo: Pendiente, Aceptada, Rechazada).
+            </summary>
+        </member>
+        <member name="P:Library.Cotizacion.FechaEnvio">
+            <summary>
+            Fecha en que se envió la cotización.
+            </summary>
+        </member>
+        <member name="P:Library.Cotizacion.ImporteTotal">
+            <summary>
+            Importe total cotizado.
+            </summary>
+        </member>
+        <member name="P:Library.Cotizacion.VentasGeneradas">
+            <summary>
+            Ventas generadas a partir de esta cotización.
+            </summary>
+        </member>
+        <member name="M:Library.Cotizacion.#ctor(System.String,System.DateTime,System.Double,System.DateTime,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Constructor principal de Cotizacion.
+            </summary>
+        </member>
+        <member name="M:Library.Cotizacion.#ctor">
+            <summary>
+            Constructor vacío para crear una cotización sin inicializar valores.
+            </summary>
+        </member>
+        <member name="M:Library.Cotizacion.RegistrarVentaAsociada(Library.Venta)">
+            <summary>
+            Registra una venta asociada a esta cotización.
+            </summary>
+        </member>
+        <member name="T:Library.Etiqueta">
+            <summary>
+            Representa una etiqueta que puede asociarse a clientes u otros elementos del sistema.
+            </summary>
+        </member>
+        <member name="F:Library.Etiqueta.nombre">
+            <summary>
+            Nombre de la etiqueta.
+            </summary>
+        </member>
+        <member name="M:Library.Etiqueta.#ctor(System.String)">
+            <summary>
+            Constructor que inicializa la etiqueta con un nombre.
+            </summary>
+            <param name="nombre">Nombre de la etiqueta.</param>
+        </member>
+        <member name="M:Library.Etiqueta.ObtenerNombre">
+            <summary>
+            Devuelve el nombre de la etiqueta.
+            </summary>
+            <returns>Nombre de la etiqueta.</returns>
+        </member>
+        <member name="T:Library.GestorClientes">
+            <summary>
+            Repositorio central de clientes del sistema.
+            Permite agregar, modificar, eliminar y buscar clientes.
+            </summary>
+        </member>
+        <member name="M:Library.GestorClientes.AgregarCliente(Library.Cliente)">
+            <summary>
+            Agrega un nuevo cliente al sistema.
+            </summary>
+            <param name="cliente">Cliente a agregar.</param>
+            <returns>ID asignado al cliente.</returns>
+        </member>
+        <member name="M:Library.GestorClientes.EliminarCliente(System.Int32)">
+            <summary>
+            Elimina un cliente del sistema según su ID.
+            </summary>
+            <param name="id">ID del cliente.</param>
+            <returns>True si se eliminó, False si no se encontró.</returns>
+        </member>
+        <member name="M:Library.GestorClientes.ModificarCliente(Library.Cliente)">
+            <summary>
+            Modifica la información de un cliente existente.
+            </summary>
+            <param name="cliente">Cliente con los nuevos datos.</param>
+            <returns>True si se actualizó, False si no se encontró.</returns>
+        </member>
+        <member name="M:Library.GestorClientes.BuscarClientes(System.String)">
+            <summary>
+            Busca clientes por nombre, apellido, teléfono o correo electrónico.
+            </summary>
+            <param name="filtro">Texto de búsqueda.</param>
+            <returns>Lista de clientes coincidentes.</returns>
+        </member>
+        <member name="M:Library.GestorClientes.ObtenerTodos">
+            <summary>
+            Obtiene todos los clientes registrados.
+            </summary>
+            <returns>Lista de clientes.</returns>
+        </member>
+        <member name="T:Library.GestorInteracciones">
+            <summary>
+            Gestor de todas las interacciones (llamadas, reuniones, mensajes, correos) del sistema.
+            Implementa el patrón Singleton.
+            </summary>
+        </member>
+        <member name="F:Library.GestorInteracciones.interacciones">
+            <summary>
+            Lista que almacena todas las interacciones registradas.
+            </summary>
+        </member>
+        <member name="F:Library.GestorInteracciones.instancia">
+            <summary>
+            Instancia única del gestor (Singleton).
+            </summary>
+        </member>
+        <member name="P:Library.GestorInteracciones.Instancia">
+            <summary>
+            Propiedad para acceder al Singleton del gestor de interacciones.
+            </summary>
+        </member>
+        <member name="M:Library.GestorInteracciones.#ctor">
+            <summary>
+            Constructor privado para impedir instanciación externa.
+            </summary>
+        </member>
+        <member name="M:Library.GestorInteracciones.AgregarInteraccion(System.String,System.DateTime,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Agrega una nueva interacción al sistema según el tipo especificado.
+            </summary>
+            <param name="tipo">Tipo de interacción: "llamada", "reunion", "mensaje", "correo".</param>
+            <param name="fecha">Fecha de la interacción.</param>
+            <param name="descripcion">Descripción de la interacción.</param>
+            <param name="notas">Notas adicionales de la interacción.</param>
+            <param name="respondida">Indica si la interacción fue respondida.</param>
+            <param name="direccion">Dirección asociada a la interacción.</param>
+            <returns>ID asignado a la nueva interacción o -1 si el tipo es inválido.</returns>
+        </member>
+        <member name="M:Library.GestorInteracciones.ObtenerInteraccion(System.Int32)">
+            <summary>
+            Obtiene una interacción por su ID.
+            </summary>
+            <param name="id">ID de la interacción a buscar.</param>
+            <returns>La interacción encontrada o null si no existe.</returns>
+        </member>
+        <member name="M:Library.GestorInteracciones.MostrarTodasInteracciones">
+            <summary>
+            Muestra todas las interacciones registradas por consola.
+            </summary>
+        </member>
+        <member name="M:Library.GestorInteracciones.EliminarInteraccion(System.Int32)">
+            <summary>
+            Elimina una interacción por su ID.
+            </summary>
+            <param name="id">ID de la interacción a eliminar.</param>
+            <returns>True si se eliminó correctamente; false si no se encontró.</returns>
+        </member>
+        <member name="T:Library.GestorUsuarios">
+            <summary>
+            Clase que gestiona la creación, consulta y administración de usuarios del sistema.
+            Implementa el patrón Singleton clásico.
+            </summary>
+        </member>
+        <member name="P:Library.GestorUsuarios.Instancia">
+            <summary>
+            Instancia única del gestor de usuarios.
+            </summary>
+        </member>
+        <member name="M:Library.GestorUsuarios.#ctor">
+            <summary>
+            Constructor privado para cumplir con el patrón Singleton.
+            </summary>
+        </member>
+        <member name="M:Library.GestorUsuarios.Registrar(Library.IUsuario)">
+            <summary>
+            Registra un usuario en el sistema asignándole un ID si corresponde.
+            </summary>
+            <param name="usuario">Usuario a registrar.</param>
+            <returns>ID asignado o 0 si el tipo de usuario no usa ID.</returns>
+        </member>
+        <member name="M:Library.GestorUsuarios.CrearAdministrador(System.Boolean,System.DateTime)">
+            <summary>
+            Crea un administrador y lo registra en el sistema.
+            </summary>
+        </member>
+        <member name="M:Library.GestorUsuarios.CrearVendedor(System.Boolean,System.DateTime)">
+            <summary>
+            Crea un vendedor y lo registra en el sistema.
+            </summary>
+        </member>
+        <member name="M:Library.GestorUsuarios.ObtenerUsuario(System.Int32)">
+            <summary>
+            Busca un usuario por su identificador.
+            </summary>
+        </member>
+        <member name="M:Library.GestorUsuarios.ActualizarActivo(System.Int32,System.Boolean)">
+            <summary>
+            Cambia el estado Activo/Inactivo de un usuario.
+            </summary>
+            <returns>true si se modificó correctamente.</returns>
+        </member>
+        <member name="M:Library.GestorUsuarios.EliminarUsuario(System.Int32)">
+            <summary>
+            Elimina un usuario del sistema.
+            </summary>
+        </member>
+        <member name="M:Library.GestorUsuarios.ObtenerTodos">
+            <summary>
+            Obtiene una lista con todos los usuarios del sistema.
+            </summary>
+        </member>
+        <member name="T:Library.Interaccion">
+            <summary>
+            Clase base abstracta que representa una interacción genérica con un cliente,
+            como una llamada, correo, mensaje, reunión, etc.
+            </summary>
+        </member>
+        <member name="P:Library.Interaccion.Id">
+            <summary>
+            Identificador único de la interacción.
+            </summary>
+        </member>
+        <member name="P:Library.Interaccion.Fecha">
+            <summary>
+            Fecha en la que ocurrió la interacción.
+            </summary>
+        </member>
+        <member name="P:Library.Interaccion.Descripcion">
+            <summary>
+            Breve descripción del contenido o propósito de la interacción.
+            </summary>
+        </member>
+        <member name="P:Library.Interaccion.Notas">
+            <summary>
+            Notas adicionales o detalles de la interacción.
+            </summary>
+        </member>
+        <member name="P:Library.Interaccion.Respondida">
+            <summary>
+            Indica si la interacción fue respondida o no.
+            </summary>
+        </member>
+        <member name="P:Library.Interaccion.Direccion">
+            <summary>
+            Dirección o ubicación asociada a la interacción.
+            </summary>
+        </member>
+        <member name="M:Library.Interaccion.#ctor(System.DateTime,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Constructor protegido: inicializa los valores principales de la interacción.
+            </summary>
+        </member>
+        <member name="M:Library.Interaccion.#ctor">
+            <summary>
+            Constructor vacío: permite crear una interacción sin parámetros (por ejemplo, desde un gestor).
+            </summary>
+        </member>
+        <member name="M:Library.Interaccion.AgregarNota(System.String)">
+            <summary>
+            Agrega una nueva nota a la interacción.
+            </summary>
+            <param name="nota">Texto de la nota a agregar.</param>
+        </member>
+        <member name="T:Library.InteraccionSinDescripcionException">
+            <summary>
+            Excepción personalizada que se lanza cuando se intenta crear o registrar
+            una interacción sin descripción válida.
+            </summary>
+        </member>
+        <member name="M:Library.InteraccionSinDescripcionException.#ctor(System.String)">
+            <summary>
+            Inicializa una nueva instancia de la excepción con un mensaje personalizado.
+            </summary>
+            <param name="mensaje">Mensaje que describe el error.</param>
+        </member>
+        <member name="T:Library.IUsuario">
+            <summary>
+            Define las propiedades básicas que deben tener todos los tipos de usuario del sistema.
+            Sirve como contrato para asegurar que cualquier clase que la implemente
+            mantenga información sobre su estado de actividad y su fecha de creación.
+            </summary>
+        </member>
+        <member name="P:Library.IUsuario.Activo">
+            <summary>
+            Indica si el usuario está activo o no.
+            </summary>
+        </member>
+        <member name="P:Library.IUsuario.FechaCreacion">
+            <summary>
+            Fecha en la que el usuario fue creado o registrado en el sistema.
+            </summary>
+        </member>
+        <member name="T:Library.Llamada">
+            <summary>
+            Representa una interacción del tipo llamada dentro del sistema CRM.
+            Hereda de <see cref="T:Library.Interaccion"/> y agrega información sobre la duración de la llamada.
+            </summary>
+        </member>
+        <member name="P:Library.Llamada.Duracion">
+            <summary>
+            Duración total de la llamada (por ejemplo, "5 minutos", "00:03:45", etc.).
+            </summary>
+        </member>
+        <member name="M:Library.Llamada.#ctor(System.DateTime,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Constructor que inicializa una nueva instancia de la clase <see cref="T:Library.Llamada"/>.
+            </summary>
+            <param name="fecha">Fecha en que se realizó la llamada.</param>
+            <param name="descripcion">Descripción breve de la llamada.</param>
+            <param name="notas">Notas adicionales asociadas a la llamada.</param>
+            <param name="respondida">Indica si la llamada fue respondida.</param>
+            <param name="direccion">Dirección o número de contacto del destinatario.</param>
+            <param name="duracion">Duración total de la llamada.</param>
+        </member>
+        <member name="M:Library.Llamada.#ctor">
+            <summary>
+            Constructor vacío que permite crear una instancia sin inicializar los valores.
+            </summary>
+        </member>
+        <member name="T:Library.Mensaje">
+            <summary>
+            Representa una interacción del tipo mensaje dentro del sistema CRM.
+            Hereda de <see cref="T:Library.Interaccion"/> e incluye información adicional sobre el medio del mensaje.
+            </summary>
+        </member>
+        <member name="P:Library.Mensaje.Medio">
+            <summary>
+            Medio por el cual se envió el mensaje (por ejemplo, "WhatsApp", "SMS", "Telegram", etc.).
+            </summary>
+        </member>
+        <member name="M:Library.Mensaje.#ctor(System.DateTime,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Constructor que inicializa una nueva instancia de la clase <see cref="T:Library.Mensaje"/>.
+            </summary>
+            <param name="fecha">Fecha en que se realizó la interacción.</param>
+            <param name="descripcion">Descripción breve del mensaje.</param>
+            <param name="notas">Notas adicionales asociadas al mensaje.</param>
+            <param name="respondida">Indica si el mensaje fue respondido.</param>
+            <param name="direccion">Dirección o contacto relacionado con el mensaje.</param>
+            <param name="medio">Medio de comunicación utilizado.</param>
+        </member>
+        <member name="M:Library.Mensaje.#ctor">
+            <summary>
+            Constructor vacío que permite crear una instancia sin inicializar los valores.
+            </summary>
+        </member>
+        <member name="T:Library.Reunion">
+            <summary>
+            Representa una reunión como tipo de interacción.
+            Hereda de la clase base Interaccion.
+            </summary>
+        </member>
+        <member name="P:Library.Reunion.Lugar">
+            <summary>
+            Lugar donde se realiza la reunión.
+            </summary>
+        </member>
+        <member name="M:Library.Reunion.#ctor(System.DateTime,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            Constructor que inicializa una reunión con todos los datos.
+            </summary>
+            <param name="fecha">Fecha de la reunión.</param>
+            <param name="descripcion">Descripción breve de la reunión.</param>
+            <param name="notas">Notas adicionales sobre la reunión.</param>
+            <param name="respondida">Indica si la interacción fue respondida.</param>
+            <param name="direccion">Dirección asociada a la reunión.</param>
+            <param name="lugar">Lugar específico de la reunión.</param>
+        </member>
+        <member name="M:Library.Reunion.#ctor">
+            <summary>
+            Constructor por defecto.
+            </summary>
+        </member>
+        <member name="M:Library.Reunion.EsProxima">
+            <summary>
+            Indica si la reunión es próxima comparando con la fecha actual.
+            </summary>
+            <returns>true si la reunión aún no ha ocurrido; false si ya pasó.</returns>
+        </member>
+        <member name="T:Library.UsuarioBase">
+            <summary>
+            Clase base abstracta para todos los tipos de usuario del sistema.
+            Proporciona propiedades comunes como ID, estado y fecha de creación.
+            </summary>
+        </member>
+        <member name="P:Library.UsuarioBase.Id">
+            <summary>
+            Identificador único del usuario dentro del sistema.
+            Este valor es asignado automáticamente por el <see cref="T:Library.GestorUsuarios"/>.
+            </summary>
+        </member>
+        <member name="P:Library.UsuarioBase.Activo">
+            <summary>
+            Indica si el usuario se encuentra activo en el sistema.
+            </summary>
+        </member>
+        <member name="P:Library.UsuarioBase.FechaCreacion">
+            <summary>
+            Fecha en la que el usuario fue creado o registrado en el sistema.
+            </summary>
+        </member>
+        <member name="M:Library.UsuarioBase.#ctor(System.Boolean,System.DateTime)">
+            <summary>
+            Constructor protegido utilizado por todas las clases derivadas.
+            </summary>
+            <param name="activo">Estado inicial del usuario.</param>
+            <param name="fechaCreacion">Fecha de creación o registro.</param>
+        </member>
+        <member name="T:Library.Vendedor">
+            <summary>
+            Representa un vendedor del sistema.
+            Los vendedores pueden tener clientes asignados.
+            </summary>
+        </member>
+        <member name="M:Library.Vendedor.#ctor(System.Boolean,System.DateTime)">
+            <summary>
+            Constructor del vendedor.
+            </summary>
+            <param name="activo">Estado inicial del vendedor.</param>
+            <param name="fechaCreacion">Fecha de creación.</param>
+        </member>
+        <member name="M:Library.Vendedor.getClientesAsignados">
+            <summary>
+            Obtiene la lista de clientes asignados al vendedor.
+            </summary>
+            <returns>Lista de clientes asignados.</returns>
+        </member>
+        <member name="T:Library.Venta">
+            <summary>
+            Representa una venta realizada, heredando de la clase <see cref="T:Library.Interaccion"/>.
+            Contiene información sobre el total de la venta, fecha, descripción, notas, estado de respuesta y dirección.
+            </summary>
+        </member>
+        <member name="P:Library.Venta.Total">
+            <summary>
+            Monto total de la venta.
+            </summary>
+        </member>
+        <member name="P:Library.Venta.CotizacionOrigen">
+            <summary>
+            Cotización origen que generó esta venta (si aplica).
+            </summary>
+        </member>
+        <member name="M:Library.Venta.#ctor(System.Double,System.DateTime,System.String,System.String,System.Boolean,System.String,Library.Cotizacion)">
+            <summary>
+            Constructor principal de una Venta.
+            </summary>
+        </member>
+        <member name="M:Library.Venta.AsociarCotizacion(Library.Cotizacion)">
+            <summary>
+            Asocia una cotización a esta venta (si se creó sin una).
+            </summary>
+        </member>
+        <member name="M:Library.Venta.GetTotales(System.String,System.String)">
+            <summary>
+            Obtiene el total de la venta.
+            </summary>
+        </member>
+        <member name="T:ClienteSinVendedorAsignadoException">
+            <summary>
+            Excepción que se lanza cuando se intenta operar con un cliente
+            que no tiene un vendedor asignado.
+            </summary>
+        </member>
+        <member name="M:ClienteSinVendedorAsignadoException.#ctor(System.String)">
+            <summary>
+            Constructor que recibe el mensaje de error a mostrar.
+            </summary>
+            <param name="mensaje">Mensaje que describe la excepción.</param>
+        </member>
+        <member name="T:ProyectoCRM.Fachada">
+            <summary>
+            Fachada principal del CRM.
+            Unifica el acceso a clientes, ventas, cotizaciones, interacciones, etiquetas y usuarios.
+            </summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.#ctor">
+            <summary>
+            Inicializa la fachada.
+            </summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.ObtenerUsuarios">
+            <summary>Obtiene todos los usuarios registrados.</summary>
+            <returns>Lista de usuarios.</returns>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.RegistrarCliente(System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime)">
+            <summary>Registra un nuevo cliente.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.ModificarCliente(Library.Cliente,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime)">
+            <summary>Modifica un cliente existente.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.EliminarCliente(Library.Cliente)">
+            <summary>Elimina un cliente del sistema.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.BuscarClientes(System.String)">
+            <summary>Busca clientes por nombre, apellido, teléfono o correo.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.ObtenerClientes">
+            <summary>Obtiene todos los clientes.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.RegistrarInteraccion(Library.Cliente,Library.Interaccion)">
+            <summary>Registra una interacción de un cliente.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.RegistrarVenta(Library.Cliente,Library.Venta)">
+            <summary>Registra una venta de un cliente.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.RegistrarCotizacion(Library.Cliente,Library.Cotizacion)">
+            <summary>Registra una cotización de un cliente.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.CrearEtiqueta(System.String)">
+            <summary>Crea una nueva etiqueta.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.ObtenerEtiquetas">
+            <summary>Obtiene todas las etiquetas.</summary>
+        </member>
+        <member name="M:ProyectoCRM.Fachada.AgregarEtiquetaACliente(Library.Cliente,Library.Etiqueta)">
+            <summary>Agrega una etiqueta a un cliente.</summary>
+        </member>
+        <member name="T:ProyectoCRM.RegistroVenta">
+            <summary>
+            Servicio para filtrar y consultar ventas.
+            No almacena ventas internamente; recibe la lista desde afuera.
+            </summary>
+        </member>
+        <member name="F:ProyectoCRM.RegistroVenta.ventas">
+            <summary>
+            Lista interna opcional para almacenamiento temporal.
+            </summary>
+        </member>
+        <member name="M:ProyectoCRM.RegistroVenta.#ctor">
+            <summary>
+            Constructor opcional: inicializa la lista interna vacía.
+            </summary>
+        </member>
+        <member name="M:ProyectoCRM.RegistroVenta.AgregarVenta(Library.Venta)">
+            <summary>
+            Agrega una venta a la lista interna (si se desea mantener un historial local).
+            </summary>
+            <param name="venta">Venta a agregar.</param>
+        </member>
+        <member name="M:ProyectoCRM.RegistroVenta.GetVentasEntre(System.Collections.Generic.IEnumerable{Library.Venta},System.DateTime,System.DateTime)">
+            <summary>
+            Obtiene las ventas dentro de un rango de fechas a partir de una lista dada.
+            </summary>
+            <param name="listaVentas">Lista de ventas a filtrar.</param>
+            <param name="desde">Fecha de inicio.</param>
+            <param name="hasta">Fecha de fin.</param>
+            <returns>Lista de ventas filtradas.</returns>
+        </member>
+        <member name="M:ProyectoCRM.RegistroVenta.ObtenerTodas">
+            <summary>
+            Obtiene todas las ventas registradas en la lista interna.
+            </summary>
+            <returns>Lista de ventas internas.</returns>
+        </member>
+        <member name="T:UsuarioDuplicadoException">
+            <summary>
+            Excepción personalizada que se lanza cuando se intenta crear un usuario que ya existe.
+            </summary>
+        </member>
+        <member name="M:UsuarioDuplicadoException.#ctor(System.String)">
+            <summary>
+            Constructor de la excepción que recibe un mensaje descriptivo.
+            </summary>
+            <param name="mensaje">Mensaje que describe el motivo de la excepción.</param>
         </member>
     </members>
 </doc>
