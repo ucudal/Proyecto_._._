@@ -10,6 +10,11 @@ namespace Library
     public interface IUsuario
     {
         /// <summary>
+        /// Identificador único del usuario dentro del sistema.
+        /// </summary>
+        int Id { get; set; }
+        
+        /// <summary>
         /// Indica si el usuario está activo o no.
         /// </summary>
         bool Activo { get; set; }

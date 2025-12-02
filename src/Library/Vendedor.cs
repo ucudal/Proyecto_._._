@@ -4,39 +4,56 @@ using System.Collections.Generic;
 namespace Library
 {
     /// <summary>
-    /// Representa un vendedor del sistema, implementando la interfaz <see cref="IUsuario"/>.
-    /// Contiene información sobre el estado del vendedor y la fecha de creación.
+    /// Representa un vendedor del sistema.
+    /// Los vendedores pueden tener clientes asignados.
     /// </summary>
-    public class Vendedor : IUsuario
+    public class Vendedor : UsuarioBase
     {
         /// <summary>
-        /// Indica si el vendedor está activo o inactivo.
+        /// Lista de clientes asignados a este vendedor.
         /// </summary>
-        public bool Activo { get; set; }
+        private readonly List<Cliente> clientesAsignados = new List<Cliente>();
 
         /// <summary>
-        /// Fecha en la que el vendedor fue creado o registrado en el sistema.
-        /// </summary>
-        public DateTime FechaCreacion { get; set; }
-
-        /// <summary>
-        /// Constructor de la clase <see cref="Vendedor"/> que inicializa el estado y la fecha de creación.
+        /// Constructor del vendedor.
         /// </summary>
         /// <param name="activo">Estado inicial del vendedor.</param>
-        /// <param name="fechaCreacion">Fecha de creación del vendedor.</param>
+        /// <param name="fechaCreacion">Fecha de creación.</param>
         public Vendedor(bool activo, DateTime fechaCreacion)
-        {
-            Activo = activo;
-            FechaCreacion = fechaCreacion;
-        }
+            : base(activo, fechaCreacion) { }
 
         /// <summary>
         /// Obtiene la lista de clientes asignados al vendedor.
+        /// Devuelve una copia de la lista para preservar encapsulación.
         /// </summary>
-        /// <returns>Una lista de clientes asignados. Actualmente retorna una lista vacía.</returns>
-        public List<Cliente> getClientesAsignados()
+        /// <returns>Lista de clientes asignados.</returns>
+        public List<Cliente> GetClientesAsignados()
         {
-            return new List<Cliente>();
+            return new List<Cliente>(clientesAsignados);
+        }
+
+        /// <summary>
+        /// Asigna un cliente a este vendedor.
+        /// </summary>
+        /// <param name="cliente">Cliente a asignar.</param>
+        /// <returns>True si se asignó; false si ya estaba asignado.</returns>
+        public bool AsignarCliente(Cliente cliente)
+        {
+            if (cliente == null) throw new ArgumentNullException(nameof(cliente));
+            if (clientesAsignados.Contains(cliente)) return false;
+            clientesAsignados.Add(cliente);
+            return true;
+        }
+
+        /// <summary>
+        /// Desasigna un cliente de este vendedor.
+        /// </summary>
+        /// <param name="cliente">Cliente a desasignar.</param>
+        /// <returns>True si se desasignó; false si no estaba asignado.</returns>
+        public bool DesasignarCliente(Cliente cliente)
+        {
+            if (cliente == null) throw new ArgumentNullException(nameof(cliente));
+            return clientesAsignados.Remove(cliente);
         }
     }
 }

@@ -1,135 +1,98 @@
-// GestorClientes.cs
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Library
 {
     /// <summary>
-    /// Clase que gestiona la lista de clientes del sistema.
-    /// Implementa el patrón Singleton para asegurar una sola instancia.
-    /// Permite agregar, obtener, mostrar, actualizar y eliminar clientes.
+    /// Repositorio central de clientes del sistema.
+    /// Permite agregar, modificar, eliminar y buscar clientes.
     /// </summary>
     public class GestorClientes
     {
-        /// <summary>
-        /// Lista que actúa como "base de datos" de clientes.
-        /// </summary>
         private readonly List<Cliente> clientes = new List<Cliente>();
-
-        /// <summary>
-        /// Contador interno para asignar IDs automáticos a los clientes nuevos.
-        /// </summary>
         private int proximoId = 1;
-
-        /// <summary>
-        /// Instancia única del gestor (Singleton).
-        /// </summary>
-        private static GestorClientes instancia;
-
-        /// <summary>
-        /// Propiedad para acceder al Singleton de GestorClientes.
-        /// </summary>
-        public static GestorClientes Instancia
-        {
-            get
-            {
-                return instancia ?? (instancia = new GestorClientes());
-            }
-        }
-
-        /// <summary>
-        /// Constructor privado para evitar instanciación externa.
-        /// </summary>
-        private GestorClientes() { }
 
         /// <summary>
         /// Agrega un nuevo cliente al sistema.
         /// </summary>
-        /// <param name="nombre">Nombre del cliente.</param>
-        /// <param name="apellido">Apellido del cliente.</param>
-        /// <param name="email">Correo electrónico del cliente.</param>
-        /// <param name="telefono">Teléfono del cliente.</param>
-        /// <returns>ID asignado al nuevo cliente.</returns>
-        public int AgregarCliente(string nombre, string apellido, string email, string telefono)
+        /// <param name="cliente">Cliente a agregar.</param>
+        /// <returns>ID asignado al cliente.</returns>
+        public int AgregarCliente(Cliente cliente)
         {
-            Cliente nuevo = new Cliente
-            {
-                Id = proximoId,
-                Nombre = nombre,
-                Apellido = apellido,
-                Email = email,
-                Telefono = telefono,
-                FechaUltimaInteraccion = DateTime.Now
-            };
+            if (cliente == null)
+                throw new ArgumentNullException(nameof(cliente));
 
-            clientes.Add(nuevo);
-            proximoId++;
-            return nuevo.Id;
+            cliente.Id = proximoId++;
+            clientes.Add(cliente);
+            return cliente.Id;
         }
 
         /// <summary>
-        /// Obtiene un cliente por su ID.
+        /// Elimina un cliente del sistema según su ID.
         /// </summary>
-        /// <param name="id">ID del cliente a buscar.</param>
-        /// <returns>Cliente encontrado o null si no existe.</returns>
-        public Cliente ObtenerCliente(int id)
+        /// <param name="id">ID del cliente.</param>
+        /// <returns>True si se eliminó, False si no se encontró.</returns>
+        public bool EliminarCliente(int id)
         {
-            foreach (var c in clientes)
-            {
-                if (c.Id == id)
-                    return c;
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Muestra todos los clientes registrados en la consola.
-        /// </summary>
-        public void MostrarTodosClientes()
-        {
-            foreach (var c in clientes)
-            {
-                Console.WriteLine($"ID: {c.Id}, Nombre: {c.Nombre}, Apellido: {c.Apellido}, Email: {c.Email}, Teléfono: {c.Telefono}");
-            }
-        }
-
-        /// <summary>
-        /// Actualiza el correo electrónico de un cliente.
-        /// </summary>
-        /// <param name="id">ID del cliente a actualizar.</param>
-        /// <param name="nuevoEmail">Nuevo correo electrónico.</param>
-        /// <returns>True si se actualizó correctamente, false si no se encontró el cliente.</returns>
-        public bool ActualizarEmail(int id, string nuevoEmail)
-        {
-            Cliente cliente = ObtenerCliente(id);
+            var cliente = clientes.FirstOrDefault(c => c.Id == id);
             if (cliente != null)
             {
-                cliente.Email = nuevoEmail;
+                clientes.Remove(cliente);
                 return true;
             }
             return false;
         }
 
         /// <summary>
-        /// Elimina un cliente por su ID.
+        /// Modifica la información de un cliente existente.
         /// </summary>
-        /// <param name="id">ID del cliente a eliminar.</param>
-        /// <returns>True si se eliminó correctamente, false si no se encontró.</returns>
-        public bool EliminarCliente(int id)
+        /// <param name="cliente">Cliente con los nuevos datos.</param>
+        /// <returns>True si se actualizó, False si no se encontró.</returns>
+        public bool ModificarCliente(Cliente cliente)
         {
-            var cliente = ObtenerCliente(id);
-            if (cliente != null)
+            if (cliente == null)
+                throw new ArgumentNullException(nameof(cliente));
+
+            var existente = clientes.FirstOrDefault(c => c.Id == cliente.Id);
+            if (existente != null)
             {
-                return clientes.Remove(cliente);
+                existente.Nombre = cliente.Nombre;
+                existente.Apellido = cliente.Apellido;
+                existente.Telefono = cliente.Telefono;
+                existente.Email = cliente.Email;
+                existente.Genero = cliente.Genero;
+                existente.FechaNacimiento = cliente.FechaNacimiento;
+                existente.Observaciones = cliente.Observaciones;
+                return true;
             }
             return false;
         }
 
         /// <summary>
-        /// Obtiene una copia de todos los clientes registrados.
+        /// Busca clientes por nombre, apellido, teléfono o correo electrónico.
+        /// </summary>
+        /// <param name="filtro">Texto de búsqueda.</param>
+        /// <returns>Lista de clientes coincidentes.</returns>
+        public List<Cliente> BuscarClientes(string filtro)
+        {
+            if (string.IsNullOrWhiteSpace(filtro))
+                return new List<Cliente>(clientes);
+
+            filtro = filtro.ToLower();
+            return clientes.Where(c =>
+                (c.Nombre?.ToLower().Contains(filtro) ?? false) ||
+                (c.Apellido?.ToLower().Contains(filtro) ?? false) ||
+                (c.Telefono?.ToLower().Contains(filtro) ?? false) ||
+                (c.Email?.ToLower().Contains(filtro) ?? false)
+            ).ToList();
+        }
+
+        /// <summary>
+        /// Obtiene todos los clientes registrados.
         /// </summary>
         /// <returns>Lista de clientes.</returns>
-        public List<Cliente> ObtenerTodosClientes()
+        public List<Cliente> ObtenerTodos()
         {
             return new List<Cliente>(clientes);
         }
