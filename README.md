@@ -18,6 +18,12 @@ En resumen, gracias a este proyecto estoy consolidando muchos de los conceptos q
 En conclusión, gracias al proyecto estoy consolidando un montón de conceptos que damos en clase, me está enseñando a pensar de manera más estructurada para resolver conflictos y creo que logramos una comunicación súper eficiente dentro del grupo.
 
 
+Thiago Soca: En mi caso, este proyecto fue bastante desafiante desde el principio. Hubo muchas cosas que no tenía del todo claras, sobre todo cuando empezamos a trabajar con varias clases distintas, la fachada, los gestores y toda la estructura del proyecto. Al principio me costó entender cómo encajaba cada parte y cómo debía funcionar el sistema completo. Me llevó tiempo ordenarme, también porque siento que al haber entrado tarde al curso se me hizo mas complicado, pero aun asi, fue justamente eso fue lo que más me ayudó a aprender.
+
+Varias veces me pasó que sentía que la consigna pedía cosas que todavía no habíamos visto en clase, o que el código se volvía más complejo de lo que estaba acostumbrado. Eso me obligó a buscar la información yo, mirar ejemplos, probar distintas soluciones y equivocarme varias veces. Aunque fue frustrante por momentos, también era un alivio cuando algo funcionaba o cuando lograba entender una parte que antes no me cerraba.
+
+En general, siento que aprendí muchísimo. No solo a programar mejor, sino a entender cómo se arma un proyecto más grande, cómo dividirlo en partes para ser mas organizado y cómo ir resolviendo de a poco. Fue un trabajo que me exigió bastante, pero que también me dejó la sensación de que realmente estoy progresando y entendiendo mejor lo que hacemos en la carrera.
+
 
 Descripcion del Proyecto: Este proyecto se centra en la creación de un CRM (Customer Relationship Management) implementado como un chatbot conversacional. Su objetivo es ofrecer un sistema que facilite la gestión de clientes, incluyendo sus datos, interacciones (como llamadas, reuniones, mensajes y correos electrónicos), ventas, cotizaciones, etiquetas y reportes, todo a través de una interfaz de chat. El chatbot se integra con Discord, permitiendo a los usuarios realizar todas las funciones del CRM mediante comandos o mediante conversaciones naturales.
 
