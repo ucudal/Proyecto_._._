@@ -28,6 +28,17 @@ En general, siento que aprendí muchísimo. No solo a programar mejor, sino a en
 Descripcion del Proyecto: Este proyecto se centra en la creación de un CRM (Customer Relationship Management) implementado como un chatbot conversacional. Su objetivo es ofrecer un sistema que facilite la gestión de clientes, incluyendo sus datos, interacciones (como llamadas, reuniones, mensajes y correos electrónicos), ventas, cotizaciones, etiquetas y reportes, todo a través de una interfaz de chat. El chatbot se integra con Discord, permitiendo a los usuarios realizar todas las funciones del CRM mediante comandos o mediante conversaciones naturales.
 Por motivos de tiempo, no hemos podido completar la implementación del bot de manera óptima. Sin embargo, para la defensa del miércoles, estará completamente implementado y funcionando correctamente.
 
+Patrones GRASP utilizados
+Controller: La clase Fachada centraliza las operaciones del CRM y coordina las acciones entre los gestores y las entidades.
+Creator: GestorUsuarios crea usuarios y Fachada crea clientes, porque ambas manejan las colecciones donde esos objetos se almacenan.
+Information Expert: RegistroVenta conoce la lista de ventas y por eso implementa los métodos para agregarlas y filtrarlas; Cliente maneja sus propias interacciones.
+Low Coupling / High Cohesion: Cada clase cumple una función específica (GestorUsuarios, RegistroVenta, Cliente, etc.), evitando depender innecesariamente de otras.
+
+Principios SOLID aplicados
+SRP: Clases como GestorUsuarios, RegistroVenta, Fachada y Cliente tienen responsabilidades bien definidas.
+OCP: Nuevos tipos de interacción pueden crearse heredando de Interaccion sin modificar código existente.
+LSP: Las subclases (Venta, Cotizacion, Llamada, etc.) pueden usarse donde se espera una Interaccion.
+
 
 
 
