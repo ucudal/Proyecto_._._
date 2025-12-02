@@ -8,6 +8,15 @@ Para poder comprender ciertos conceptos y guiarme en el desarrollo de los flujos
 Sin lugar a duda un proyecto muy desafiante y entretenido. Muy recomendable para seguirlo realizando en los siguientes años.
 
 
+Alexis Giménez: Desde mi punto de vista, este proyecto ha sido una excelente manera de poner en práctica los conceptos que vemos en clase y realmente asimilarlos.
+
+Lo que más me costó fue comenzar con el UML desde cero: comprender cómo debía funcionar cada componente y qué lógica aplicar en cada caso. Al inicio todo parecía muy abstracto, pero a medida que el diagrama fue tomando forma y empezamos a desarrollar el código, las ideas se fueron aclarando y el proceso se volvió más entretenido.
+
+Disfruté mucho trabajar con mis compañeros. Fue una gran oportunidad para aprender a coordinar tareas en equipo, organizar horarios, comunicarnos de manera efectiva y enfrentar juntos los problemas que surgían.
+
+En resumen, gracias a este proyecto estoy consolidando muchos de los conceptos que estudiamos en clase, mejorando mi forma de pensar de manera estructurada y resolviendo conflictos con mayor claridad. Además, siento que dentro del grupo logramos establecer una comunicación muy eficiente, lo que hizo que el trabajo fuera mucho más fluido y productivo.
+En conclusión, gracias al proyecto estoy consolidando un montón de conceptos que damos en clase, me está enseñando a pensar de manera más estructurada para resolver conflictos y creo que logramos una comunicación súper eficiente dentro del grupo.
+
 
 
 Descripcion del Proyecto: Este proyecto se centra en la creación de un CRM (Customer Relationship Management) implementado como un chatbot conversacional. Su objetivo es ofrecer un sistema que facilite la gestión de clientes, incluyendo sus datos, interacciones (como llamadas, reuniones, mensajes y correos electrónicos), ventas, cotizaciones, etiquetas y reportes, todo a través de una interfaz de chat. El chatbot se integra con Discord, permitiendo a los usuarios realizar todas las funciones del CRM mediante comandos o mediante conversaciones naturales.
