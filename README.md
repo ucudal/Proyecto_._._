@@ -26,7 +26,7 @@ En general, siento que aprendí muchísimo. No solo a programar mejor, sino a en
 
 
 Descripcion del Proyecto: Este proyecto se centra en la creación de un CRM (Customer Relationship Management) implementado como un chatbot conversacional. Su objetivo es ofrecer un sistema que facilite la gestión de clientes, incluyendo sus datos, interacciones (como llamadas, reuniones, mensajes y correos electrónicos), ventas, cotizaciones, etiquetas y reportes, todo a través de una interfaz de chat. El chatbot se integra con Discord, permitiendo a los usuarios realizar todas las funciones del CRM mediante comandos o mediante conversaciones naturales.
-
+Por motivos de tiempo, no hemos podido completar la implementación del bot de manera óptima. Sin embargo, para la defensa del miércoles, estará completamente implementado y funcionando correctamente.
 
 
 
