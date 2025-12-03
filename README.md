@@ -1,43 +1,51 @@
-# Qué hay configurado en esta plantilla
+Sebastian Silveira: En primera parte, disfruté mucho la experiencia de trabajar en equipo, especialmente en lo que respecta a los desafíos relacionados con la organización y la comunicación interna. Tener algunos inconvenientes en estos aspectos me impulsó a buscar nuevas estrategias y a implementar herramientas que facilitaran la comunicación y la resolución de problemas de la manera más eficiente posible.
 
-1. Un proyecto de biblioteca (creado con [`dotnet new classlib --name Library`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `src\Library`
-2. Un proyecto de aplicación de consola (creado con [`dotnet new console --name Program`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `src\Program`
-3. Un proyecto de prueba en [NUnit](https://nunit.org/) (creado con [`dotnet new nunit --name LibraryTests`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `test\LibraryTests`
-4. Un proyecto de [Doxygen](https://www.doxygen.nl/index.html) para generación de sitio web de documentación en la carpeta `docs`
-5. Análisis estático con [Roslyn analyzers](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview) en los proyectos de biblioteca y de aplicación
-6. Análisis de estilo con [StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/README.md) en los proyectos de biblioteca y de aplicación
-7. Una solución `ProjectTemplate.sln` que referencia todos los proyectos de C# y facilita la compilación con [`dotnet build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build).
-8. Tareas preconfiguradas para compilar y ejecutar los proyectos, ejecutar las pruebas, y generar documentación desde VSCode en la carpeta `.vscode`
-9. Análisis de cobertura de los casos de prueba mediante []() que aparece en los márgenes con el complemento de VS Code [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters).
-10. Ejecución automática de compilación y prueba mediante [GitHub Actions](https://docs.github.com/en/actions) configuradas en el repositorio al hacer [push](https://github.com/git-guides/git-push) o [pull request](https://docs.github.com/en/github/collaborating-with-pull-requests).
+Por otro lado, el proyecto en sí tiene una propuesta muy interesante y motivadora. Me gusto mucho participar en su desarrollo y tengo muchas ganas de ver cómo será su implementación final. Al mismo tiempo, debo reconocer que el desarrollo del código y del flujo del programa fue bastante complejo. Esto no solo se debió a que las instrucciones en el repositorio a veces eran poco claras o pedían conceptos que nunca nos habían introducido, sino también porque gran parte del aprendizaje lo recibimos de forma muy sobre la marcha. 
 
-Vean este 🎥 [video](https://web.microsoftstream.com/video/55c6a06c-07dc-4f95-a96d-768f198c9044) que explica el funcionamiento de la plantilla.
+Lo positivo de esta situación es que representó un desafío completo, ya que nos obligó a ingeniárnoslas para poder enfrentar problemas similares en el futuro. La posibilidad de ser creativos dentro de las limitaciones y desarrollar soluciones propias fue una experiencia muy valiosa. Sin embargo, debo admitir que, en algunos momentos, la ambigüedad fue bastante alta.
 
-## Convenciones
+Para poder comprender ciertos conceptos y guiarme en el desarrollo de los flujos de programa, recurrí frecuentemente a videos en YouTube y a foros en internet.
+Sin lugar a duda un proyecto muy desafiante y entretenido. Muy recomendable para seguirlo realizando en los siguientes años.
 
-[Convenciones de código en C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
 
-[Convenciones de nombres en C#](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines)
+Alexis Giménez: Desde mi punto de vista, este proyecto ha sido una excelente manera de poner en práctica los conceptos que vemos en clase y realmente asimilarlos.
 
-## Dónde encontrar información sobre los errores/avisos al compilar
+Lo que más me costó fue comenzar con el UML desde cero: comprender cómo debía funcionar cada componente y qué lógica aplicar en cada caso. Al inicio todo parecía muy abstracto, pero a medida que el diagrama fue tomando forma y empezamos a desarrollar el código, las ideas se fueron aclarando y el proceso se volvió más entretenido.
 
-[C# Compiler Errors (CS*)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/)
+Disfruté mucho trabajar con mis compañeros. Fue una gran oportunidad para aprender a coordinar tareas en equipo, organizar horarios, comunicarnos de manera efectiva y enfrentar juntos los problemas que surgían.
 
-[Roslyn Analyzer Warnings (CA*)](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/categories)
+En resumen, gracias a este proyecto estoy consolidando muchos de los conceptos que estudiamos en clase, mejorando mi forma de pensar de manera estructurada y resolviendo conflictos con mayor claridad. Además, siento que dentro del grupo logramos establecer una comunicación muy eficiente, lo que hizo que el trabajo fuera mucho más fluido y productivo.
+En conclusión, gracias al proyecto estoy consolidando un montón de conceptos que damos en clase, me está enseñando a pensar de manera más estructurada para resolver conflictos y creo que logramos una comunicación súper eficiente dentro del grupo.
 
-[StyleCop Analyzer Warnings (SA*)](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md)
 
-# Cómo deshabilitar temporalmente los avisos al compilar
+Thiago Soca: En mi caso, este proyecto fue bastante desafiante desde el principio. Hubo muchas cosas que no tenía del todo claras, sobre todo cuando empezamos a trabajar con varias clases distintas, la fachada, los gestores y toda la estructura del proyecto. Al principio me costó entender cómo encajaba cada parte y cómo debía funcionar el sistema completo. Me llevó tiempo ordenarme, también porque siento que al haber entrado tarde al curso se me hizo mas complicado, pero aun asi, fue justamente eso fue lo que más me ayudó a aprender.
 
-## Roslyn Analyzer
+Varias veces me pasó que sentía que la consigna pedía cosas que todavía no habíamos visto en clase, o que el código se volvía más complejo de lo que estaba acostumbrado. Eso me obligó a buscar la información yo, mirar ejemplos, probar distintas soluciones y equivocarme varias veces. Aunque fue frustrante por momentos, también era un alivio cuando algo funcionaba o cuando lograba entender una parte que antes no me cerraba.
 
-Comentar las siguientes líneas en los archivos de proyecto (`*.csproj`)
-```
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-```
+En general, siento que aprendí muchísimo. No solo a programar mejor, sino a entender cómo se arma un proyecto más grande, cómo dividirlo en partes para ser mas organizado y cómo ir resolviendo de a poco. Fue un trabajo que me exigió bastante, pero que también me dejó la sensación de que realmente estoy progresando y entendiendo mejor lo que hacemos en la carrera.
 
-## StyleCop Analyzer
 
-Comentar la línea `<PackageReference Include="StyleCop.Analyzers" Version="1.1.118"/>` en los archivos de proyecto (`*.csproj`)
+Descripcion del Proyecto: Este proyecto se centra en la creación de un CRM (Customer Relationship Management) implementado como un chatbot conversacional. Su objetivo es ofrecer un sistema que facilite la gestión de clientes, incluyendo sus datos, interacciones (como llamadas, reuniones, mensajes y correos electrónicos), ventas, cotizaciones, etiquetas y reportes, todo a través de una interfaz de chat. El chatbot se integra con Discord, permitiendo a los usuarios realizar todas las funciones del CRM mediante comandos o mediante conversaciones naturales.
+Por motivos de tiempo, no hemos podido completar la implementación del bot de manera óptima. Sin embargo, para la defensa del miércoles, estará completamente implementado y funcionando correctamente.
+
+Patrones GRASP utilizados
+Controller: La clase Fachada centraliza las operaciones del CRM y coordina las acciones entre los gestores y las entidades.
+Creator: GestorUsuarios crea usuarios y Fachada crea clientes, porque ambas manejan las colecciones donde esos objetos se almacenan.
+Information Expert: RegistroVenta conoce la lista de ventas y por eso implementa los métodos para agregarlas y filtrarlas; Cliente maneja sus propias interacciones.
+Low Coupling / High Cohesion: Cada clase cumple una función específica (GestorUsuarios, RegistroVenta, Cliente, etc.), evitando depender innecesariamente de otras.
+
+Principios SOLID aplicados
+SRP: Clases como GestorUsuarios, RegistroVenta, Fachada y Cliente tienen responsabilidades bien definidas.
+OCP: Nuevos tipos de interacción pueden crearse heredando de Interaccion sin modificar código existente.
+LSP: Las subclases (Venta, Cotizacion, Llamada, etc.) pueden usarse donde se espera una Interaccion.
+
+
+
+
+
+
+
+
+
+
+
