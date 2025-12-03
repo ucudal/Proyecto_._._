@@ -117,9 +117,10 @@ namespace ProyectoCRM.Tests
             var cliente = fachada.ObtenerClientes().First();
 
             var venta = new Venta(1500, DateTime.Today, "Producto A", String.Empty, false, String.Empty, null);
-            
 
-            fachada.RegistrarVenta(cliente, venta);
+            var vendedor = new Vendedor(true, DateTime.Today);
+
+            fachada.RegistrarVenta(cliente, venta, vendedor);
 
             Assert.IsTrue(cliente.GetInteracciones().Any(i => i is Venta));
         }
@@ -185,6 +186,33 @@ namespace ProyectoCRM.Tests
         {
             int id = fachada.CrearVendedor(true, DateTime.Now);
             Assert.IsTrue(fachada.ObtenerUsuarios().Any(u => u.Id == id));
+        }
+        
+        // ============================================================
+        // DEFENSA PROYECTO
+        // ============================================================
+
+        /// <summary>
+        /// Registra 2 ventas de un mismo cliente a un vendedo A y revisa si el bono que recibe es igual a 200
+        /// Implementacion incompleta por tiempo
+        /// </summary>
+        public void DarBono_OK(Vendedor vendedor)
+        {
+            fachada.RegistrarCliente("Jose", "Perez", "888", "s@mail.com");
+            var vendedorA = new Vendedor(true, DateTime.Today);
+            
+            var vendedorB = new Vendedor(true, DateTime.Now);
+            
+            var cliente = fachada.ObtenerClientes().First();
+
+            var venta1 = new Venta(1500, DateTime.Today, "Una descripcion", string.Empty, true, string.Empty, null);
+            
+            var venta2 = new Venta(2500, DateTime.Today, "Una descripcion", string.Empty, true, string.Empty, null);
+
+            fachada.RegistrarVenta(cliente, venta1, vendedorA);
+            fachada.RegistrarVenta(cliente, venta2, vendedorA);
+            fachada.DarBono(vendedorA);
+            Assert.IsTrue(vendedor.GetBono().any(int == 200 == Bono));
         }
     }
 }

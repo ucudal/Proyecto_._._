@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Library;
 
 namespace Library
 {
@@ -13,7 +14,13 @@ namespace Library
         /// Lista de clientes asignados a este vendedor.
         /// </summary>
         private readonly List<Cliente> clientesAsignados = new List<Cliente>();
+        
+        private readonly List<Venta> cantidadVentas = new List<Venta>();
 
+        public int NumVentas { get; set; }
+
+        public int Bono { get; set;}
+        
         /// <summary>
         /// Constructor del vendedor.
         /// </summary>
@@ -54,6 +61,61 @@ namespace Library
         {
             if (cliente == null) throw new ArgumentNullException(nameof(cliente));
             return clientesAsignados.Remove(cliente);
+        }
+        public void AgregarVenta(Venta venta)
+        {
+            if (venta != null)
+            {
+                cantidadVentas.Add(venta);
+            }
+        }
+        
+        // ---------------------------------------------------------------------
+        // DEFENSA PROYECTO
+        // ---------------------------------------------------------------------
+
+        /// <summary>
+        ///  Método creado para recibir la lista de ventas de cada vendedor en caso de necesitarla
+        /// </summary>
+        /// <returns></returns>
+        public List<Venta> GetVentas()
+        {
+            return new List<Venta>(cantidadVentas);
+        }
+
+        /// <summary>
+        /// Método que entrega la cantidad de ventas en tipo int para facilitar los métodos de la fachada
+        /// </summary>
+        /// <returns></returns>
+        public int GetVentasInt()
+        {
+            foreach (var VARIABLE in cantidadVentas)
+            {
+                NumVentas += 1;
+            }
+
+            return NumVentas;
+        }
+
+        /// <summary>
+        /// Método que permite a la Fachada entregarle el bono al vendedor con mayor cantidad de ventas, recorre la lista de ventas y por cada una de ellas le entrega el bono de 100
+        /// </summary>
+        public void RecibirBono()
+        {
+            foreach (var VARIABLE in cantidadVentas)
+            {
+                Bono += 100;
+            }
+        }
+        
+        /// <summary>
+        /// Metodo que retorna el valor del Bono del vendedor
+        /// </summary>
+        /// <returns></returns>
+
+        public int GetBono()
+        {
+            return Bono;
         }
     }
 }

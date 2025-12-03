@@ -33,6 +33,8 @@ namespace Library
 
         private readonly List<IUsuario> usuarios = new List<IUsuario>();
 
+        private readonly List<Vendedor> vendedores = new List<Vendedor>();
+
         private int proximoId = 1;
 
         /// <summary>
@@ -79,6 +81,8 @@ namespace Library
         {
             Vendedor vendedor = new Vendedor(activo, fechaCreacion);
             Registrar(vendedor);
+            /// Como se añadio una lista de vendedores, se agrega vendedores.Add(vendedor) en el metodo de creacion del vendedor para ya añadirlo directamente a la lista
+            vendedores.Add(vendedor);
             return vendedor;
         }
 
@@ -138,6 +142,19 @@ namespace Library
         public List<IUsuario> ObtenerTodos()
         {
             return new List<IUsuario>(usuarios);
+        }
+        
+        // ---------------------------------------------------------------------
+        // DEFENSA PROYECTO
+        // ---------------------------------------------------------------------
+
+        /// <summary>
+        /// Metodo que da una lista con todos los vendedores del sistema
+        /// </summary>
+        /// <returns></returns>
+        public List<Vendedor> RecibirVendedores()
+        {
+            return new List<Vendedor>(vendedores);
         }
     }
 }

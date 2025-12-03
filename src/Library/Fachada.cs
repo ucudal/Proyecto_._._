@@ -16,7 +16,10 @@ namespace ProyectoCRM
         private readonly RegistroVenta registroVenta;
 
         private readonly List<Etiqueta> etiquetas = new List<Etiqueta>();
-
+        private List<Vendedor> vendedorestotales = new List<Vendedor>();
+        private List<int> listaventasdevendedores = new List<int>();
+        private int CantidadMayor { get; set; }
+        private int CantidadActual { get; set; }
         /// <summary>
         /// Constructor de la Fachada.
         /// </summary>
@@ -113,11 +116,12 @@ namespace ProyectoCRM
         // Ventas y Cotizaciones
         // ---------------------------------------------------------------------
 
-        public void RegistrarVenta(Cliente cliente, Venta venta)
+        public void RegistrarVenta(Cliente cliente, Venta venta, Vendedor vendedor)
         {
             if (cliente == null || venta == null) throw new ArgumentNullException();
 
             cliente.AgregarInteraccion(venta);
+            vendedor.AgregarVenta(venta);
             registroVenta.RegistrarVentaInterna(venta);
         }
 
@@ -171,6 +175,58 @@ namespace ProyectoCRM
         public List<IUsuario> ObtenerUsuarios()
         {
             return gestorUsuarios.ObtenerTodos();
+        }
+        
+        
+        // ---------------------------------------------------------------------
+        // DEFENSA PROYECTO
+        // ---------------------------------------------------------------------
+        
+        /// <summary>
+        /// Método de la fachada que retorna la lista de vendedores 
+        /// </summary>
+        /// <returns></returns>
+        public List<Vendedor> ObtenerVendedores()
+        {
+            return gestorUsuarios.RecibirVendedores();
+        }
+        /// <summary>
+        /// Método de la fachada que entrega el bono al vendedor con mayor cantidad de ventas
+        /// Primero recibe la lista de vendedores por parte de GestorUsuario
+        /// Con un foreach recorre cada vendedor de la lista y con el metodo GetVentasInt recibe el numero de ventas de cada vendedor y las almacena en una lista de tipo int
+        /// Luego de eso, recorre esta lista de tipo int y almacena en CantidadMayor la variable (la cual representa cada cantidad de ventas por vendedor) mas alta
+        /// Por ultimo recorre nuevamente la lista de vendedores y revisa nuevamente la cantidad de ventas de cada uno
+        /// Si la cantidad de ventas es igual a la cantidad que recibe del vendedor entonces le da el bono
+        /// De esta manera, si varios vendedores tienen la misma cantidad de ventas, se les puede dar a cada uno el bono
+        /// </summary>
+        /// <param name="vendedor"></param>
+        public void DarBono(Vendedor vendedor)
+        {
+            CantidadMayor = 0;
+            CantidadActual = 0;
+            vendedorestotales = gestorUsuarios.RecibirVendedores();
+            foreach (var VARIABLE in vendedorestotales)
+            {
+                new List<int>().Add(vendedor.GetVentasInt());   
+            }
+
+            foreach (var VARIABLE in listaventasdevendedores)
+            {
+                if (VARIABLE > CantidadMayor)
+                {
+                    CantidadMayor = VARIABLE;
+                    vendedor.RecibirBono();
+                }
+            }
+
+            foreach (var VARIABLE in vendedorestotales)
+            {
+                CantidadActual = vendedor.GetVentasInt();
+                if (CantidadActual == CantidadMayor)
+                {
+                    vendedor.RecibirBono();
+                }
+            }
         }
     }
 }
