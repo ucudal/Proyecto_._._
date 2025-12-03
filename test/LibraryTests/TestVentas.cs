@@ -1,5 +1,40 @@
 using System;
 using Library;
+using NUnit.Framework;
+
+public class Vendedores
+{
+    public void Add(Vendedor v1)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class Ventas
+{
+    public static void Add(Venta p0)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class Sistema
+{
+    public Sistema(Vendedores vendedores, object venta)
+    {
+        throw new NotImplementedException();
+    }
+
+    public object ObtenerVentasPorVendedor()
+    {
+        throw new NotImplementedException();
+    }
+
+    public (object vendedor, object cantidad, object bono) ObtenerTopVendedorConBono()
+    {
+        throw new NotImplementedException();
+    }
+}
 
 namespace Program.Tests
 {
@@ -60,3 +95,60 @@ namespace Program.Tests
         }
     }
 }
+
+
+public void TopVendedorConBono()
+{
+    // 
+    var Vendedores = new Vendedores();
+    var repoVentas = new Venta();
+    var sistema = new Sistema(Vendedores, Venta);
+
+    var v1 = new Vendedor("1", "Juan");
+    var v2 = new Vendedor("2", "Pedro");
+
+    Vendedores.Add(v1);
+    Vendedores.Add(v2);
+
+    Venta.Add(new Venta("A", "1"));
+    Venta.Add(new Venta("B", "1"));
+    Venta.Add(new Venta("C", "2"));
+
+    // 
+    var (vendedor, cantidad, bono) = sistema.ObtenerTopVendedorConBono();
+
+    // 
+    Assert.Equals("1", vendedor.Id); // Juan tiene 2 ventas entonces es el top
+    Assert.Equals(2, cantidad);
+    Assert.Equals(200, bono);        // $100 por venta
+}
+
+public void ObtenerVentasPorVendedor()
+{
+    // 
+    var Vendedores = new Vendedores();
+    var repoVentas = new Venta();
+    var sistema = new Sistema(Vendedores, Venta);
+
+    var v1 = new Vendedor("1", "Juan");
+    var v2 = new Vendedor("2", "Pedro");
+
+    Vendedores.Add(v1);
+    Vendedores.Add(v2);
+
+    Ventas.Add(new Venta("A", "1"));
+    Ventas.Add(new Venta("B", "1"));
+    Ventas.Add(new Venta("C", "2"));
+
+    // 
+    var resultado = sistema.ObtenerVentasPorVendedor();
+
+    //
+    Assert.That(2, resultado["1"]); // Juan tiene 2 ventas
+    Assert.That(1, resultado["2"]); // Pedro tiene 1 venta
+}
+
+
+
+
+

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 namespace Library
 {
@@ -35,6 +36,11 @@ namespace Library
             // Este constructor existe solo por si se necesita crear una venta vacía.
         }
 
+        public Venta(string total, string fecha)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Asigna una cotización como origen de la venta.
         /// </summary>
@@ -50,6 +56,16 @@ namespace Library
         public double GetTotales(string criterio1, string criterio2)
         {
             return this.Total;
+        }
+
+        public static IEnumerable GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void Add(Venta p0)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Library
 {
@@ -34,9 +35,7 @@ namespace Library
         /// Obtiene la lista de clientes asignados al vendedor.
         /// </summary>
         /// <returns>Una lista de clientes asignados. Actualmente retorna una lista vacía.</returns>
-        public List<Cliente> getClientesAsignados()
-        {
-            return new List<Cliente>();
-        }
-    }
-}
+        
+        
+
+

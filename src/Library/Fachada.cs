@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Library;
 
 namespace ProyectoCRM
@@ -245,3 +246,45 @@ namespace ProyectoCRM
         }
     }
 }
+// Devuelve un diccionario: VendedorId -> CantidadDeVentas
+namespace ObtenerVentasPorVendedor{}
+Dictionary<string, int> ObtenerVentasPorVendedor()
+{
+    var ventas = Venta.GetAll();
+    var vendedores = Vendedor.GetAll();
+
+    // Inicio el diccionario con todos los vendedores en 0
+    var resultado = new Dictionary<string, int>();
+
+    foreach (var vendedor in vendedores)
+        resultado[vendedor.Id] = 0;
+
+    // Cuento las ventas por vendedor
+    foreach (var venta in ventas)
+    {
+        string vendedor;
+        if (resultado.ContainsKey(vendedor))
+            resultado[vendedor]++;
+    }
+
+    return resultado;
+}
+ 
+//Devuelve el vendedor con más ventas + mas bono
+
+(Vendedor vendedor, int cantidadVentas, int bono) ObtenerTopVendedorConBono()
+{
+    var dict = ObtenerVentasPorVendedor();
+
+    // Obtengo el ID del vendedor con más ventas
+    var top = dict.OrderByDescending(x => x.Value).First();
+
+    Vendedor MaxVendedor;
+    var vendedor = MaxVendedor;
+    int cantidad = top.Value;
+    int bono = cantidad + 100;
+
+    return (MaxVendedor, cantidad, bono);
+}
+
+
