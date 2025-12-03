@@ -29,7 +29,7 @@ namespace Library
         /// <summary>
         /// Constructor privado para cumplir con el patrón Singleton.
         /// </summary>
-        private GestorUsuarios() { }
+        public GestorUsuarios() { }
 
         private readonly List<IUsuario> usuarios = new List<IUsuario>();
 
@@ -138,6 +138,16 @@ namespace Library
         public List<IUsuario> ObtenerTodos()
         {
             return new List<IUsuario>(usuarios);
+        }
+
+        public Vendedor ObtenerUsuarioPorId(int vendedorId)
+        {
+            throw new NotImplementedException();         //El programa me recomienda usar throw new throw new NotImplementedException() para solucionar problemas.
+        }
+
+        public void AgregarUsuario(Vendedor p0)
+        {
+            throw new NotImplementedException();// para que no se cometan errores en los test...
         }
     }
 }

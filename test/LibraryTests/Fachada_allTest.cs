@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Library;
 using ProyectoCRM;
@@ -186,5 +187,88 @@ namespace ProyectoCRM.Tests
             int id = fachada.CrearVendedor(true, DateTime.Now);
             Assert.IsTrue(fachada.ObtenerUsuarios().Any(u => u.Id == id));
         }
+        
+        
+        //--------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------
+        
+        
+        // ============================================================
+        // TEST DE SEBASTIAN 
+        // ============================================================
+        
+        [Test]    //Test para: " comando que permita obtener la cantidad de las ventas de cada vendedor"
+        public void ObtenerCantidadVentasPorVendedor_CuentaCorrectamente()
+        {
+            var v1 = new Venta { VendedorId = 1 }; //inicilizo objetos para realizar el testing
+            var v2 = new Venta { VendedorId = 1 };
+            var v3 = new Venta { VendedorId = 2 };
+
+            var gestor = new GestorVentas(new List<Venta>{ v1, v2, v3 });
+            var dict = gestor.ObtenerCantidadVentasPorVendedor();
+
+            Assert.AreEqual(2, dict[1]);
+            Assert.AreEqual(1, dict[2]);
+        }
+
+        [Test] //Test para: "El vendedor con mayor cantidad"
+        public void ObtenerVendedorConMasVentas_RetornaCorrecto()
+        {
+            var gestor = new GestorVentas(new List<Venta>{
+                new Venta{VendedorId = 10},
+                new Venta{VendedorId = 20},
+                new Venta{VendedorId = 10}
+            });
+
+            var (id, cantidad) = gestor.ObtenerVendedorConMasVentas();
+            Assert.AreEqual(10, id);
+            Assert.AreEqual(2, cantidad);
+        }
+
+        [Test]   //Test cuando tiene que retornar 0.
+        public void ObtenerVendedorConMasVentas_SinVentas_RetornaCero()
+        {
+            var gestor = new GestorVentas();
+            var (id, cantidad) = gestor.ObtenerVendedorConMasVentas();
+            Assert.AreEqual(0, id);
+            Assert.AreEqual(0, cantidad);
+        }
+        
+        
+        
+         //Aca el test de este metodo que calcula el bono de 100 x venta.
+         [Test]
+         public void ObtenerVendedorConMayorCantidadDeVentasYBonificacion_CalculaBonoCorrectamente()
+         {
+             // Crear vendedores en el GestorUsuarios
+             var gestorUsuarios = new GestorUsuarios();
+             gestorUsuarios.AgregarUsuario(new Vendedor { Id = 1, Nombre = "Marcelo" });//inicializo objetos para el testing
+             gestorUsuarios.AgregarUsuario(new Vendedor { Id = 2, Nombre = "Gonzalo" });
+
+             var ventas = new List<Venta>{          // lista
+                 new Venta{ VendedorId = 1 },
+                 new Venta{ VendedorId = 1 },
+                 new Venta{ VendedorId = 2 }
+             };
+             var gestorVentas = new GestorVentas(ventas);
+
+             var fachada = new Fachada(gestorVentas, gestorUsuarios);
+             
+             var bono = fachada.ObtenerVendedorConMayorCantidadDeVentasYBonificacion();
+
+             
+             Assert.IsNotNull(bono);
+             Assert.AreEqual(1, bono.VendedorId);
+             Assert.AreEqual("Marcelo", bono.VendedorNombre);
+             Assert.AreEqual(2, bono.CantidadVentas);
+             Assert.AreEqual(200m, bono.Bono); // 2 * 100!!!
+         }
+         
     }
+    
+     
+    
+    
+    
 }

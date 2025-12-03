@@ -35,5 +35,16 @@ namespace Library
             FechaCreacion = fechaCreacion;
             Id = 0;
         }
+
+        protected UsuarioBase(bool activo)
+        {
+            throw new NotImplementedException(); // Estas son recomendaciones del programa para solucionar errores...
+            
+        }
+
+        protected UsuarioBase()
+        {
+            throw new NotImplementedException(); // Estas son recomendaciones del programa para solucionar errores...
+        }
     }
 }

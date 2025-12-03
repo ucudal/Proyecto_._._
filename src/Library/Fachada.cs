@@ -14,6 +14,8 @@ namespace ProyectoCRM
         private readonly GestorClientes gestorClientes;
         private readonly GestorInteracciones gestorInteracciones;
         private readonly RegistroVenta registroVenta;
+        private readonly GestorVentas gestorVentas;
+       
 
         private readonly List<Etiqueta> etiquetas = new List<Etiqueta>();
 
@@ -26,6 +28,7 @@ namespace ProyectoCRM
             gestorClientes = new GestorClientes();
             gestorInteracciones = GestorInteracciones.Instancia;
             registroVenta = new RegistroVenta();
+            gestorVentas = new GestorVentas();
         }
 
         // ---------------------------------------------------------------------
@@ -172,5 +175,47 @@ namespace ProyectoCRM
         {
             return gestorUsuarios.ObtenerTodos();
         }
+        
+        
+        // ---------------------------------------------------------------------
+        // NUEVO AGREGADO POR SEBASTIAN
+        // ---------------------------------------------------------------------
+        
+        public Fachada(GestorVentas gv, GestorUsuarios gu)
+        {
+            gestorVentas = gv;   // inicializo variables q luego usare
+            gestorUsuarios = gu;
+        }
+        
+        
+        // Retorna null si no hay ventas. Siento que es la mejor de las opciones.
+        public BonoVendedor ObtenerVendedorConMayorCantidadDeVentasYBonificacion()
+        {
+            var (vendedorId, cantidad) = gestorVentas.ObtenerVendedorConMasVentas();
+            if (vendedorId == 0 || cantidad == 0) return null;
+
+            var vendedor = gestorUsuarios.ObtenerUsuarioPorId(vendedorId) as Vendedor;
+            if (vendedor == null) return null;
+
+            decimal bono = cantidad * 100m; /// BONO DE 100 x venta como decia la letra de la defensa.
+            return new BonoVendedor
+            {
+                VendedorId = vendedor.Id,
+                VendedorNombre = vendedor.Nombre,
+                CantidadVentas = cantidad,
+                Bono = bono
+            };
+        }
+    }
+
+    public class BonoVendedor
+    {
+        public int VendedorId { get; set; }  //id vendedor
+        public string VendedorNombre { get; set; } // nombre vendedor
+        public int CantidadVentas { get; set; }   //cantidad de ventas
+        public decimal Bono { get; set; } // bono
     }
 }
+     
+    
+

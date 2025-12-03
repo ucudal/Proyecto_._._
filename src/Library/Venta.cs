@@ -18,6 +18,9 @@ namespace Library
         /// </summary>
         public Cotizacion CotizacionOrigen { get; private set; }
 
+        public object Vendedorid { get; set; }
+        public int VendedorId { get; set; }
+
         /// <summary>
         /// Constructor principal de una Venta.
         /// </summary>
@@ -36,6 +39,11 @@ namespace Library
 
             // Si viene de una cotización, registramos relación bidireccional
             cotizacionOrigen?.RegistrarVentaAsociada(this);
+        }
+
+        public Venta()
+        {
+            throw new NotImplementedException();    //lo solicita el programa para que no ocurran errores...
         }
 
         /// <summary>

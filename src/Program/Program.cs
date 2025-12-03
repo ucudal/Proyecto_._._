@@ -12,7 +12,7 @@ namespace Ucu.Poo.DiscordBot.Program
         /// <summary>
         /// Punto de entrada al programa.
         /// </summary>
-        private static void Main(string [] args)
+        private static void Main(string[] args)
         {
             if (args.Length != 0)
             {
@@ -24,7 +24,7 @@ namespace Ucu.Poo.DiscordBot.Program
             }
         }
 
-        private static void DemoFacade(string [] args)
+        private static void DemoFacade(string[] args)
         {
             if (args.Length > 0)
             {
@@ -38,3 +38,15 @@ namespace Ucu.Poo.DiscordBot.Program
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
